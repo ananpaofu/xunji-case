@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XUNJI — A quiet place for everything you own</title>
+  <meta name="description" content="XUNJI is a local-first app that remembers what you own and when it expires. A product design case study.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+
+  <!-- ambient background -->
+  <div class="ambient" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="path-trace" aria-hidden="true">
+    <svg viewBox="0 0 1400 9000" preserveAspectRatio="none">
+      <path d="M-40 300 C 260 340, 380 640, 180 900 C -20 1160, 220 1420, 520 1560 C 900 1740, 1120 2040, 860 2320 C 620 2580, 300 2760, 480 3060 C 700 3420, 1100 3600, 940 3980 C 790 4320, 420 4480, 560 4860 C 720 5300, 1140 5500, 980 5920 C 820 6340, 420 6500, 600 6920 C 800 7380, 1160 7600, 1000 8000 C 880 8320, 700 8620, 900 9050" />
+    </svg>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="XUNJI home">
+      <span class="brand-glyph" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="brand-name">XUNJI<span class="brand-dot">.</span></span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#app" data-i18n="nav_app">The App</a>
+      <a href="#features" data-i18n="nav_features">Why XUNJI</a>
+      <a href="#process" data-i18n="nav_process">Process</a>
+      <a href="#testing" data-i18n="nav_testing">Testing</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <span class="lang-sep">/</span>
+      <button type="button" class="lang-btn" data-lang="zh">中文</button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow reveal"><span class="eyebrow-line"></span><span data-i18n="hero_eyebrow">PRODUCT DESIGN CASE STUDY · 2026</span></p>
+          <h1 class="hero-title reveal"><span data-i18n="hero_l1">A quiet place</span><br><span class="outline" data-i18n="hero_l2">for everything</span><br><span data-i18n="hero_l3">you own.</span></h1>
+          <p class="hero-sub reveal" data-i18n="hero_sub">XUNJI is a local-first app that remembers what you have, where it lives, and when it runs out. No account. No cloud. Just you and your things.</p>
+          <div class="hero-meta reveal">
+            <div><b data-i18n="hero_m1">12</b><span data-i18n="hero_m1l">INTERVIEWS</span></div>
+            <div><b data-i18n="hero_m2">04</b><span data-i18n="hero_m2l">CORE FEATURES</span></div>
+            <div><b data-i18n="hero_m3">20+</b><span data-i18n="hero_m3l">ITERATIONS</span></div>
+          </div>
+          <a class="hero-cta reveal" href="#app"><span data-i18n="hero_cta">Explore the app</span><span class="cta-arrow">↘</span></a>
+        </div>
+
+        <div class="hero-stage reveal">
+          <div class="stage-glow" aria-hidden="true"></div>
+          <div class="stage-label stage-label-top"><span data-i18n="stage_local">LOCAL FIRST</span><i></i><span data-i18n="stage_private">PRIVATE BY DEFAULT</span></div>
+
+          <div class="phone phone-front" aria-label="XUNJI app home screen">
+            <div class="phone-bar"><span class="pb-time">9:41</span><span class="pb-icons">▮▮▮ ◔</span></div>
+            <div class="scr">
+              <div class="scr-head">
+                <span class="sh-title" data-i18n="ph_home">Home</span>
+                <span class="sh-bell">♢</span>
+              </div>
+              <div class="scr-search"><span class="ss-ico">⌕</span><span data-i18n="ph_search">Search your things…</span><span class="ss-mic">◉</span></div>
+              <div class="scr-section"><span data-i18n="ph_expiring">Expiring soon</span><em>2</em></div>
+              <div class="scr-card urgent"><span class="sc-emoji">🥚</span><div class="sc-main"><b data-i18n="ph_egg">Eggs</b><small data-i18n="ph_eggmeta">Fridge · Food</small></div><span class="sc-badge" data-i18n="ph_3days">3d left</span></div>
+              <div class="scr-card"><span class="sc-emoji">🥛</span><div class="sc-main"><b data-i18n="ph_milk">Whole milk</b><small data-i18n="ph_milkmeta">Fridge · Food</small></div><span class="sc-badge soft" data-i18n="ph_12days">12d</span></div>
+              <div class="scr-section"><span data-i18n="ph_recent">Recently added</span></div>
+              <div class="scr-card"><span class="sc-emoji">💊</span><div class="sc-main"><b data-i18n="ph_vit">Vitamin C</b><small data-i18n="ph_vitmeta">Med cabinet · Medicine</small></div></div>
+              <div class="scr-card"><span class="sc-emoji">🧴</span><div class="sc-main"><b data-i18n="ph_sunscreen">Sunscreen</b><small data-i18n="ph_sunmeta">Drawer · Opened</small></div></div>
+              <div class="scr-tab"><span class="on">⌂<small data-i18n="ph_tab1">Home</small></span><span>▦<small data-i18n="ph_tab2">Sort</small></span><span class="add">＋</span><span>◔<small data-i18n="ph_tab3">Alerts</small></span><span>☺<small data-i18n="ph_tab4">Me</small></span></div>
+            </div>
+          </div>
+
+          <div class="phone phone-back" aria-hidden="true">
+            <div class="scr">
+              <div class="scr-head"><span class="sh-title" data-i18n="ph_sort">Categories</span></div>
+              <div class="cat-grid">
+                <span>📦<small data-i18n="cat_all">All</small></span><span>⭐<small data-i18n="cat_best">Best</small></span><span>🕐<small data-i18n="cat_soon">Soon</small></span><span>⚠️<small data-i18n="cat_expired">Expired</small></span>
+                <span>📂<small data-i18n="cat_opened">Opened</small></span><span>🗂️<small data-i18n="cat_stock">Stock</small></span><span>🍞<small data-i18n="cat_food">Food</small></span><span>💊<small data-i18n="cat_med">Medicine</small></span>
+                <span>🧴<small data-i18n="cat_beauty">Beauty</small></span><span>👕<small data-i18n="cat_clothes">Clothes</small></span><span>📄<small data-i18n="cat_docs">Docs</small></span><span>🔌<small data-i18n="cat_tech">Tech</small></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stage-caption"><span class="cap-dot"></span><span data-i18n="stage_cap">Designed for the things you forget you have.</span></div>
+        </div>
+      </div>
+      <div class="scroll-cue"><span data-i18n="scroll">SCROLL</span><i></i></div>
+    </section>
+
+    <!-- ============ STATEMENT ============ -->
+    <section class="statement" id="overview">
+      <div class="statement-inner reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="statement_eyebrow">THE IDEA</span></p>
+        <h2 data-i18n="statement_h">The problem was never<br>having too much.<br><span class="dim">It was losing track.</span></h2>
+        <p class="statement-note" data-i18n="statement_note">Most storage apps ask you to organise more. XUNJI asks you to remember less — and quietly keeps an eye on expiry dates, opened packs, and where everything went.</p>
+      </div>
+    </section>
+
+    <!-- ============ APP SHOWCASE ============ -->
+    <section class="app-show" id="app">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="app_eyebrow">01 / THE APP</span></p>
+        <h2 data-i18n="app_h">Four screens. One habit.</h2>
+        <p data-i18n="app_sub">Everything happens on the device. The interface stays out of the way until you need it.</p>
+      </div>
+
+      <div class="screens-grid">
+        <article class="screen-card reveal">
+          <div class="sc-top"><span class="sc-num">01</span><span class="sc-tag" data-i18n="screen1_tag">CAPTURE</span></div>
+          <div class="mini-phone">
+            <div class="mp-bar"><span>9:41</span><span>▮▮▮</span></div>
+            <div class="mp-head" data-i18n="ph_add">New item</div>
+            <div class="mp-photo"><span>＋</span><small data-i18n="mp_photo">Add a photo</small></div>
+            <div class="mp-field"><span data-i18n="mp_name">Name</span><b data-i18n="mp_eggs">Eggs</b></div>
+            <div class="mp-field"><span data-i18n="mp_cat">Category</span><b data-i18n="mp_food">Food</b></div>
+            <div class="mp-field"><span data-i18n="mp_loc">Location</span><b data-i18n="mp_fridge">Fridge</b></div>
+            <div class="mp-field"><span data-i18n="mp_date">Best before</span><b>2026 · 11 · 26</b></div>
+            <div class="mp-save" data-i18n="mp_save">Save item</div>
+          </div>
+          <h3 data-i18n="screen1_h">Log it in seconds</h3>
+          <p data-i18n="screen1_p">Snap a photo, pick a category, set an expiry date. The form remembers your usual choices so next time takes even less.</p>
+        </article>
+
+        <article class="screen-card reveal">
+          <div class="sc-top"><span class="sc-num">02</span><span class="sc-tag" data-i18n="screen2_tag">FIND</span></div>
+          <div class="mini-phone">
+            <div class="mp-bar"><span>9:41</span><span>▮▮▮</span></div>
+            <div class="mp-head" data-i18n="ph_sort">Categories</div>
+            <div class="mp-grid">
+              <span>📦<small data-i18n="cat_all">All</small></span><span>🕐<small data-i18n="cat_soon">Soon</small></span><span>⚠️<small data-i18n="cat_expired">Expired</small></span><span>📂<small data-i18n="cat_opened">Opened</small></span>
+              <span>🗂️<small data-i18n="cat_stock">Stock</small></span><span>🍞<small data-i18n="cat_food">Food</small></span><span>💊<small data-i18n="cat_med">Medicine</small></span><span>🧴<small data-i18n="cat_beauty">Beauty</small></span>
+              <span>👕<small data-i18n="cat_clothes">Clothes</small></span><span>📄<small data-i18n="cat_docs">Docs</small></span><span>🔌<small data-i18n="cat_tech">Tech</small></span><span>✏️<small data-i18n="cat_other">Other</small></span>
+            </div>
+            <div class="mp-search" data-i18n="mp_searchhint">Or just search by name</div>
+          </div>
+          <h3 data-i18n="screen2_h">Find it without digging</h3>
+          <p data-i18n="screen2_p">Twelve categories, a plain-language search, and voice input. Your things stay where you left them — you just know where that is.</p>
+        </article>
+
+        <article class="screen-card reveal">
+          <div class="sc-top"><span class="sc-num">03</span><span class="sc-tag" data-i18n="screen3_tag">REMEMBER</span></div>
+          <div class="mini-phone">
+            <div class="mp-bar"><span>9:41</span><span>▮▮▮</span></div>
+            <div class="mp-head" data-i18n="ph_tab3">Alerts</div>
+            <div class="mp-group" data-i18n="mp_soongroup">EXPIRING SOON · 2</div>
+            <div class="mp-row"><span>🥚</span><b data-i18n="mp_eggs">Eggs</b><em class="hot" data-i18n="mp_3d">3 days</em></div>
+            <div class="mp-row"><span>🥛</span><b data-i18n="mp_milk">Whole milk</b><em data-i18n="mp_12d">12 days</em></div>
+            <div class="mp-group" data-i18n="mp_expgroup">EXPIRED · 1</div>
+            <div class="mp-row"><span>🧴</span><b data-i18n="mp_mask">Face mask</b><em class="dead" data-i18n="mp_2d">2d ago</em></div>
+            <div class="mp-note" data-i18n="mp_notetime">Reminders at 09:00 · adjustable</div>
+          </div>
+          <h3 data-i18n="screen3_h">A nudge, not a nag</h3>
+          <p data-i18n="screen3_p">XUNJI tells you when something is about to expire. It never demands a routine, never scores you, and can be turned off completely.</p>
+        </article>
+
+        <article class="screen-card reveal">
+          <div class="sc-top"><span class="sc-num">04</span><span class="sc-tag" data-i18n="screen4_tag">ADAPT</span></div>
+          <div class="mini-phone">
+            <div class="mp-bar"><span>9:41</span><span>▮▮▮</span></div>
+            <div class="mp-head" data-i18n="ph_tab4">Me</div>
+            <div class="mp-avatar">☺</div>
+            <div class="mp-name" data-i18n="mp_nickname">My storage</div>
+            <div class="mp-setting"><span data-i18n="mp_theme">Theme</span><b data-i18n="mp_themeval">Mono / Warm / Green</b></div>
+            <div class="mp-setting"><span data-i18n="mp_font">Text size</span><b data-i18n="mp_fontval">Standard → XL</b></div>
+            <div class="mp-setting"><span data-i18n="mp_elder">Elder mode</span><b data-i18n="mp_off">Off</b></div>
+            <div class="mp-setting"><span data-i18n="mp_lang">Language</span><b>EN / 简 / 繁</b></div>
+          </div>
+          <h3 data-i18n="screen4_h">Made for real hands</h3>
+          <p data-i18n="screen4_p">Three themes, adjustable type, an elder mode, and full English support. The app meets you where you are, not the other way around.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ WHY ============ -->
+    <section class="why" id="features">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="why_eyebrow">02 / THE DECISIONS</span></p>
+        <h2 data-i18n="why_h">Small choices, on purpose.</h2>
+      </div>
+      <div class="why-list">
+        <div class="why-row reveal"><span class="wr-num">01</span><div><h3 data-i18n="why1_h">Local is a feature</h3><p data-i18n="why1_p">Everything lives in the browser's local storage. No sign-up, no sync, no data leaving the device. Privacy isn't a settings page — it's the architecture.</p></div><span class="wr-mark">◌</span></div>
+        <div class="why-row reveal"><span class="wr-num">02</span><div><h3 data-i18n="why2_h">Expiry, not aesthetics</h3><p data-i18n="why2_p">The thing people actually lose track of isn't the object — it's the date. So the app tracks best-before, opened state, and quantity, not just a pretty inventory.</p></div><span class="wr-mark">◔</span></div>
+        <div class="why-row reveal"><span class="wr-num">03</span><div><h3 data-i18n="why3_h">One green accent</h3><p data-i18n="why3_p">A monochrome interface with a single green signal for actions and alerts. The colour means the same thing everywhere, so nothing competes for attention.</p></div><span class="wr-mark">＋</span></div>
+        <div class="why-row reveal"><span class="wr-num">04</span><div><h3 data-i18n="why4_h">Installable, not installed</h3><p data-i18n="why4_p">A PWA that can sit on the home screen like a native app, but updates itself silently and works offline. No app store, no friction.</p></div><span class="wr-mark">↧</span></div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="process" id="process">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="proc_eyebrow">03 / THE PROCESS</span></p>
+        <h2 data-i18n="proc_h">We listened before we drew.</h2>
+        <p data-i18n="proc_sub">Twelve interviews with students who share rooms. The findings were less about tidiness and more about the quiet anxiety of not knowing what you have.</p>
+      </div>
+
+      <!-- persona -->
+      <div class="persona reveal">
+        <div class="persona-card">
+          <p class="pc-kicker" data-i18n="persona_kicker">USER PERSONA / 01</p>
+          <h3 data-i18n="persona_h">The anxious organiser</h3>
+          <p class="pc-meta" data-i18n="persona_meta">Alias · Junior · Lives on campus</p>
+          <blockquote data-i18n="persona_quote">“Things get lost, and the mess comes back a week later.”</blockquote>
+          <p class="pc-src" data-i18n="persona_src">Representative quote · Interview P4</p>
+        </div>
+        <div class="persona-attrs">
+          <div><span data-i18n="pa1k">GOAL</span><p data-i18n="pa1">Wants a clear room without spending every weekend sorting it.</p></div>
+          <div><span data-i18n="pa2k">PAIN</span><p data-i18n="pa2">Can't remember where things went; buys duplicates; finds expired food too late.</p></div>
+          <div><span data-i18n="pa3k">BEHAVIOUR</span><p data-i18n="pa3">Occasional big clean-ups, then everything slowly drifts back.</p></div>
+          <div><span data-i18n="pa4k">NEED</span><p data-i18n="pa4">A low-effort way to record, find, and check what's still good.</p></div>
+        </div>
+      </div>
+
+      <!-- affinity -->
+      <div class="cluster-block reveal">
+        <div class="block-head"><h3 data-i18n="aff_h">Five patterns kept showing up</h3><p data-i18n="aff_sub">Affinity mapping · 12 interview transcripts</p></div>
+        <div class="clusters">
+          <div class="cluster"><span class="cl-num">01</span><b data-i18n="cl1h">Small things vanish</b><p data-i18n="cl1p">“Where did I put the charger?” “Bought the same thing twice.”</p></div>
+          <div class="cluster"><span class="cl-num">02</span><b data-i18n="cl2h">Dates get forgotten</b><p data-i18n="cl2p">“It looked fine.” “Found the medicine after it expired.”</p></div>
+          <div class="cluster"><span class="cl-num">03</span><b data-i18n="cl3h">Storage doesn't fit</b><p data-i18n="cl3p">“Boxes are the wrong size.” “Dividers never line up.”</p></div>
+          <div class="cluster"><span class="cl-num">04</span><b data-i18n="cl4h">Order doesn't last</b><p data-i18n="cl4p">“Two weeks and it's back to normal.” “Putting things away is the hard part.”</p></div>
+          <div class="cluster"><span class="cl-num">05</span><b data-i18n="cl5h">Too much effort</b><p data-i18n="cl5p">“Sorting is exhausting.” “I don't even know where to start.”</p></div>
+        </div>
+      </div>
+
+      <!-- journey -->
+      <div class="journey-block reveal">
+        <div class="block-head"><h3 data-i18n="jour_h">One clean-up, pulled apart</h3><p data-i18n="jour_sub">Journey map · the emotional curve tells the real story</p></div>
+        <div class="journey">
+          <div class="j-row j-head"><span></span><span data-i18n="j_s1">DECIDING</span><span data-i18n="j_s2">DOING</span><span data-i18n="j_s3">AFTERWARDS</span></div>
+          <div class="j-row"><span data-i18n="j_goal">GOAL</span><span data-i18n="j1g">Find a reason to start</span><span data-i18n="j2g">Sort everything quickly</span><span data-i18n="j3g">Keep it in place</span></div>
+          <div class="j-row"><span data-i18n="j_act">ACTION</span><span data-i18n="j1a">Stare at the desk, avoid it</span><span data-i18n="j2a">Empty drawers, sort into piles</span><span data-i18n="j3a">Put things down, drift back</span></div>
+          <div class="j-row"><span data-i18n="j_issue">FRICTION</span><span data-i18n="j1i">Too much, don't know where to begin</span><span data-i18n="j2i">No clear categories, wrong boxes</span><span data-i18n="j3i">Can't find things, start over</span></div>
+          <div class="j-row j-feel"><span data-i18n="j_emotion">EMOTION</span><span>😕 <span data-i18n="j_confused">Confused</span></span><span>😣 <span data-i18n="j_helpless">Helpless</span> → 😵 <span data-i18n="j_overwhelmed">Overwhelmed</span></span><span>😌 <span data-i18n="j_relieved">Relieved</span> → 😞 <span data-i18n="j_disappointed">Disappointed</span></span></div>
+          <div class="j-row j-op"><span data-i18n="j_opp">OPPORTUNITY</span><span data-i18n="j1o">Simple "where to start" list</span><span data-i18n="j2o">Snap & log, no manual sorting</span><span data-i18n="j3o">Light reminders, easy put-back</span></div>
+        </div>
+      </div>
+
+      <!-- emotion curve -->
+      <div class="curve-block reveal">
+        <div class="block-head"><h3 data-i18n="curve_h">The relief never lasts</h3><p data-i18n="curve_sub">Emotion extracted from interview language</p></div>
+        <div class="curve-box">
+          <svg viewBox="0 0 900 230" role="img" aria-label="Emotional curve: confused, helpless, overwhelmed, relieved, disappointed">
+            <path class="cv-line" d="M40 130 C 130 128, 160 162, 240 160 S 340 100, 420 112 S 510 172, 580 164 S 670 88, 740 100 S 820 180, 860 184" />
+            <g class="cv-dot"><circle cx="240" cy="160" r="6"/><text x="240" y="145">😕</text><text class="cv-label" x="240" y="190" data-i18n="j_confused">Confused</text></g>
+            <g class="cv-dot"><circle cx="420" cy="112" r="6"/><text x="420" y="97">😣</text><text class="cv-label" x="420" y="142" data-i18n="j_helpless">Helpless</text></g>
+            <g class="cv-dot"><circle cx="580" cy="164" r="6"/><text x="580" y="149">😵</text><text class="cv-label" x="580" y="194" data-i18n="j_overwhelmed">Overwhelmed</text></g>
+            <g class="cv-dot"><circle cx="740" cy="100" r="6"/><text x="740" y="85">😌</text><text class="cv-label" x="740" y="130" data-i18n="j_relieved">Relieved</text></g>
+            <g class="cv-dot"><circle cx="860" cy="184" r="6"/><text x="860" y="169">😞</text><text class="cv-label" x="860" y="214" data-i18n="j_disappointed">Disappointed</text></g>
+          </svg>
+        </div>
+        <p class="curve-note" data-i18n="curve_note">XUNJI exists to lift that last point. Not by organising harder — by making check-out automatic, and putting-back almost effortless.</p>
+      </div>
+
+      <!-- mapping -->
+      <div class="mapping-block reveal">
+        <div class="block-head"><h3 data-i18n="map_h">From what we heard to what we built</h3><p data-i18n="map_sub">Every feature traces back to a sentence someone said</p></div>
+        <div class="map-rows">
+          <div class="map-row"><span class="mr-quote" data-i18n="map1q">“I buy the same thing twice.”</span><span class="mr-arrow">→</span><span class="mr-feat"><b data-i18n="map1h">Categories + search</b><small data-i18n="map1p">Know what you already have</small></span></div>
+          <div class="map-row"><span class="mr-quote" data-i18n="map2q">“It looked fine, then it wasn't.”</span><span class="mr-arrow">→</span><span class="mr-feat"><b data-i18n="map2h">Expiry alerts</b><small data-i18n="map2p">Dates you don't have to remember</small></span></div>
+          <div class="map-row"><span class="mr-quote" data-i18n="map3q">“Sorting is exhausting.”</span><span class="mr-arrow">→</span><span class="mr-feat"><b data-i18n="map3h">Snap & log</b><small data-i18n="map3p">One photo, one tap, done</small></span></div>
+          <div class="map-row"><span class="mr-quote" data-i18n="map4q">“I don't want my stuff in the cloud.”</span><span class="mr-arrow">→</span><span class="mr-feat"><b data-i18n="map4h">Local-first storage</b><small data-i18n="map4p">Private by architecture</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ USABILITY TEST ============ -->
+    <section class="testing" id="testing">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="test_eyebrow">04 / USABILITY TEST</span></p>
+        <h2 data-i18n="test_h">We watched six people use it.</h2>
+        <p data-i18n="test_sub">6 participants, 25 minutes each, four tasks. Version 2.0 and 3.0, side by side. What they struggled with changed what we built.</p>
+      </div>
+
+      <div class="test-stats reveal">
+        <div><b>06</b><span data-i18n="ts1">PARTICIPANTS</span></div>
+        <div><b>25<span>min</span></b><span data-i18n="ts2">PER SESSION</span></div>
+        <div><b>04</b><span data-i18n="ts3">TASKS</span></div>
+        <div><b>02</b><span data-i18n="ts4">VERSIONS</span></div>
+      </div>
+
+      <div class="baseline reveal">
+        <div class="baseline-big">6<span>/6</span></div>
+        <div class="baseline-copy">
+          <h3 data-i18n="base_h">Everyone had lost something. Everyone relied on memory.</h3>
+          <p data-i18n="base_p">From last week's keys to a bottle of perfume that took one to two hours to find — the problem was real, frequent, and solved by remembering harder.</p>
+          <div class="baseline-quotes">
+            <span data-i18n="base_q1">“翻遍了柜子和箱子，找了 10 多分钟”</span>
+            <span data-i18n="base_q2">“找香水翻遍了家里，一两个小时”</span>
+            <span data-i18n="base_q3">“没有专门方式，全靠记忆”</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="friction reveal">
+        <div class="block-head"><h3 data-i18n="fric_h">Where people got stuck</h3><p data-i18n="fric_sub">Share of participants who mentioned each issue · n=6</p></div>
+        <div class="bar-row"><span class="br-label" data-i18n="br1">Add entry hard to spot / two entries</span><span class="br-track"><i style="width:83%"></i></span><span class="br-val">5/6</span></div>
+        <div class="bar-row"><span class="br-label" data-i18n="br2">Location &amp; tracking not trustworthy</span><span class="br-track"><i style="width:50%"></i></span><span class="br-val">3/6</span></div>
+        <div class="bar-row"><span class="br-label" data-i18n="br3">Form needs scrolling after photo</span><span class="br-track"><i style="width:33%"></i></span><span class="br-val">2/6</span></div>
+        <div class="bar-row"><span class="br-label" data-i18n="br4">Too many photo entries, shaky AI</span><span class="br-track"><i style="width:33%"></i></span><span class="br-val">2/6</span></div>
+        <div class="bar-row"><span class="br-label" data-i18n="br5">Search result feedback unclear</span><span class="br-track"><i style="width:17%"></i></span><span class="br-val">1/6</span></div>
+        <div class="bar-row"><span class="br-label" data-i18n="br6">Social features seen as unnecessary</span><span class="br-track"><i style="width:17%"></i></span><span class="br-val">1/6</span></div>
+        <p class="fric-note" data-i18n="fric_note">Search itself worked: 6/6 completed the find task. The friction was almost entirely at the entrance — seeing where to add, and understanding the form.</p>
+      </div>
+
+      <div class="version-block reveal">
+        <div class="block-head"><h3 data-i18n="ver_h">What changed from 2.0 to 3.0</h3><p data-i18n="ver_sub">Five screens, rebuilt around what the tests showed</p></div>
+        <div class="ver-table">
+          <div class="ver-row ver-head"><span></span><span>2.0</span><span>3.0</span></div>
+          <div class="ver-row"><span data-i18n="v1k">HOME</span><span data-i18n="v1a">Three overview cards, multiple filter tabs</span><span data-i18n="v1b">Direct item list: icon, name, category, quantity, expiry</span></div>
+          <div class="ver-row"><span data-i18n="v2k">ADD ITEM</span><span data-i18n="v2a">Three photo sections, long form, scroll to finish</span><span data-i18n="v2b">One photo slot, grouped fields, quick location tags</span></div>
+          <div class="ver-row"><span data-i18n="v3k">SOCIAL</span><span data-i18n="v3a">Chat, friends and community feed in a hub</span><span data-i18n="v3b">Removed entirely — nobody asked for it</span></div>
+          <div class="ver-row"><span data-i18n="v4k">LINK</span><span data-i18n="v4a">Location card with four inline actions</span><span data-i18n="v4b">Same card, plus a clear capability explainer</span></div>
+          <div class="ver-row"><span data-i18n="v5k">PROFILE</span><span data-i18n="v5a">Signature and achievement levels</span><span data-i18n="v5b">Settings grouped by interface and function</span></div>
+        </div>
+      </div>
+
+      <div class="test-credit reveal">
+        <span data-i18n="credit1">Tested 2026-11-22</span>
+        <span class="credit-line"></span>
+        <span data-i18n="credit2">YI Qianhui · ZHANG Wanqing · DING Ziyan</span>
+      </div>
+    </section>
+
+    <!-- ============ OUTRO ============ -->
+    <section class="outro">
+      <div class="outro-inner reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="outro_eyebrow">FINALLY</span></p>
+        <h2 data-i18n="outro_h">For the things you forgot you had.</h2>
+        <p data-i18n="outro_p">XUNJI doesn't promise a tidier life. It just means the next time you reach for something, you'll know exactly where it is — and whether it's still good.</p>
+        <a class="outro-link" href="https://ananpaofu.github.io/new-shouna-app/" target="_blank" rel="noopener"><span data-i18n="outro_cta">Open the app</span> <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
