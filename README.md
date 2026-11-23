@@ -28,15 +28,16 @@ python -m http.server 8000
 ```
 .
 ├── index.html    # 页面结构与全部文案节点
-├── styles.css    # 全部样式（深色画廊风格、响应式）
-├── script.js     # 中英切换、滚动显现、导航高亮
+├── styles.css    # 主题、全部样式与响应式
+├── script.js     # 中英切换、主题切换、对比拖拽、滚动交互
+├── assets/       # 寻迹 2.0 / 3.0 各页面的真实截图
 └── README.md     # 本文件
 ```
 
 ## 部署到 GitHub Pages
 
 1. 新建公开仓库，例如 `xunji-case`。
-2. 把本目录下的 `index.html`、`styles.css`、`script.js`、`README.md` 上传到仓库根目录。
+2. 把本目录下的全部文件上传：`index.html`、`styles.css`、`script.js`、`README.md` 和 `assets/` 文件夹。
 3. 进入仓库 **Settings → Pages**，Source 选择 `main` 分支 / `root`，保存。
 4. 等待 1–2 分钟，访问 `https://<用户名>.github.io/<仓库名>/`。
 

@@ -243,6 +243,22 @@ let saved = null;
 try { saved = localStorage.getItem('xunji-lang'); } catch (e) {}
 setLang(saved === 'zh' ? 'zh' : 'en'); // default: English
 
+/* ---------- mobile menu ---------- */
+const menuToggle = document.getElementById('menuToggle');
+const mobileNav = document.querySelector('.nav');
+if (menuToggle && mobileNav){
+  menuToggle.addEventListener('click', ()=>{
+    const open = mobileNav.classList.toggle('open');
+    menuToggle.classList.toggle('open', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+  });
+  mobileNav.querySelectorAll('a').forEach((link)=> link.addEventListener('click', ()=>{
+    mobileNav.classList.remove('open');
+    menuToggle.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+  }));
+}
+
 /* ---------- before / after compare ---------- */
 const cmpTabs = document.querySelectorAll('.cmp-tab');
 const cmpPanels = document.querySelectorAll('.cmp-panel');
