@@ -15,6 +15,7 @@
 
   <!-- ambient background -->
   <div class="ambient" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="cursor-blob" id="cursorBlob" aria-hidden="true"></div>
   <div class="path-trace" aria-hidden="true">
     <svg viewBox="0 0 1400 9000" preserveAspectRatio="none">
       <path d="M-40 300 C 260 340, 380 640, 180 900 C -20 1160, 220 1420, 520 1560 C 900 1740, 1120 2040, 860 2320 C 620 2580, 300 2760, 480 3060 C 700 3420, 1100 3600, 940 3980 C 790 4320, 420 4480, 560 4860 C 720 5300, 1140 5500, 980 5920 C 820 6340, 420 6500, 600 6920 C 800 7380, 1160 7600, 1000 8000 C 880 8320, 700 8620, 900 9050" />
@@ -31,12 +32,20 @@
       <a href="#app" data-i18n="nav_app">The App</a>
       <a href="#features" data-i18n="nav_features">Why XUNJI</a>
       <a href="#process" data-i18n="nav_process">Process</a>
+      <a href="#compare" data-i18n="nav_compare">Compare</a>
       <a href="#testing" data-i18n="nav_testing">Testing</a>
     </nav>
-    <div class="lang-switch" role="group" aria-label="Language">
-      <button type="button" class="lang-btn active" data-lang="en">EN</button>
-      <span class="lang-sep">/</span>
-      <button type="button" class="lang-btn" data-lang="zh">中文</button>
+    <div class="header-tools">
+      <div class="theme-switch" role="group" aria-label="Theme">
+        <button type="button" class="theme-btn dark active" data-theme="dark" title="Dark"></button>
+        <button type="button" class="theme-btn light" data-theme="light" title="Light"></button>
+        <button type="button" class="theme-btn warm" data-theme="warm" title="Warm"></button>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang="en">EN</button>
+        <span class="lang-sep">/</span>
+        <button type="button" class="lang-btn" data-lang="zh">中文</button>
+      </div>
     </div>
   </header>
 
@@ -61,35 +70,11 @@
           <div class="stage-glow" aria-hidden="true"></div>
           <div class="stage-label stage-label-top"><span data-i18n="stage_local">LOCAL FIRST</span><i></i><span data-i18n="stage_private">PRIVATE BY DEFAULT</span></div>
 
-          <div class="phone phone-front" aria-label="XUNJI app home screen">
-            <div class="phone-bar"><span class="pb-time">9:41</span><span class="pb-icons">▮▮▮ ◔</span></div>
-            <div class="scr">
-              <div class="scr-head">
-                <span class="sh-title" data-i18n="ph_home">Home</span>
-                <span class="sh-bell">♢</span>
-              </div>
-              <div class="scr-search"><span class="ss-ico">⌕</span><span data-i18n="ph_search">Search your things…</span><span class="ss-mic">◉</span></div>
-              <div class="scr-section"><span data-i18n="ph_expiring">Expiring soon</span><em>2</em></div>
-              <div class="scr-card urgent"><span class="sc-emoji">🥚</span><div class="sc-main"><b data-i18n="ph_egg">Eggs</b><small data-i18n="ph_eggmeta">Fridge · Food</small></div><span class="sc-badge" data-i18n="ph_3days">3d left</span></div>
-              <div class="scr-card"><span class="sc-emoji">🥛</span><div class="sc-main"><b data-i18n="ph_milk">Whole milk</b><small data-i18n="ph_milkmeta">Fridge · Food</small></div><span class="sc-badge soft" data-i18n="ph_12days">12d</span></div>
-              <div class="scr-section"><span data-i18n="ph_recent">Recently added</span></div>
-              <div class="scr-card"><span class="sc-emoji">💊</span><div class="sc-main"><b data-i18n="ph_vit">Vitamin C</b><small data-i18n="ph_vitmeta">Med cabinet · Medicine</small></div></div>
-              <div class="scr-card"><span class="sc-emoji">🧴</span><div class="sc-main"><b data-i18n="ph_sunscreen">Sunscreen</b><small data-i18n="ph_sunmeta">Drawer · Opened</small></div></div>
-              <div class="scr-tab"><span class="on">⌂<small data-i18n="ph_tab1">Home</small></span><span>▦<small data-i18n="ph_tab2">Sort</small></span><span class="add">＋</span><span>◔<small data-i18n="ph_tab3">Alerts</small></span><span>☺<small data-i18n="ph_tab4">Me</small></span></div>
-            </div>
+          <div class="hero-shots">
+            <figure class="hero-shot shot-back"><img src="assets/v3-categories.png" alt="XUNJI 3.0 categories screen"></figure>
+            <figure class="hero-shot shot-mid"><img src="assets/v3-add.png" alt="XUNJI 3.0 add item screen"></figure>
+            <figure class="hero-shot shot-front"><img src="assets/v3-home.png" alt="XUNJI 3.0 home screen"></figure>
           </div>
-
-          <div class="phone phone-back" aria-hidden="true">
-            <div class="scr">
-              <div class="scr-head"><span class="sh-title" data-i18n="ph_sort">Categories</span></div>
-              <div class="cat-grid">
-                <span>📦<small data-i18n="cat_all">All</small></span><span>⭐<small data-i18n="cat_best">Best</small></span><span>🕐<small data-i18n="cat_soon">Soon</small></span><span>⚠️<small data-i18n="cat_expired">Expired</small></span>
-                <span>📂<small data-i18n="cat_opened">Opened</small></span><span>🗂️<small data-i18n="cat_stock">Stock</small></span><span>🍞<small data-i18n="cat_food">Food</small></span><span>💊<small data-i18n="cat_med">Medicine</small></span>
-                <span>🧴<small data-i18n="cat_beauty">Beauty</small></span><span>👕<small data-i18n="cat_clothes">Clothes</small></span><span>📄<small data-i18n="cat_docs">Docs</small></span><span>🔌<small data-i18n="cat_tech">Tech</small></span>
-              </div>
-            </div>
-          </div>
-
           <div class="stage-caption"><span class="cap-dot"></span><span data-i18n="stage_cap">Designed for the things you forget you have.</span></div>
         </div>
       </div>
@@ -109,73 +94,28 @@
     <section class="app-show" id="app">
       <div class="section-head reveal">
         <p class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="app_eyebrow">01 / THE APP</span></p>
-        <h2 data-i18n="app_h">Four screens. One habit.</h2>
+        <h2 data-i18n="app_h">Three screens. One habit.</h2>
         <p data-i18n="app_sub">Everything happens on the device. The interface stays out of the way until you need it.</p>
       </div>
 
       <div class="screens-grid">
         <article class="screen-card reveal">
           <div class="sc-top"><span class="sc-num">01</span><span class="sc-tag" data-i18n="screen1_tag">CAPTURE</span></div>
-          <div class="mini-phone">
-            <div class="mp-bar"><span>9:41</span><span>▮▮▮</span></div>
-            <div class="mp-head" data-i18n="ph_add">New item</div>
-            <div class="mp-photo"><span>＋</span><small data-i18n="mp_photo">Add a photo</small></div>
-            <div class="mp-field"><span data-i18n="mp_name">Name</span><b data-i18n="mp_eggs">Eggs</b></div>
-            <div class="mp-field"><span data-i18n="mp_cat">Category</span><b data-i18n="mp_food">Food</b></div>
-            <div class="mp-field"><span data-i18n="mp_loc">Location</span><b data-i18n="mp_fridge">Fridge</b></div>
-            <div class="mp-field"><span data-i18n="mp_date">Best before</span><b>2026 · 11 · 26</b></div>
-            <div class="mp-save" data-i18n="mp_save">Save item</div>
-          </div>
+          <div class="screen-shot"><img src="assets/v3-add.png" alt="XUNJI 3.0 add item screen"></div>
           <h3 data-i18n="screen1_h">Log it in seconds</h3>
           <p data-i18n="screen1_p">Snap a photo, pick a category, set an expiry date. The form remembers your usual choices so next time takes even less.</p>
         </article>
-
         <article class="screen-card reveal">
           <div class="sc-top"><span class="sc-num">02</span><span class="sc-tag" data-i18n="screen2_tag">FIND</span></div>
-          <div class="mini-phone">
-            <div class="mp-bar"><span>9:41</span><span>▮▮▮</span></div>
-            <div class="mp-head" data-i18n="ph_sort">Categories</div>
-            <div class="mp-grid">
-              <span>📦<small data-i18n="cat_all">All</small></span><span>🕐<small data-i18n="cat_soon">Soon</small></span><span>⚠️<small data-i18n="cat_expired">Expired</small></span><span>📂<small data-i18n="cat_opened">Opened</small></span>
-              <span>🗂️<small data-i18n="cat_stock">Stock</small></span><span>🍞<small data-i18n="cat_food">Food</small></span><span>💊<small data-i18n="cat_med">Medicine</small></span><span>🧴<small data-i18n="cat_beauty">Beauty</small></span>
-              <span>👕<small data-i18n="cat_clothes">Clothes</small></span><span>📄<small data-i18n="cat_docs">Docs</small></span><span>🔌<small data-i18n="cat_tech">Tech</small></span><span>✏️<small data-i18n="cat_other">Other</small></span>
-            </div>
-            <div class="mp-search" data-i18n="mp_searchhint">Or just search by name</div>
-          </div>
+          <div class="screen-shot"><img src="assets/v3-home.png" alt="XUNJI 3.0 home screen"></div>
           <h3 data-i18n="screen2_h">Find it without digging</h3>
           <p data-i18n="screen2_p">Twelve categories, a plain-language search, and voice input. Your things stay where you left them — you just know where that is.</p>
         </article>
-
         <article class="screen-card reveal">
           <div class="sc-top"><span class="sc-num">03</span><span class="sc-tag" data-i18n="screen3_tag">REMEMBER</span></div>
-          <div class="mini-phone">
-            <div class="mp-bar"><span>9:41</span><span>▮▮▮</span></div>
-            <div class="mp-head" data-i18n="ph_tab3">Alerts</div>
-            <div class="mp-group" data-i18n="mp_soongroup">EXPIRING SOON · 2</div>
-            <div class="mp-row"><span>🥚</span><b data-i18n="mp_eggs">Eggs</b><em class="hot" data-i18n="mp_3d">3 days</em></div>
-            <div class="mp-row"><span>🥛</span><b data-i18n="mp_milk">Whole milk</b><em data-i18n="mp_12d">12 days</em></div>
-            <div class="mp-group" data-i18n="mp_expgroup">EXPIRED · 1</div>
-            <div class="mp-row"><span>🧴</span><b data-i18n="mp_mask">Face mask</b><em class="dead" data-i18n="mp_2d">2d ago</em></div>
-            <div class="mp-note" data-i18n="mp_notetime">Reminders at 09:00 · adjustable</div>
-          </div>
+          <div class="screen-shot"><img src="assets/v3-link.png" alt="XUNJI 3.0 link screen"></div>
           <h3 data-i18n="screen3_h">A nudge, not a nag</h3>
           <p data-i18n="screen3_p">XUNJI tells you when something is about to expire. It never demands a routine, never scores you, and can be turned off completely.</p>
-        </article>
-
-        <article class="screen-card reveal">
-          <div class="sc-top"><span class="sc-num">04</span><span class="sc-tag" data-i18n="screen4_tag">ADAPT</span></div>
-          <div class="mini-phone">
-            <div class="mp-bar"><span>9:41</span><span>▮▮▮</span></div>
-            <div class="mp-head" data-i18n="ph_tab4">Me</div>
-            <div class="mp-avatar">☺</div>
-            <div class="mp-name" data-i18n="mp_nickname">My storage</div>
-            <div class="mp-setting"><span data-i18n="mp_theme">Theme</span><b data-i18n="mp_themeval">Mono / Warm / Green</b></div>
-            <div class="mp-setting"><span data-i18n="mp_font">Text size</span><b data-i18n="mp_fontval">Standard → XL</b></div>
-            <div class="mp-setting"><span data-i18n="mp_elder">Elder mode</span><b data-i18n="mp_off">Off</b></div>
-            <div class="mp-setting"><span data-i18n="mp_lang">Language</span><b>EN / 简 / 繁</b></div>
-          </div>
-          <h3 data-i18n="screen4_h">Made for real hands</h3>
-          <p data-i18n="screen4_p">Three themes, adjustable type, an elder mode, and full English support. The app meets you where you are, not the other way around.</p>
         </article>
       </div>
     </section>
@@ -272,6 +212,106 @@
       </div>
     </section>
 
+    <!-- ============ BEFORE / AFTER ============ -->
+    <section class="compare" id="compare">
+      <div class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="cmp_eyebrow">04 / BEFORE &amp; AFTER</span></p>
+        <h2 data-i18n="cmp_h">See the difference, screen by screen.</h2>
+        <p data-i18n="cmp_sub">Pick a page, then drag the handle. Left is 2.0, right is 3.0. The tests told us exactly what to remove.</p>
+      </div>
+
+      <div class="cmp-wrap reveal">
+        <div class="cmp-tabs" role="tablist">
+          <button type="button" class="cmp-tab active" data-page="home"><span data-en="Home" data-zh="首页">Home</span></button>
+          <button type="button" class="cmp-tab" data-page="add"><span data-en="Add item" data-zh="录入">Add item</span></button>
+          <button type="button" class="cmp-tab" data-page="social"><span data-en="Social" data-zh="社交">Social</span></button>
+          <button type="button" class="cmp-tab" data-page="link"><span data-en="Link" data-zh="联动">Link</span></button>
+          <button type="button" class="cmp-tab" data-page="profile"><span data-en="Profile" data-zh="我的">Profile</span></button>
+        </div>
+
+        <div class="cmp-stage">
+          <div class="cmp-panel active" data-panel="home">
+            <div class="cmp-frame" data-pos="50">
+              <div class="cmp-layer cmp-old">
+                <span class="cmp-tag old" data-en="2.0 · BEFORE" data-zh="2.0 · 改版前">2.0 · BEFORE</span>
+                <img src="assets/v2-home.png" alt="XUNJI 2.0 home screen">
+              </div>
+              <div class="cmp-layer cmp-new">
+                <span class="cmp-tag new" data-en="3.0 · AFTER" data-zh="3.0 · 改版后">3.0 · AFTER</span>
+                <img src="assets/v3-home.png" alt="XUNJI 3.0 home screen">
+              </div>
+              <div class="cmp-divider"><span class="cmp-handle">↔</span></div>
+            </div>
+            <p class="cmp-note" data-en="Three overview cards and stacked filters → a direct item list with one search box." data-zh="三个概览卡片和堆叠的筛选标签 → 物品列表直出，只留一个搜索框。">Three overview cards and stacked filters → a direct item list with one search box.</p>
+          </div>
+          <div class="cmp-panel" data-panel="add">
+            <div class="cmp-frame" data-pos="50">
+              <div class="cmp-layer cmp-old">
+                <span class="cmp-tag old" data-en="2.0 · BEFORE" data-zh="2.0 · 改版前">2.0 · BEFORE</span>
+                <img src="assets/v2-add.png" alt="XUNJI 2.0 add screen">
+              </div>
+              <div class="cmp-layer cmp-new">
+                <span class="cmp-tag new" data-en="3.0 · AFTER" data-zh="3.0 · 改版后">3.0 · AFTER</span>
+                <img src="assets/v3-add.png" alt="XUNJI 3.0 add screen">
+              </div>
+              <div class="cmp-divider"><span class="cmp-handle">↔</span></div>
+            </div>
+            <p class="cmp-note" data-en="Three photo sections and a long form → one photo slot, paired fields and quick location tags." data-zh="三段拍照加长表单 → 一处上传、字段分组、位置快捷标签。">Three photo sections and a long form → one photo slot, paired fields and quick location tags.</p>
+          </div>
+          <div class="cmp-panel" data-panel="social">
+            <div class="cmp-frame" data-pos="50">
+              <div class="cmp-layer cmp-old">
+                <span class="cmp-tag old" data-en="2.0 · BEFORE" data-zh="2.0 · 改版前">2.0 · BEFORE</span>
+                <img src="assets/v2-features.png" alt="XUNJI 2.0 social screen">
+              </div>
+              <div class="cmp-layer cmp-new">
+                <span class="cmp-tag new" data-en="3.0 · AFTER" data-zh="3.0 · 改版后">3.0 · AFTER</span>
+                <img src="assets/v3-categories.png" alt="XUNJI 3.0 social screen">
+              </div>
+              <div class="cmp-divider"><span class="cmp-handle">↔</span></div>
+            </div>
+            <p class="cmp-note" data-en="Chat, friends and community hub → removed. One tester put it plainly: nobody asked for it." data-zh="聊天、好友、社区功能中心 → 整体移除。一位用户说得很直接：没有人需要它。">Chat, friends and community hub → removed. One tester put it plainly: nobody asked for it.</p>
+          </div>
+          <div class="cmp-panel" data-panel="link">
+            <div class="cmp-frame" data-pos="50">
+              <div class="cmp-layer cmp-old">
+                <span class="cmp-tag old" data-en="2.0 · BEFORE" data-zh="2.0 · 改版前">2.0 · BEFORE</span>
+                <img src="assets/v2-link.png" alt="XUNJI 2.0 link screen">
+              </div>
+              <div class="cmp-layer cmp-new">
+                <span class="cmp-tag new" data-en="3.0 · AFTER" data-zh="3.0 · 改版后">3.0 · AFTER</span>
+                <img src="assets/v3-link.png" alt="XUNJI 3.0 link screen">
+              </div>
+              <div class="cmp-divider"><span class="cmp-handle">↔</span></div>
+            </div>
+            <p class="cmp-note" data-en="Same device card, now with a plain-language explainer of what linking actually does." data-zh="设备卡片保持不变，补上一段直白的说明，讲清「联动」到底能做什么。">Same device card, now with a plain-language explainer of what linking actually does.</p>
+          </div>
+          <div class="cmp-panel" data-panel="profile">
+            <div class="cmp-frame" data-pos="50">
+              <div class="cmp-layer cmp-old">
+                <span class="cmp-tag old" data-en="2.0 · BEFORE" data-zh="2.0 · 改版前">2.0 · BEFORE</span>
+                <img src="assets/v2-profile.png" alt="XUNJI 2.0 profile screen">
+              </div>
+              <div class="cmp-layer cmp-new">
+                <span class="cmp-tag new" data-en="3.0 · AFTER" data-zh="3.0 · 改版后">3.0 · AFTER</span>
+                <img src="assets/v3-profile.png" alt="XUNJI 3.0 profile screen">
+              </div>
+              <div class="cmp-divider"><span class="cmp-handle">↔</span></div>
+            </div>
+            <p class="cmp-note" data-en="Signature and achievements → settings grouped by interface and function. Everything has a place." data-zh="个性签名与成就入口 → 设置按界面 / 功能分组，每样东西都有位置。">Signature and achievements → settings grouped by interface and function. Everything has a place.</p>
+          </div>
+        </div>
+
+        <div class="cmp-footer">
+          <button type="button" class="cmp-hint" id="cmpHint" data-en="↔  Drag the handle to compare" data-zh="↔  拖动滑块对比">↔  Drag the handle to compare</button>
+          <div class="cmp-links">
+            <a href="https://ananpaofu.github.io/Tracking/" target="_blank" rel="noopener"><span data-en="Open 2.0" data-zh="打开 2.0">Open 2.0</span> ↗</a>
+            <a href="https://ananpaofu.github.io/new-shouna-app/" target="_blank" rel="noopener"><span data-en="Open 3.0" data-zh="打开 3.0">Open 3.0</span> ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ USABILITY TEST ============ -->
     <section class="testing" id="testing">
       <div class="section-head reveal">
@@ -340,6 +380,12 @@
       </div>
     </section>
   </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot preview">
+    <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+    <img id="lbImg" src="" alt="">
+    <span class="lb-cap" id="lbCap"></span>
+  </div>
 
   <script src="script.js"></script>
 </body>

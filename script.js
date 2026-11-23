@@ -3,7 +3,7 @@
    ============================================================ */
 const I18N = {
   en: {
-    nav_app: 'The App', nav_features: 'Why XUNJI', nav_process: 'Process', nav_testing: 'Testing',
+    nav_app: 'The App', nav_features: 'Why XUNJI', nav_process: 'Process', nav_compare: 'Compare', nav_testing: 'Testing',
     hero_eyebrow: 'PRODUCT DESIGN CASE STUDY · 2026',
     hero_l1: 'A quiet place', hero_l2: 'for everything', hero_l3: 'you own.',
     hero_sub: 'XUNJI is a local-first app that remembers what you have, where it lives, and when it runs out. No account. No cloud. Just you and your things.',
@@ -24,7 +24,7 @@ const I18N = {
     statement_eyebrow: 'THE IDEA',
     statement_h: 'The problem was never<br>having too much.<br><span class="dim">It was losing track.</span>',
     statement_note: 'Most storage apps ask you to organise more. XUNJI asks you to remember less — and quietly keeps an eye on expiry dates, opened packs, and where everything went.',
-    app_eyebrow: '01 / THE APP', app_h: 'Four screens. One habit.',
+    app_eyebrow: '01 / THE APP', app_h: 'Three screens. One habit.',
     app_sub: 'Everything happens on the device. The interface stays out of the way until you need it.',
     screen1_tag: 'CAPTURE', ph_add: 'New item', mp_photo: 'Add a photo', mp_name: 'Name', mp_eggs: 'Eggs',
     mp_cat: 'Category', mp_food: 'Food', mp_loc: 'Location', mp_fridge: 'Fridge', mp_date: 'Best before',
@@ -81,7 +81,9 @@ const I18N = {
     outro_eyebrow: 'FINALLY', outro_h: 'For the things you forgot you had.',
     outro_p: 'XUNJI doesn’t promise a tidier life. It just means the next time you reach for something, you’ll know exactly where it is — and whether it’s still good.',
     outro_cta: 'Open the app',
-    test_eyebrow: '04 / USABILITY TEST', test_h: 'We watched six people use it.',
+    cmp_eyebrow: '04 / BEFORE &amp; AFTER', cmp_h: 'See the difference, screen by screen.',
+    cmp_sub: 'Pick a page, then drag the handle. Left is 2.0, right is 3.0. The tests told us exactly what to remove.',
+    test_eyebrow: '05 / USABILITY TEST', test_h: 'We watched six people use it.',
     test_sub: '6 participants, 25 minutes each, four tasks. Version 2.0 and 3.0, side by side. What they struggled with changed what we built.',
     ts1: 'PARTICIPANTS', ts2: 'PER SESSION', ts3: 'TASKS', ts4: 'VERSIONS',
     base_h: 'Everyone had lost something. Everyone relied on memory.',
@@ -101,7 +103,7 @@ const I18N = {
     credit1: 'Tested 2026-11-22', credit2: 'YI Qianhui · ZHANG Wanqing · DING Ziyan'
   },
   zh: {
-    nav_app: 'App 展示', nav_features: '设计亮点', nav_process: '设计过程', nav_testing: '可用性测试',
+    nav_app: 'App 展示', nav_features: '设计亮点', nav_process: '设计过程', nav_compare: '版本对比', nav_testing: '可用性测试',
     hero_eyebrow: '产品设计案例 · 2026',
     hero_l1: '给每样东西', hero_l2: '一个安静的', hero_l3: '位置。',
     hero_sub: '寻迹是一款本地优先的收纳 App，帮你记住有什么、放在哪、什么时候到期。不登录、不上云，只有你和你的东西。',
@@ -120,7 +122,7 @@ const I18N = {
     statement_eyebrow: '设计初衷',
     statement_h: '问题从来不是<br>东西太多，<br><span class="dim">而是找不到、记不住。</span>',
     statement_note: '大多数收纳 App 让你整理更多，寻迹让你记住更少——它会悄悄盯着保质期、开封状态和每样东西去了哪里。',
-    app_eyebrow: '01 / App 展示', app_h: '四个界面，一个习惯。',
+    app_eyebrow: '01 / App 展示', app_h: '三个界面，一个习惯。',
     app_sub: '一切都发生在设备本地。界面只在你需要时出现，其余时间不打扰。',
     screen1_tag: '记录', ph_add: '新增物品', mp_photo: '添加照片', mp_name: '名称', mp_eggs: '鸡蛋',
     mp_cat: '分类', mp_food: '食品', mp_loc: '位置', mp_fridge: '冰箱', mp_date: '保质期至',
@@ -177,7 +179,9 @@ const I18N = {
     outro_eyebrow: '最后', outro_h: '为那些你忘了自己拥有的东西。',
     outro_p: '寻迹不承诺让你变得更整洁。它只保证，下次你伸手找东西的时候，会清楚知道它在哪、还能不能用。',
     outro_cta: '打开 App',
-    test_eyebrow: '04 / 可用性测试', test_h: '我们看着六个人用它。',
+    cmp_eyebrow: '04 / 版本对比', cmp_h: '一屏一屏，看变化。',
+    cmp_sub: '选一个页面，拖动滑块。左边是 2.0，右边是 3.0。测试告诉我们哪些东西该拿掉。',
+    test_eyebrow: '05 / 可用性测试', test_h: '我们看着六个人用它。',
     test_sub: '6 名受访用户，每人 25 分钟，四个任务。2.0 与 3.0 界面对比。他们卡住的地方，改变了我们做出来的东西。',
     ts1: '受访用户', ts2: '每人时长', ts3: '个任务', ts4: '个版本',
     base_h: '六个人都找不到过东西，六个人都靠脑子记。',
@@ -198,6 +202,21 @@ const I18N = {
   }
 };
 
+/* ---------- theme ---------- */
+function setTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme);
+  document.querySelectorAll('.theme-btn').forEach((btn)=>{
+    btn.classList.toggle('active', btn.dataset.theme === theme);
+  });
+  try { localStorage.setItem('xunji-theme', theme); } catch (e) {}
+}
+document.querySelectorAll('.theme-btn').forEach((btn)=>{
+  btn.addEventListener('click', ()=> setTheme(btn.dataset.theme));
+});
+let savedTheme = null;
+try { savedTheme = localStorage.getItem('xunji-theme'); } catch (e) {}
+setTheme(['dark','light','warm'].includes(savedTheme) ? savedTheme : 'dark');
+
 let currentLang = 'en';
 
 function setLang(lang) {
@@ -206,6 +225,9 @@ function setLang(lang) {
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const value = I18N[lang][el.dataset.i18n];
     if (value !== undefined) el.innerHTML = value;
+  });
+  document.querySelectorAll('[data-en][data-zh]').forEach((el) => {
+    el.textContent = lang === 'zh' ? el.dataset.zh : el.dataset.en;
   });
   document.querySelectorAll('.lang-btn').forEach((btn) => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
@@ -220,6 +242,35 @@ document.querySelectorAll('.lang-btn').forEach((btn) => {
 let saved = null;
 try { saved = localStorage.getItem('xunji-lang'); } catch (e) {}
 setLang(saved === 'zh' ? 'zh' : 'en'); // default: English
+
+/* ---------- before / after compare ---------- */
+const cmpTabs = document.querySelectorAll('.cmp-tab');
+const cmpPanels = document.querySelectorAll('.cmp-panel');
+cmpTabs.forEach((tab)=>{
+  tab.addEventListener('click', ()=>{
+    cmpTabs.forEach((t)=> t.classList.toggle('active', t === tab));
+    cmpPanels.forEach((p)=> p.classList.toggle('active', p.dataset.panel === tab.dataset.page));
+  });
+});
+
+document.querySelectorAll('.cmp-frame').forEach((frame)=>{
+  const divider = frame.querySelector('.cmp-divider');
+  function update(clientX){
+    const rect = frame.getBoundingClientRect();
+    let pos = ((clientX - rect.left) / rect.width) * 100;
+    pos = Math.max(6, Math.min(94, pos));
+    frame.style.setProperty('--pos', pos + '%');
+    divider.style.left = pos + '%';
+  }
+  frame.addEventListener('pointerdown', (e)=>{
+    frame.setPointerCapture(e.pointerId);
+    update(e.clientX);
+  });
+  frame.addEventListener('pointermove', (e)=>{
+    if (frame.hasPointerCapture(e.pointerId)) update(e.clientX);
+  });
+  frame.addEventListener('pointerup', (e)=> frame.releasePointerCapture(e.pointerId));
+});
 
 /* ---------- scroll reveal ---------- */
 const observer = new IntersectionObserver((entries) => {
@@ -243,3 +294,88 @@ const sectionObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.3 });
 document.querySelectorAll('main section[id]').forEach((s) => sectionObserver.observe(s));
+
+/* ---------- screenshot lightbox ---------- */
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbCap = document.getElementById('lbCap');
+document.querySelectorAll('.screen-shot img,.hero-shot img').forEach((img)=>{
+  img.parentElement.addEventListener('click', ()=>{
+    lbImg.src = img.src;
+    lbCap.textContent = img.alt;
+    lightbox.classList.add('open');
+  });
+});
+function closeLightbox(){ lightbox.classList.remove('open'); lbImg.src=''; }
+document.getElementById('lbClose').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLightbox(); });
+document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLightbox(); });
+
+/* ---------- compare keyboard navigation ---------- */
+document.addEventListener('keydown', (e)=>{
+  if (lightbox.classList.contains('open')) return;
+  if (!['ArrowLeft','ArrowRight'].includes(e.key)) return;
+  const activeFrame = document.querySelector('.cmp-panel.active .cmp-frame');
+  if (!activeFrame) return;
+  const rect = activeFrame.getBoundingClientRect();
+  if (rect.top > innerHeight || rect.bottom < 0) return;
+  const cur = parseFloat(activeFrame.style.getPropertyValue('--pos')) || 50;
+  const next = Math.max(6, Math.min(94, cur + (e.key==='ArrowRight'?8:-8)));
+  activeFrame.style.setProperty('--pos', next+'%');
+  activeFrame.querySelector('.cmp-divider').style.left = next+'%';
+});
+cmpTabs.forEach((tab, i)=>{
+  tab.addEventListener('keydown', (e)=>{
+    if (e.key!=='ArrowRight' && e.key!=='ArrowLeft') return;
+    e.preventDefault();
+    const next = cmpTabs[(i + (e.key==='ArrowRight'?1:-1) + cmpTabs.length) % cmpTabs.length];
+    next.focus(); next.click();
+  });
+});
+
+/* ---------- animated bars ---------- */
+const barObserver = new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+    if (!entry.isIntersecting) return;
+    entry.target.querySelectorAll('.br-track i').forEach((bar)=>{
+      const w = bar.style.width;
+      bar.style.width = '0';
+      requestAnimationFrame(()=> requestAnimationFrame(()=> bar.style.width = w));
+    });
+    barObserver.unobserve(entry.target);
+  });
+}, {threshold:.3});
+const friction = document.querySelector('.friction');
+if (friction) barObserver.observe(friction);
+
+/* ---------- cursor blob ---------- */
+const cursorBlob = document.getElementById('cursorBlob');
+if (cursorBlob && matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+  let tx=0, ty=0, cx=-500, cy=-500;
+  window.addEventListener('pointermove', (e)=>{
+    tx=e.clientX; ty=e.clientY;
+    cursorBlob.classList.add('visible');
+  });
+  document.addEventListener('pointerleave', ()=> cursorBlob.classList.remove('visible'));
+  (function loop(){
+    cx += (tx-cx)*.12; cy += (ty-cy)*.12;
+    cursorBlob.style.transform = `translate(${cx-210}px,${cy-210}px)`;
+    requestAnimationFrame(loop);
+  })();
+}
+
+/* ---------- hero pointer parallax ---------- */
+const heroShots = document.querySelector('.hero-shots');
+if (heroShots && matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+  heroShots.addEventListener('pointermove', (e)=>{
+    const r = heroShots.getBoundingClientRect();
+    const x = (e.clientX - r.left)/r.width - .5;
+    const y = (e.clientY - r.top)/r.height - .5;
+    heroShots.querySelector('.shot-mid').style.translate = `${x*-14}px ${y*-10}px`;
+    heroShots.querySelector('.shot-back').style.translate = `${x*14}px ${y*-8}px`;
+  });
+  heroShots.addEventListener('pointerleave', ()=>{
+    heroShots.querySelector('.shot-mid').style.translate = '';
+    heroShots.querySelector('.shot-back').style.translate = '';
+  });
+}
