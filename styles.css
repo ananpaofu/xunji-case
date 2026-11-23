@@ -256,6 +256,22 @@ html[data-theme="warm"] .cursor-blob.visible{opacity:.15}
 .lb-close:hover{background:#fff;color:#000}
 .screen-shot,.hero-shot{cursor:zoom-in}
 
+/* ---------- 3d showcase ---------- */
+.showcase3d{position:fixed;inset:0;z-index:110;background:radial-gradient(circle at 50% 45%,rgba(74,222,128,.10),transparent 60%),rgba(0,0,0,.94);display:none;flex-direction:column;align-items:center;justify-content:center;gap:36px;backdrop-filter:blur(10px);cursor:pointer;overflow:hidden}
+.showcase3d.open{display:flex;animation:lbIn .4s ease}
+.s3d-stage{perspective:1200px;width:100%;height:70vh;display:flex;align-items:center;justify-content:center}
+.s3d-ring{position:relative;width:300px;height:600px;transform-style:preserve-3d;animation:s3dSpin 14s linear infinite}
+@keyframes s3dSpin{from{transform:rotateY(0)}to{transform:rotateY(360deg)}}
+.showcase3d.paused .s3d-ring{animation-play-state:paused}
+.s3d-card{position:absolute;left:0;top:0;width:300px;height:650px;backface-visibility:hidden;border-radius:36px;overflow:hidden;border:5px solid #1a1a1a;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.s3d-card img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.s3d-card.c1{transform:rotateY(0deg) translateZ(300px)}
+.s3d-card.c2{transform:rotateY(120deg) translateZ(300px)}
+.s3d-card.c3{transform:rotateY(240deg) translateZ(300px)}
+.s3d-caption{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:14px;color:#bbb;letter-spacing:.08em;animation:s3dPulse 2s ease-in-out infinite}
+.s3d-dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+@keyframes s3dPulse{0%,100%{opacity:.5}50%{opacity:1}}
+
 /* ---------- usability test ---------- */
 .testing{padding:110px 5vw;background:var(--bg-2);border-top:1px solid var(--line)}
 .testing>.section-head,.testing>.test-stats,.testing>.baseline,.testing>.friction,.testing>.version-block,.testing>.test-credit{max-width:1320px;margin-left:auto;margin-right:auto}
