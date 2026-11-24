@@ -539,16 +539,44 @@ if (igBtn && igMore){
   });
 }
 
-/* ---------- comparative product filters ---------- */
+/* ---------- comparative product filters + one-row collapse ---------- */
+const marketCards = [...document.querySelectorAll('.market-card')];
+const marketMoreBtn = document.getElementById('marketMoreBtn');
+let marketFilter = 'all';
+let marketExpanded = false;
+function marketRowCount(){ return innerWidth <= 700 ? 1 : innerWidth <= 960 ? 2 : 4; }
+function updateMarket(){
+  const limit = marketExpanded ? marketCards.length : marketRowCount();
+  const total = marketCards.filter((card)=> marketFilter === 'all' || card.dataset.cat === marketFilter).length;
+  let shown = 0;
+  marketCards.forEach((card)=>{
+    const match = marketFilter === 'all' || card.dataset.cat === marketFilter;
+    const visible = match && shown < limit;
+    if (visible) shown++;
+    card.classList.toggle('hide', !visible);
+  });
+  const more = total > marketRowCount();
+  marketMoreBtn.classList.toggle('hide', !more);
+  marketMoreBtn.setAttribute('aria-expanded', marketExpanded ? 'true' : 'false');
+  const label = marketMoreBtn.querySelector('span');
+  label.dataset.zh = marketExpanded ? '收起同类产品' : '点击查看更多同类产品';
+  label.dataset.en = marketExpanded ? 'Show fewer product references' : 'Show more product references';
+  label.textContent = currentLang === 'zh' ? label.dataset.zh : label.dataset.en;
+}
 document.querySelectorAll('.market-tab').forEach((btn)=>{
   btn.addEventListener('click', ()=>{
-    const filter = btn.dataset.filter;
+    marketFilter = btn.dataset.filter;
+    marketExpanded = false;
     document.querySelectorAll('.market-tab').forEach((b)=> b.classList.toggle('active', b === btn));
-    document.querySelectorAll('.market-card').forEach((card)=>{
-      card.classList.toggle('hide', filter !== 'all' && card.dataset.cat !== filter);
-    });
+    updateMarket();
   });
 });
+marketMoreBtn.addEventListener('click', ()=>{
+  marketExpanded = !marketExpanded;
+  updateMarket();
+});
+window.addEventListener('resize', updateMarket);
+updateMarket();
 
 /* ---------- journey row focus ---------- */
 document.querySelectorAll('.journey .j-row:not(.j-head)').forEach((row)=>{

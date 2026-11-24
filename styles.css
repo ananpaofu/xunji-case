@@ -800,3 +800,5 @@ html[data-theme="warm"]{--stat:#f0a568}
 @media(max-width:960px){.market-grid{grid-template-columns:repeat(2,1fr)}.shift-block.focus .pl-shift{padding:32px 26px}}
 @media(max-width:700px){.market-grid{grid-template-columns:1fr}.market-card img{height:230px}.shift-block.focus{padding:0 5vw}.shift-block.focus .pl-shift{padding:24px 20px;gap:14px}.shift-block.focus .pl-shift p{font-size:21px}}
 @media(prefers-reduced-motion:reduce){.reveal.reveal-x{transform:none}.ig-more.open{animation:none}}
+
+.more-toggle.hide{display:none}
