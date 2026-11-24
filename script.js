@@ -6,7 +6,7 @@ const I18N = {
     nav_app: 'The App', nav_features: 'Why XUNJI', nav_process: 'Process', nav_compare: 'Compare', nav_testing: 'Testing', nav_pitch: 'Pitch',
     hero_eyebrow: 'PRODUCT DESIGN CASE STUDY · 2026',
     hero_l1: 'A quiet place', hero_l2: 'for everything', hero_l3: 'you own.',
-    hero_sub: 'XUNJI is a local-first app that remembers what you have, where it lives, and when it runs out. No account. No cloud. Just you and your things.',
+    hero_sub: 'XUNJI is a local-first app that remembers what you have, where it lives, and when it runs out. Sign in to keep your list across your own devices; the rest stays quiet and private.',
     hero_m1: '12', hero_m1l: 'INTERVIEWS', hero_m2: '04', hero_m2l: 'CORE FEATURES', hero_m3: '20+', hero_m3l: 'ITERATIONS',
     hero_cta: 'Explore the app', scroll: 'SCROLL',
     stage_local: 'LOCAL FIRST', stage_private: 'PRIVATE BY DEFAULT',
@@ -30,25 +30,25 @@ const I18N = {
     mp_cat: 'Category', mp_food: 'Food', mp_loc: 'Location', mp_fridge: 'Fridge', mp_date: 'Best before',
     mp_save: 'Save item', screen1_h: 'Log it in seconds',
     screen1_p: 'Snap a photo, pick a category, set an expiry date. The form remembers your usual choices so next time takes even less.',
-    screen2_tag: 'FIND', mp_searchhint: 'Or just search by name', screen2_h: 'Find it without digging',
-    screen2_p: 'Twelve categories, a plain-language search, and voice input. Your things stay where you left them — you just know where that is.',
+    screen2_tag: 'FIND', mp_searchhint: 'Or just search by name', screen2_h: 'A nudge, not a nag',
+    screen2_p: 'XUNJI tells you when something is about to expire. It never demands a routine, never scores you, and can be turned off completely.',
     screen3_tag: 'REMEMBER', mp_soongroup: 'EXPIRING SOON · 2', mp_3d: '3 days', mp_milk: 'Whole milk', mp_12d: '12 days', mp_expgroup: 'EXPIRED · 1',
     mp_mask: 'Face mask', mp_2d: '2d ago', mp_notetime: 'Reminders at 09:00 · adjustable',
-    screen3_h: 'A nudge, not a nag',
-    screen3_p: 'XUNJI tells you when something is about to expire. It never demands a routine, never scores you, and can be turned off completely.',
+    screen3_h: 'When it vanishes, let a tag find it',
+    screen3_p: 'Attach a tracking tag to the things that matter. One press plays a sound or shows the last known place on a map — no more tearing the room apart.',
     screen4_tag: 'ADAPT', mp_nickname: 'My storage', mp_theme: 'Theme', mp_themeval: 'Mono / Warm / Green',
     mp_font: 'Text size', mp_fontval: 'Standard → XL', mp_elder: 'Elder mode', mp_off: 'Off', mp_lang: 'Language',
     screen4_h: 'Made for real hands',
     screen4_p: 'Three themes, adjustable type, an elder mode, and full English support. The app meets you where you are, not the other way around.',
     why_eyebrow: '02 / THE DECISIONS', why_h: 'Small choices, on purpose.',
     why1_h: 'Local is a feature',
-    why1_p: 'Everything lives in the browser’s local storage. No sign-up, no sync, no data leaving the device. Privacy isn’t a settings page — it’s the architecture.',
+    why1_p: 'Your list lives on the device first. Signing in only syncs it across your own devices — nothing public, nothing sold. Privacy is not a settings page; it is the architecture.',
     why2_h: 'Expiry, not aesthetics',
     why2_p: 'The thing people actually lose track of isn’t the object — it’s the date. So the app tracks best-before, opened state, and quantity, not just a pretty inventory.',
     why3_h: 'One green accent',
     why3_p: 'A monochrome interface with a single green signal for actions and alerts. The colour means the same thing everywhere, so nothing competes for attention.',
-    why4_h: 'Installable, not installed',
-    why4_p: 'A PWA that can sit on the home screen like a native app, but updates itself silently and works offline. No app store, no friction.',
+    why4_h: 'Installable — and headed for the stores',
+    why4_p: 'This case study is a web prototype today. The real product is planned for the app stores: the same quiet interface, a native install, silent updates and offline use.',
     proc_eyebrow: '03 / THE PROCESS', proc_h: 'We listened before we drew.',
     proc_sub: 'Twelve interviews with students who share rooms. The findings were less about tidiness and more about the quiet anxiety of not knowing what you have.',
     persona_kicker: 'USER PERSONA / 01', persona_h: 'The anxious organiser', persona_meta: 'Alias · Junior · Lives on campus',
@@ -106,7 +106,7 @@ const I18N = {
     nav_app: 'App 展示', nav_features: '设计亮点', nav_process: '设计过程', nav_compare: '版本对比', nav_testing: '可用性测试', nav_pitch: '路演思路',
     hero_eyebrow: '产品设计案例 · 2026',
     hero_l1: '给每样东西', hero_l2: '一个安静的', hero_l3: '位置。',
-    hero_sub: '寻迹是一款本地优先的收纳 App，帮你记住有什么、放在哪、什么时候到期。不登录、不上云，只有你和你的东西。',
+    hero_sub: '寻迹是一款本地优先的收纳 App，帮你记住有什么、放在哪、什么时候到期。注册登录后可在自己的设备间同步清单，其余时间它安静地陪着你。',
     hero_m1: '12', hero_m1l: '位访谈对象', hero_m2: '04', hero_m2l: '个核心功能', hero_m3: '20+', hero_m3l: '轮迭代',
     hero_cta: '看看这个 App', scroll: '向下滚动',
     stage_local: '本地优先', stage_private: '默认隐私', stage_cap: '为那些你忘了自己拥有的东西而设计。',
@@ -128,25 +128,25 @@ const I18N = {
     mp_cat: '分类', mp_food: '食品', mp_loc: '位置', mp_fridge: '冰箱', mp_date: '保质期至',
     mp_save: '保存物品', screen1_h: '几秒钟就记好',
     screen1_p: '拍张照、选分类、定到期日。表单会记住你常填的选项，下次更快。',
-    screen2_tag: '查找', mp_searchhint: '也可以直接搜名字', screen2_h: '不用翻箱倒柜',
-    screen2_p: '12 个分类、直白的语言搜索，还有语音输入。东西还在你放的地方，你只是知道它在哪了。',
+    screen2_tag: '查找', mp_searchhint: '也可以直接搜名字', screen2_h: '提醒一下，不啰嗦',
+    screen2_p: '东西快到期时告诉你一声。不要求你打卡，不给你打分，也完全可以关掉。',
     screen3_tag: '提醒', mp_soongroup: '即将到期 · 2', mp_3d: '3 天', mp_milk: '全脂牛奶', mp_12d: '12 天', mp_expgroup: '已过期 · 1',
     mp_mask: '面膜', mp_2d: '过期 2 天', mp_notetime: '提醒时间 09:00 · 可调整',
-    screen3_h: '提醒一下，不啰嗦',
-    screen3_p: '东西快到期时告诉你一声。不要求你打卡，不给你打分，也完全可以关掉。',
+    screen3_h: '找不到时，让标签替你找',
+    screen3_p: '给重要物品挂上联动标签，按一下就能听到它响，或在地图上看到最后的位置；不用再把整个房间翻一遍。',
     screen4_tag: '适配', mp_nickname: '我的收纳', mp_theme: '主题', mp_themeval: '黑白 / 暖白 / 浅绿',
     mp_font: '字号', mp_fontval: '标准 → 超大', mp_elder: '老年模式', mp_off: '关闭', mp_lang: '语言',
     screen4_h: '为真实的手设计',
     screen4_p: '三套主题、可调字号、老年模式和完整的英文支持。App 来适应你，而不是反过来。',
     why_eyebrow: '02 / 设计取舍', why_h: '每一个小决定，都有原因。',
     why1_h: '本地本身就是功能',
-    why1_p: '所有数据都留在浏览器本地。不注册、不同步、数据不离开设备。隐私不是一个设置页，而是整个架构。',
+    why1_p: '数据先存在本机，注册登录只是为了在你自己的设备之间同步清单，不会公开，也不会拿去做别的用途。隐私保护不是设置页，而是整个架构。',
     why2_h: '记录日期，而不是摆拍',
     why2_p: '人们真正跟丢的不是东西，而是日期。所以 App 记录保质期、开封状态和数量，而不只是一份好看的清单。',
     why3_h: '只用一种绿',
     why3_p: '黑白界面里，唯一的绿色用来表示操作和提醒。这个颜色到处都是同一个意思，没有什么在抢注意力。',
-    why4_h: '可安装，但不用安装',
-    why4_p: 'PWA 可以像原生 App 一样放在桌面，却能悄悄自我更新、离线可用。没有应用商店，也没有门槛。',
+    why4_h: '现在是网页，目标是应用市场',
+    why4_p: '现在展示的是网页原型，最终产品会以上架应用市场为目标：界面不变，安装更自然，更新静默进行，离线也能用。',
     proc_eyebrow: '03 / 设计过程', proc_h: '先听，再画。',
     proc_sub: '我们访谈了 12 位合住宿舍的同学。结论很少关于「整洁」，更多是一种「不知道自己有什么」的隐隐焦虑。',
     persona_kicker: '用户画像 / 01', persona_h: '收纳焦虑的人', persona_meta: '化名 · 大三 · 住校',
@@ -392,8 +392,9 @@ function open3D(){
   s3dTimer = setTimeout(()=>{ s3dReady = true; }, 1000);
   s3dLoop = setInterval(()=>{ s3dShow((s3dIndex+1) % s3dPages.length); }, 2600);
 }
-function close3D(){
-  if (!s3dReady) return;
+function close3D(force){
+  if (!s3dReady && !force) return;
+  s3dReady = false;
   showcase3d.classList.remove('open');
   clearTimeout(s3dTimer); clearInterval(s3dLoop);
 }
@@ -401,7 +402,9 @@ document.querySelectorAll('.hero-shot').forEach((el)=> el.addEventListener('clic
 const demoPlay = document.getElementById('demoPlay');
 if (demoPlay) demoPlay.addEventListener('click', open3D);
 showcase3d.addEventListener('click', close3D);
-document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ close3D(); closeLightbox(); } });
+const s3dClose = document.getElementById('s3dClose');
+if (s3dClose) s3dClose.addEventListener('click', (e)=>{ e.stopPropagation(); close3D(true); });
+document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ close3D(true); closeLightbox(); } });
 
 /* ---------- compare keyboard navigation ---------- */
 document.addEventListener('keydown', (e)=>{
