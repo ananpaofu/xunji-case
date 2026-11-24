@@ -241,7 +241,7 @@ document.querySelectorAll('.lang-btn').forEach((btn) => {
 
 let saved = null;
 try { saved = localStorage.getItem('xunji-lang'); } catch (e) {}
-setLang(saved === 'zh' ? 'zh' : 'en'); // default: English
+setLang(saved === 'en' ? 'en' : 'zh'); // default: Chinese (matches the pitch deck)
 
 /* ---------- mobile menu ---------- */
 const menuToggle = document.getElementById('menuToggle');
@@ -309,18 +309,14 @@ const sectionObserver = new IntersectionObserver((entries) => {
     });
   });
 }, { threshold: 0.3 });
-document.querySelectorAll('main section[id]').forEach((s) => sectionObserver.observe(s));
+document.querySelectorAll('main section[id], main div#demo, main div#iteration').forEach((s) => sectionObserver.observe(s));
 
 /* ---------- screenshot lightbox ---------- */
 const lightbox = document.getElementById('lightbox');
 const lbImg = document.getElementById('lbImg');
 const lbCap = document.getElementById('lbCap');
 document.querySelectorAll('.screen-shot img').forEach((img)=>{
-  img.parentElement.addEventListener('click', ()=>{
-    lbImg.src = img.src;
-    lbCap.textContent = img.alt;
-    lightbox.classList.add('open');
-  });
+  img.parentElement.addEventListener('click', open3D);
 });
 function closeLightbox(){ lightbox.classList.remove('open'); lbImg.src=''; }
 document.getElementById('lbClose').addEventListener('click', closeLightbox);
@@ -357,6 +353,8 @@ function close3D(){
   clearTimeout(s3dTimer); clearInterval(s3dLoop);
 }
 document.querySelectorAll('.hero-shot').forEach((el)=> el.addEventListener('click', open3D));
+const demoPlay = document.getElementById('demoPlay');
+if (demoPlay) demoPlay.addEventListener('click', open3D);
 showcase3d.addEventListener('click', close3D);
 document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ close3D(); closeLightbox(); } });
 
