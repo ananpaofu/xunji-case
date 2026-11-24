@@ -733,3 +733,10 @@ html[data-theme="light"] .scroll-progress{
   background:#0067e0;
   box-shadow:0 1px 5px rgba(0,85,215,.4);
 }
+
+
+/* survey stat color: green in dark theme, vivid blue in light theme */
+:root{--stat:#4ade80}
+html[data-theme="dark"]{--stat:#4ade80}
+html[data-theme="light"]{--stat:#0067e0}
+html[data-theme="warm"]{--stat:#f0a568}
