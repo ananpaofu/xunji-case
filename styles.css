@@ -740,3 +740,13 @@ html[data-theme="light"] .scroll-progress{
 html[data-theme="dark"]{--stat:#4ade80}
 html[data-theme="light"]{--stat:#0067e0}
 html[data-theme="warm"]{--stat:#f0a568}
+
+
+/* align research blocks and keep the plan heading on one line */
+.pl-block{max-width:1320px}
+.nowrap{white-space:nowrap}
+.hardware .plan-section{padding:0;margin-bottom:80px}
+.hardware .plan-drawing{padding:0;margin-top:48px}
+@media (max-width:700px){
+  .nowrap{white-space:normal}
+}
