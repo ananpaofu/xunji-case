@@ -356,6 +356,13 @@ const lbCap = document.getElementById('lbCap');
 document.querySelectorAll('.screen-shot img').forEach((img)=>{
   img.parentElement.addEventListener('click', open3D);
 });
+document.querySelectorAll('.research-shot img').forEach((img)=>{
+  img.parentElement.addEventListener('click', ()=>{
+    lbImg.src = img.src;
+    lbCap.textContent = img.parentElement.querySelector('figcaption').textContent;
+    lightbox.classList.add('open');
+  });
+});
 function closeLightbox(){ lightbox.classList.remove('open'); lbImg.src=''; }
 document.getElementById('lbClose').addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLightbox(); });

@@ -675,3 +675,50 @@ p,span,b,small,a,button,li,td,th{font-size:max(16px,1em)}
   .hero-sub{line-height:1.7}
   .hero-meta{margin:28px 0 26px;gap:34px}
 }
+
+
+/* ============================================================
+   SKETCH · INTERVIEW RECORDS · QUESTIONNAIRE CHARTS
+   ============================================================ */
+.plan-drawing,.interview-gallery,.survey-charts{max-width:1320px;margin-left:auto;margin-right:auto;margin-top:84px;padding:0 6vw}
+.plan-drawing figure,.interview-gallery,.survey-charts{}
+.plan-drawing figure{margin-top:24px;padding:24px;border:1px solid var(--line);border-radius:14px;background:var(--bg-2)}
+.plan-drawing svg{display:block;width:100%;height:auto}
+.plan-drawing figcaption{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);color:var(--ink-3);font-size:16px;line-height:1.7}
+.sk-line rect,.sk-line path,.sk-line circle{fill:none;stroke:var(--ink-3);stroke-width:2}
+.sk-line .sk-accent{fill:none;stroke:var(--accent);stroke-width:2.5}
+.sk-line .sk-fill{fill:var(--surface-2);stroke:var(--line)}
+.sk-dash path{fill:none;stroke:var(--ink-3);stroke-width:2;stroke-dasharray:7 7}
+.sk-dash .sk-dash-accent{stroke:var(--accent)}
+.plan-drawing text{font-family:var(--sans)}
+.sk-label{fill:var(--accent);font-size:18px;font-weight:800}
+.sk-small{fill:var(--ink-3);font-size:16px}
+
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.research-shot{margin:0;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--bg-2);cursor:zoom-in;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.research-shot:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 16px 36px rgba(0,0,0,.16)}
+.research-shot img{display:block;width:100%;height:190px;object-fit:cover;object-position:top;border-radius:7px;background:var(--surface)}
+.research-shot figcaption{margin-top:10px;color:var(--ink-3);font-size:16px;text-align:center}
+
+.sc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.sc-card{padding:24px;border:1px solid var(--line);border-radius:14px;background:var(--bg-2)}
+.sc-card h4{font-size:18px;margin-bottom:20px;letter-spacing:-.02em}
+.sc-bar{display:grid;grid-template-columns:112px 1fr 58px;gap:10px;align-items:center;margin:12px 0;font-size:16px}
+.sc-bar span{color:var(--ink-2)}
+.sc-bar i{display:block;height:9px;border-radius:100px;background:var(--surface-2);overflow:hidden}
+.sc-bar b{display:block;height:100%;border-radius:100px;background:var(--accent)}
+.sc-bar em{font-style:normal;font-family:var(--mono);color:var(--accent);text-align:right;font-size:16px}
+.sc-links{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;margin-top:22px;padding-top:18px;border-top:1px dashed var(--line);font-size:16px}
+.sc-links a{color:var(--accent);border-bottom:1px solid currentColor;padding-bottom:2px}
+.sc-links span{color:var(--ink-3)}
+
+@media (max-width:900px){
+  .ig-grid,.sc-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:700px){
+  .plan-drawing,.interview-gallery,.survey-charts{padding:0 5vw}
+  .ig-grid,.sc-grid{grid-template-columns:1fr}
+  .sc-bar{grid-template-columns:104px 1fr 56px;gap:8px}
+  .plan-drawing figure{padding:12px}
+}
+
