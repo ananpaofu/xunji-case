@@ -88,7 +88,7 @@ const I18N = {
     ts1: 'PARTICIPANTS', ts2: 'PER SESSION', ts3: 'TASKS', ts4: 'VERSIONS',
     base_h: 'Everyone had lost something. Everyone relied on memory.',
     base_p: 'From last week’s keys to a bottle of perfume that took one to two hours to find — the problem was real, frequent, and solved by remembering harder.',
-    base_q1: '“翻遍了柜子和箱子，找了 10 多分钟”', base_q2: '“找香水翻遍了家里，一两个小时”', base_q3: '“没有专门方式，全靠记忆”',
+    base_q1: '“Rummaged through cupboards and boxes — more than ten minutes”', base_q2: '“Looked everywhere for the perfume — one or two hours”', base_q3: '“No system. Just trying to remember”',
     fric_h: 'Where people got stuck', fric_sub: 'Share of participants who mentioned each issue · n=6',
     br1: 'Add entry hard to spot / two entries', br2: 'Location &amp; tracking not trustworthy',
     br3: 'Form needs scrolling after photo', br4: 'Too many photo entries, shaky AI',
