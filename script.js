@@ -3,7 +3,7 @@
    ============================================================ */
 const I18N = {
   en: {
-    nav_app: 'The App', nav_features: 'Why XUNJI', nav_process: 'Process', nav_compare: 'Compare', nav_testing: 'Testing',
+    nav_app: 'The App', nav_features: 'Why XUNJI', nav_process: 'Process', nav_compare: 'Compare', nav_testing: 'Testing', nav_pitch: 'Pitch',
     hero_eyebrow: 'PRODUCT DESIGN CASE STUDY · 2026',
     hero_l1: 'A quiet place', hero_l2: 'for everything', hero_l3: 'you own.',
     hero_sub: 'XUNJI is a local-first app that remembers what you have, where it lives, and when it runs out. No account. No cloud. Just you and your things.',
@@ -103,7 +103,7 @@ const I18N = {
     credit1: 'Tested 2026-11-22', credit2: 'YI Qianhui · ZHANG Wanqing · DING Ziyan'
   },
   zh: {
-    nav_app: 'App 展示', nav_features: '设计亮点', nav_process: '设计过程', nav_compare: '版本对比', nav_testing: '可用性测试',
+    nav_app: 'App 展示', nav_features: '设计亮点', nav_process: '设计过程', nav_compare: '版本对比', nav_testing: '可用性测试', nav_pitch: '路演思路',
     hero_eyebrow: '产品设计案例 · 2026',
     hero_l1: '给每样东西', hero_l2: '一个安静的', hero_l3: '位置。',
     hero_sub: '寻迹是一款本地优先的收纳 App，帮你记住有什么、放在哪、什么时候到期。不登录、不上云，只有你和你的东西。',
