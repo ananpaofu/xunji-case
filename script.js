@@ -227,7 +227,8 @@ function setLang(lang) {
     if (value !== undefined) el.innerHTML = value;
   });
   document.querySelectorAll('[data-en][data-zh]').forEach((el) => {
-    el.textContent = lang === 'zh' ? el.dataset.zh : el.dataset.en;
+    const value = lang === 'zh' ? el.dataset.zh : el.dataset.en;
+    el.textContent = value ? value.replace(/\s+/g, ' ').trim() : '';
   });
   document.querySelectorAll('.lang-btn').forEach((btn) => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
