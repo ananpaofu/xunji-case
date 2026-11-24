@@ -523,3 +523,51 @@ document.querySelectorAll('.hero-cta,.demo-play,.lang-btn,.theme-btn').forEach((
     setTimeout(()=> ripple.remove(), 650);
   });
 });
+
+
+/* ---------- research notes expander ---------- */
+const igBtn = document.getElementById('igMoreBtn');
+const igMore = document.getElementById('igMore');
+if (igBtn && igMore){
+  igBtn.addEventListener('click', ()=>{
+    const open = igMore.classList.toggle('open');
+    igBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    const label = igBtn.querySelector('span');
+    label.dataset.zh = open ? '收起原始调研资料' : '点击查看更多原始调研资料';
+    label.dataset.en = open ? 'Hide original research notes' : 'See more original research notes';
+    label.textContent = currentLang === 'zh' ? label.dataset.zh : label.dataset.en;
+  });
+}
+
+/* ---------- comparative product filters ---------- */
+document.querySelectorAll('.market-tab').forEach((btn)=>{
+  btn.addEventListener('click', ()=>{
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.market-tab').forEach((b)=> b.classList.toggle('active', b === btn));
+    document.querySelectorAll('.market-card').forEach((card)=>{
+      card.classList.toggle('hide', filter !== 'all' && card.dataset.cat !== filter);
+    });
+  });
+});
+
+/* ---------- journey row focus ---------- */
+document.querySelectorAll('.journey .j-row:not(.j-head)').forEach((row)=>{
+  row.setAttribute('tabindex', '0');
+  const toggle = ()=>{
+    const on = !row.classList.contains('active');
+    document.querySelectorAll('.journey .j-row.active').forEach((r)=> r.classList.remove('active'));
+    row.classList.toggle('active', on);
+  };
+  row.addEventListener('click', toggle);
+  row.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); } });
+});
+
+/* ---------- lightbox for research and market images ---------- */
+document.querySelectorAll('.ig-more img,.market-card img').forEach((img)=>{
+  img.parentElement.addEventListener('click', ()=>{
+    const cap = img.parentElement.querySelector('figcaption');
+    lbImg.src = img.src;
+    lbCap.textContent = cap ? cap.textContent : img.alt;
+    lightbox.classList.add('open');
+  });
+});

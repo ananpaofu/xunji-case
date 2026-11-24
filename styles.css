@@ -750,3 +750,53 @@ html[data-theme="warm"]{--stat:#f0a568}
 @media (max-width:700px){
   .nowrap{white-space:normal}
 }
+
+
+/* ---- original research expander ---- */
+.more-toggle{display:flex;align-items:center;gap:10px;margin:22px auto 0;padding:12px 22px;border:1px solid var(--line);border-radius:100px;background:var(--surface);color:var(--ink);font:500 16px var(--sans,var(--font));cursor:pointer;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease,background .25s ease}
+.more-toggle i{font-style:normal;color:var(--accent);font-size:20px;transition:transform .3s ease}
+.more-toggle:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 12px 26px rgba(0,0,0,.14)}
+.more-toggle[aria-expanded="true"] i{transform:rotate(45deg)}
+.ig-more{display:none;grid-template-columns:1fr;gap:16px;margin-top:18px}
+.ig-more.open{display:grid;animation:moreIn .5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes moreIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.ig-more .research-shot img{height:auto;max-height:420px;object-fit:contain;background:#fff}
+
+/* ---- left-to-right reveal + tighter mapping rows ---- */
+.reveal.reveal-x{transform:translateX(-48px)}
+.reveal.reveal-x.in{transform:none}
+.mapping-block{margin-bottom:52px}
+.mapping-block .map-row{padding:14px 0}
+.mapping-block .map-row:hover .mr-quote{color:var(--accent);transform:translateX(4px)}
+.mapping-block .map-row:hover .mr-feat b{color:var(--accent)}
+
+/* ---- journey table interaction ---- */
+.journey .j-row:not(.j-head){cursor:pointer;transition:background .25s ease,box-shadow .25s ease,transform .25s ease}
+.journey .j-row:not(.j-head):hover,.journey .j-row.active{background:var(--accent-wash);box-shadow:inset 3px 0 0 var(--accent)}
+.journey .j-row.active span{transform:translateX(3px)}
+.journey .j-row:not(.j-head) span{transition:transform .25s ease,color .25s ease}
+
+/* ---- larger problem-definition block ---- */
+.shift-block.focus{max-width:1320px;margin-top:96px;padding:0 6vw}
+.shift-block.focus .pl-shift{padding:42px 48px;gap:28px;border-radius:18px}
+.shift-block.focus .pl-shift p{font-size:clamp(22px,2.6vw,32px);line-height:1.35}
+.shift-block.focus .pl-shift span{font-size:16px}
+.shift-block.focus .shift-detail{margin-top:32px;padding-top:32px;gap:24px}
+.shift-block.focus .shift-detail p{font-size:18px}
+
+/* ---- comparative product research ---- */
+.market-block{max-width:1320px;margin:84px auto 0;padding:0 6vw}
+.market-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 22px}
+.market-tab{padding:10px 18px;border:1px solid var(--line);border-radius:100px;background:var(--surface);color:var(--ink-2);font:500 16px var(--sans,var(--font));cursor:pointer;transition:all .25s ease}
+.market-tab:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--ink)}
+.market-tab.active{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.market-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.market-card{margin:0;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--bg-2);cursor:zoom-in;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease,opacity .3s ease}
+.market-card:hover{transform:translateY(-5px) scale(1.015);border-color:var(--accent);box-shadow:0 16px 34px rgba(0,0,0,.16);z-index:1}
+.market-card img{display:block;width:100%;height:170px;object-fit:contain;border-radius:7px;background:#fff}
+.market-card figcaption{margin-top:9px;color:var(--ink-3);font-size:16px;line-height:1.35;text-align:center}
+.market-card.hide{display:none}
+.market-note{max-width:900px;margin:26px auto 0;padding:18px 22px;border-left:3px solid var(--accent);background:var(--accent-wash);border-radius:0 10px 10px 0;color:var(--ink-2);line-height:1.65}
+@media(max-width:960px){.market-grid{grid-template-columns:repeat(2,1fr)}.shift-block.focus .pl-shift{padding:32px 26px}}
+@media(max-width:700px){.market-grid{grid-template-columns:1fr}.market-card img{height:230px}.shift-block.focus{padding:0 5vw}.shift-block.focus .pl-shift{padding:24px 20px;gap:14px}.shift-block.focus .pl-shift p{font-size:21px}}
+@media(prefers-reduced-motion:reduce){.reveal.reveal-x{transform:none}.ig-more.open{animation:none}}
