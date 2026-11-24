@@ -326,18 +326,35 @@ function closeLightbox(){ lightbox.classList.remove('open'); lbImg.src=''; }
 document.getElementById('lbClose').addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLightbox(); });
 
-/* ---------- hero 3d showcase ---------- */
+/* ---------- app showcase overlay ---------- */
 const showcase3d = document.getElementById('showcase3d');
-let s3dReady = false, s3dTimer = null;
+const s3dPages = [...document.querySelectorAll('.s3d-page')];
+const s3dDots = [...document.querySelectorAll('.s3d-dots span')];
+const s3dNum = document.getElementById('s3dNum');
+let s3dReady = false, s3dTimer = null, s3dLoop = null, s3dIndex = 0;
+
+function s3dShow(idx){
+  s3dPages.forEach((pg, i)=>{
+    pg.classList.toggle('leaving', i === s3dIndex && i !== idx);
+    pg.classList.toggle('active', i === idx);
+    s3dDots[i].classList.toggle('on', i === idx);
+  });
+  s3dIndex = idx;
+  s3dNum.textContent = String(idx+1).padStart(2,'0');
+}
 function open3D(){
   showcase3d.classList.add('open');
   s3dReady = false;
-  clearTimeout(s3dTimer);
+  s3dIndex = 0;
+  s3dShow(0);
+  clearTimeout(s3dTimer); clearInterval(s3dLoop);
   s3dTimer = setTimeout(()=>{ s3dReady = true; }, 1000);
+  s3dLoop = setInterval(()=>{ s3dShow((s3dIndex+1) % s3dPages.length); }, 2600);
 }
 function close3D(){
   if (!s3dReady) return;
   showcase3d.classList.remove('open');
+  clearTimeout(s3dTimer); clearInterval(s3dLoop);
 }
 document.querySelectorAll('.hero-shot').forEach((el)=> el.addEventListener('click', open3D));
 showcase3d.addEventListener('click', close3D);

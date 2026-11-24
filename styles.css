@@ -261,21 +261,29 @@ html[data-theme="warm"] .cursor-blob.visible{opacity:.15}
 .lb-close:hover{background:#fff;color:#000}
 .screen-shot,.hero-shot{cursor:zoom-in}
 
-/* ---------- 3d showcase ---------- */
-.showcase3d{position:fixed;inset:0;z-index:110;background:radial-gradient(circle at 50% 45%,rgba(74,222,128,.10),transparent 60%),rgba(0,0,0,.94);display:none;flex-direction:column;align-items:center;justify-content:center;gap:36px;backdrop-filter:blur(10px);cursor:pointer;overflow:hidden}
-.showcase3d.open{display:flex;animation:lbIn .4s ease}
-.s3d-stage{perspective:1200px;width:100%;height:70vh;display:flex;align-items:center;justify-content:center}
-.s3d-ring{position:relative;width:300px;height:600px;transform-style:preserve-3d;animation:s3dSpin 14s linear infinite}
-@keyframes s3dSpin{from{transform:rotateY(0)}to{transform:rotateY(360deg)}}
-.showcase3d.paused .s3d-ring{animation-play-state:paused}
-.s3d-card{position:absolute;left:0;top:0;width:300px;height:650px;backface-visibility:hidden;border-radius:36px;overflow:hidden;border:5px solid #1a1a1a;box-shadow:0 20px 60px rgba(0,0,0,.6)}
-.s3d-card img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
-.s3d-card.c1{transform:rotateY(0deg) translateZ(300px)}
-.s3d-card.c2{transform:rotateY(120deg) translateZ(300px)}
-.s3d-card.c3{transform:rotateY(240deg) translateZ(300px)}
-.s3d-caption{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:14px;color:#bbb;letter-spacing:.08em;animation:s3dPulse 2s ease-in-out infinite}
-.s3d-dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
-@keyframes s3dPulse{0%,100%{opacity:.5}50%{opacity:1}}
+/* ---------- app showcase overlay ---------- */
+.showcase3d{position:fixed;inset:0;z-index:110;display:none;flex-direction:column;align-items:center;justify-content:center;gap:30px;cursor:pointer;overflow:hidden;background:radial-gradient(120% 90% at 50% 10%,#f6f5f2 0%,#e9e6df 55%,#d9d4ca 100%)}
+.showcase3d.open{display:flex;animation:s3dFade .45s ease}
+@keyframes s3dFade{from{opacity:0}to{opacity:1}}
+.s3d-top{position:absolute;top:34px;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;font-family:var(--mono);font-size:14px;color:#5b574f;letter-spacing:.08em}
+.s3d-kicker b{color:#1a1a1a}
+.s3d-count b{font-size:18px;color:#1a1a1a}
+.s3d-count i{font-style:normal;color:#a09b91;margin:0 4px}
+.s3d-stage{perspective:1400px;display:flex;align-items:center;justify-content:center;flex:1;width:100%}
+.s3d-phone{position:relative;width:316px;height:664px;background:#fff;border:8px solid #fff;border-radius:52px;box-shadow:0 50px 90px rgba(40,32,20,.22),0 16px 40px rgba(40,32,20,.14),0 0 0 1px rgba(60,50,35,.10),inset 0 0 0 1px rgba(0,0,0,.05);overflow:hidden;transform-style:preserve-3d}
+.s3d-notch{display:none}
+.s3d-pages{position:absolute;inset:0;transform-style:preserve-3d}
+.s3d-page{position:absolute;inset:0;backface-visibility:hidden;transform-origin:center center;opacity:0;transform:translateX(60%) rotateY(-32deg) scale(.94);transition:transform .8s cubic-bezier(.22,.8,.25,1),opacity .7s ease;box-shadow:-20px 0 40px rgba(0,0,0,.08)}
+.s3d-page img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.s3d-page.active{opacity:1;transform:translateX(0) rotateY(0) scale(1);z-index:3}
+.s3d-page.leaving{opacity:0;transform:translateX(-55%) rotateY(26deg) scale(.94);z-index:2}
+.s3d-bottom{display:flex;flex-direction:column;align-items:center;gap:18px;margin-bottom:36px}
+.s3d-dots{display:flex;gap:8px}
+.s3d-dots span{width:7px;height:7px;border-radius:50%;background:#c8c3b8;transition:all .35s}
+.s3d-dots span.on{width:22px;border-radius:100px;background:#1a1a1a}
+.s3d-caption{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:14px;color:#6d685e;letter-spacing:.06em}
+.s3d-dot{width:6px;height:6px;border-radius:50%;background:#16a34a;animation:s3dPulse 2s ease-in-out infinite}
+@keyframes s3dPulse{0%,100%{opacity:.4}50%{opacity:1}}
 
 /* ---------- usability test ---------- */
 .testing{padding:110px 5vw;background:var(--bg-2);border-top:1px solid var(--line)}
@@ -384,14 +392,11 @@ html[data-theme="warm"] .cursor-blob.visible{opacity:.15}
   .cmp-panel.active{grid-template-columns:1fr;gap:22px;justify-items:center}
   .cmp-note{text-align:center;max-width:100%}
   .cmp-footer{justify-content:center}
+  .s3d-phone{width:262px;height:552px;border-radius:44px}
+  .s3d-notch{width:78px;height:20px;top:10px}
+  .s3d-top{top:22px;font-size:12px}
+  .s3d-bottom{margin-bottom:24px}
   .cmp-frame{width:270px;height:585px}
-  .s3d-card{width:200px;height:435px}
-  .s3d-card.c1{transform:rotateY(0deg) translateZ(190px)}
-  .s3d-card.c2{transform:rotateY(120deg) translateZ(190px)}
-  .s3d-card.c3{transform:rotateY(240deg) translateZ(190px)}
-  .s3d-ring{width:200px;height:435px}
-  .s3d-stage{height:58vh}
-  .showcase3d{gap:20px}
 }
 
 @media(max-width:480px){
