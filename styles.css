@@ -549,3 +549,54 @@ a.pl-status:hover{background:var(--accent-wash)}
   .ripple{display:none}
 }
 
+
+/* ============================================================
+   SURVEY EMPHASIS / LAYOUT POLISH
+   ============================================================ */
+:root{--stat:#ff8a3d}
+html[data-theme="light"]{--stat:#d9480f}
+html[data-theme="warm"]{--stat:#ffb066}
+
+.voice-key b{color:var(--stat);font-size:clamp(56px,7vw,84px)}
+.voice-key{background:color-mix(in srgb,var(--stat) 9%,transparent);border-color:var(--stat)}
+.voice{display:flex;align-items:center;gap:14px;min-height:74px}
+.voice svg{width:24px;height:24px;flex:0 0 24px;fill:none;stroke:var(--stat);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.voice b{font-size:24px;line-height:1;letter-spacing:-.04em;color:var(--stat);white-space:nowrap;font-weight:800}
+.voice span{line-height:1.55}
+
+.survey-chart{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;margin-top:18px;padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--bg-2)}
+.survey-chart figure{margin:0;border-radius:10px;overflow:hidden;border:1px solid var(--line-soft)}
+.survey-chart img{display:block;width:100%;height:auto}
+.survey-chart-copy span{font:500 10.5px var(--mono);letter-spacing:.14em;color:var(--stat)}
+.survey-chart-copy h4{margin:12px 0 10px;font-size:22px;letter-spacing:-.03em}
+.survey-chart-copy p{color:var(--ink-3);font-size:13.5px;line-height:1.75;margin-bottom:18px}
+.survey-chart-copy a{display:inline-block;padding:10px 16px;border:1px solid var(--stat);color:var(--stat);border-radius:3px;font-size:12.5px;font-weight:700;transition:background .25s,transform .25s}
+.survey-chart-copy a:hover{background:color-mix(in srgb,var(--stat) 12%,transparent);transform:translateY(-2px)}
+
+/* research layout */
+.pl-card{display:flex;flex-direction:column;height:100%}
+.pl-card .pl-status{margin-top:auto;align-self:flex-start}
+.process>.persona{margin-top:92px;margin-bottom:88px;border-radius:18px}
+.persona-card{padding:44px 40px}
+.persona-attrs div{padding:30px 32px}
+
+/* comparison notes: room for the benefit line */
+.cmp-note{font-size:15.5px;line-height:1.9;max-width:520px}
+.cmp-note::before{margin-bottom:14px}
+
+/* progress bar: readable on light themes */
+.scroll-progress{height:3px;background:var(--stat);box-shadow:0 0 8px color-mix(in srgb,var(--stat) 55%,transparent)}
+html[data-theme="light"] .scroll-progress{background:var(--stat-dim,#c2410c);box-shadow:0 1px 4px rgba(0,0,0,.28)}
+
+@media (max-width:900px){
+  .survey-chart{grid-template-columns:1fr;gap:18px}
+}
+@media (max-width:700px){
+  .voice{gap:10px;min-height:64px}
+  .voice b{font-size:20px}
+  .voice svg{width:20px;height:20px;flex-basis:20px}
+  .persona-card{padding:32px 24px}
+  .persona-attrs div{padding:24px}
+  .survey-chart{padding:12px}
+}
+
