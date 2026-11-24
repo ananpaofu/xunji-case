@@ -523,3 +523,29 @@ html[data-theme="warm"] .cursor-blob.visible{opacity:.15}
   .sketch-node{max-width:none;width:100%}
   .sketch-arrow{transform:none}
 }
+
+
+/* ============================================================
+   INTERACTION POLISH
+   ============================================================ */
+#pain,#demo,#research,#iteration,#hardware,#app,#features,#testing,#compare{scroll-margin-top:88px}
+.scroll-progress{position:fixed;top:0;left:0;width:100%;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left center;z-index:120;pointer-events:none;transition:transform .08s linear}
+.to-top{position:fixed;right:24px;bottom:24px;width:42px;height:42px;border-radius:50%;border:1px solid var(--accent);background:var(--surface);color:var(--accent);font-size:18px;line-height:1;cursor:pointer;z-index:90;opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .3s ease,transform .3s ease,background .2s}
+.to-top.show{opacity:1;transform:none;pointer-events:auto}
+.to-top:hover{background:var(--accent-wash)}
+.data-card,.pl-card,.hw-card,.screen-card{transition:transform .25s ease,box-shadow .3s ease,border-color .3s ease}
+.data-card:hover,.pl-card:hover,.hw-card:hover,.screen-card:hover{box-shadow:0 18px 44px rgba(0,0,0,.14);border-color:var(--accent)}
+.reveal{transition-delay:var(--stagger,0ms)}
+.hero-cta,.demo-play,.lang-btn,.theme-btn{position:relative;overflow:hidden}
+.ripple{position:absolute;width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.35;transform:translate(-50%,-50%) scale(0);animation:xRipple .65s ease-out forwards;pointer-events:none}
+@keyframes xRipple{to{transform:translate(-50%,-50%) scale(18);opacity:0}}
+a.pl-status{text-decoration:none}
+a.pl-status:hover{background:var(--accent-wash)}
+@media (max-width:700px){
+  .to-top{right:14px;bottom:14px;width:38px;height:38px}
+}
+@media (prefers-reduced-motion:reduce){
+  .scroll-progress,.to-top{transition:none}
+  .ripple{display:none}
+}
+
