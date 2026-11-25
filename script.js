@@ -591,25 +591,58 @@ journeyNotes.forEach((note, i)=>{
   note.addEventListener('click', ()=> showJourneyNote(i));
 });
 
-/* ---------- definition cards ---------- */
-const definitionCards = [...document.querySelectorAll('#definitionGrid .definition-card')];
-definitionCards.forEach((card)=>{
-  const toggle = ()=>{
-    const on = !card.classList.contains('active');
-    definitionCards.forEach((c)=>{
-      c.classList.remove('active');
-      c.setAttribute('aria-pressed', 'false');
-    });
-    if (on){
-      card.classList.add('active');
-      card.setAttribute('aria-pressed', 'true');
-    }
-  };
-  card.addEventListener('click', toggle);
-  card.addEventListener('keydown', (e)=>{
-    if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+/* ---------- interactive version comparison ---------- */
+const versionPairs = [
+  {
+    before: 'assets/v2-home.png?v=20261126b',
+    after: 'assets/v3-home.png?v=20261126b',
+    beforeCap: '2.0 · 首页',
+    afterCap: '3.0 · 设备',
+    zh: '2.0 把收纳列表、到期提醒和分类入口堆在一屏；3.0 以设备联动为首页，直接看到地图、定位和物品导航。删除了到期提醒、社区、成就等与「找回」无关的功能。',
+    en: '2.0 stacked storage lists, expiry reminders and category entries into one screen; 3.0 opens on device linking with map, location and item navigation. Expiry reminders, community, achievements and other storage-only functions are gone.'
+  },
+  {
+    before: 'assets/v2-function.png?v=20261126b',
+    after: 'assets/v3-sound.png?v=20261126b',
+    beforeCap: '2.0 · 功能中心',
+    afterCap: '3.0 · 声音',
+    zh: '2.0 用一个功能中心收纳消息聊天、社区动态、成就等级、到期提醒和安装到桌面；3.0 直接把声音呼唤做成一级页面：输入物品名、一键呼唤、语音呼唤和自定义都在这里。',
+    en: '2.0 hid everything in a function grid: chat, community, achievements, expiry reminders and install prompts. 3.0 makes voice calling a first-class page: name an item, call it, use voice, or customise the command.'
+  },
+  {
+    before: 'assets/v2-me.png?v=20261126b',
+    after: 'assets/v3-me.png?v=20261126b',
+    beforeCap: '2.0 · 我的',
+    afterCap: '3.0 · 我的',
+    zh: '2.0 的「我的」主要是昵称、联系方式和个性签名；3.0 把界面设置、通知中心、账号安全、修改密码和使用指南集中起来，去掉了与找回物品无关的个人资料展示。',
+    en: '2.0 profile focused on nickname, contact and signature. 3.0 groups interface settings, notifications, account security, password and guide, removing profile fields unrelated to finding things.'
+  }
+];
+const versionTabs = [...document.querySelectorAll('.version-tab')];
+const versionBefore = document.getElementById('versionBefore');
+const versionAfter = document.getElementById('versionAfter');
+const versionBeforeCap = document.getElementById('versionBeforeCap');
+const versionAfterCap = document.getElementById('versionAfterCap');
+const versionCopy = document.getElementById('versionCopy');
+function setVersionPair(index){
+  const pair = versionPairs[index];
+  if (!pair || !versionBefore || !versionAfter) return;
+  versionBefore.src = pair.before;
+  versionAfter.src = pair.after;
+  if (versionBeforeCap) versionBeforeCap.textContent = pair.beforeCap;
+  if (versionAfterCap) versionAfterCap.textContent = pair.afterCap;
+  if (versionCopy){
+    versionCopy.textContent = pair.zh;
+    versionCopy.dataset.zh = pair.zh;
+    versionCopy.dataset.en = pair.en;
+  }
+  versionTabs.forEach((tab, i)=>{
+    const on = i === index;
+    tab.classList.toggle('active', on);
+    tab.setAttribute('aria-selected', String(on));
   });
-});
+}
+versionTabs.forEach((tab, i)=> tab.addEventListener('click', ()=> setVersionPair(i)));
 
 /* ---------- journey row focus ---------- */
 document.querySelectorAll('.journey .j-row:not(.j-head)').forEach((row)=>{
@@ -667,20 +700,9 @@ if (!location.search.includes('scroll')) {
     busyTimer = setTimeout(()=>{ pageBusy = false; }, ms);
   }
   function pageStarts(slide){
-    const max = Math.max(0, slide.scrollHeight - slide.clientHeight);
-    const anchors = [...slide.querySelectorAll('[data-slide-anchor]')];
-    let starts = [0];
-    if (anchors.length){
-      anchors.forEach((anchor)=>{
-        const top = Math.max(0, Math.round(anchor.offsetTop));
-        if (top - starts[starts.length - 1] > 48) starts.push(top);
-      });
-    } else {
-      const count = Math.max(1, Math.ceil((slide.scrollHeight + 1) / Math.max(1, slide.clientHeight)));
-      for (let i = 1; i < count; i++) starts.push(i * slide.clientHeight);
-    }
-    starts = starts.map((top)=> Math.min(max, Math.round(top)));
-    return starts.filter((top, i)=> i === 0 || top - starts[i - 1] > 40);
+    const pages = [...slide.querySelectorAll('.slide-page')];
+    if (pages.length) return pages.map((page)=> Math.max(0, Math.round(page.offsetTop)));
+    return [0];
   }
   function subCount(slide){ return pageStarts(slide).length; }
   function totalPages(){ return slides.reduce((sum, s)=> sum + subCount(s), 0); }
@@ -759,15 +781,15 @@ if (!location.search.includes('scroll')) {
     if (si !== slideIndex){
       goToSlide(si);
       subIndex = sub;
-      slide.scrollTop = starts[sub] || 0;
+      slide.scrollTo({ top: starts[sub] || 0, behavior: 'smooth' });
       syncSlideUI();
-      setBusy(760);
+      setBusy(900);
       return;
     }
     subIndex = sub;
-    slide.scrollTop = starts[sub] || 0;
+    slide.scrollTo({ top: starts[sub] || 0, behavior: 'smooth' });
     syncSlideUI();
-    setBusy(700);
+    setBusy(900);
   }
   function stepPage(delta){
     if (pageBusy) return true;
@@ -805,24 +827,28 @@ if (!location.search.includes('scroll')) {
   }, true);
   document.addEventListener('keydown', (e)=>{
     if (lightbox.classList.contains('open') || showcaseOpen()) return;
-    if (e.key === 'PageDown'){ e.preventDefault(); stepPage(1); }
-    if (e.key === 'PageUp'){ e.preventDefault(); stepPage(-1); }
+    if (e.key === 'PageDown' || e.key === 'ArrowDown'){ e.preventDefault(); stepPage(1); }
+    if (e.key === 'PageUp' || e.key === 'ArrowUp'){ e.preventDefault(); stepPage(-1); }
   });
-  main.addEventListener('scroll', ()=>{
-    const inner = slides[slideIndex];
-    const starts = pageStarts(inner);
-    let nearest = 0;
-    let best = Infinity;
-    starts.forEach((top, i)=>{
-      const distance = Math.abs(inner.scrollTop - top);
-      if (distance < best){ best = distance; nearest = i; }
-    });
-    if (nearest !== subIndex){ subIndex = nearest; syncSlideUI(); }
-  }, true);
   main.addEventListener('wheel', (e)=>{
     if (lightbox.classList.contains('open') || showcaseOpen()) return;
     e.preventDefault();
     if (Math.abs(e.deltaY) < 4 || pageBusy) return;
     stepPage(e.deltaY > 0 ? 1 : -1);
   }, { passive:false });
+  let touchY = null;
+  main.addEventListener('touchstart', (e)=>{
+    if (e.target.closest('model-viewer')){ touchY = null; return; }
+    touchY = e.touches[0].clientY;
+  }, { passive:true });
+  main.addEventListener('touchmove', (e)=>{
+    if (touchY !== null) e.preventDefault();
+  }, { passive:false });
+  main.addEventListener('touchend', (e)=>{
+    if (touchY === null || pageBusy) return;
+    const endY = e.changedTouches[0].clientY;
+    const delta = touchY - endY;
+    touchY = null;
+    if (Math.abs(delta) > 40) stepPage(delta > 0 ? 1 : -1);
+  }, { passive:true });
 }

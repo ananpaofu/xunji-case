@@ -1092,11 +1092,131 @@ html[data-theme="light"] .phone-frame{border-color:#d7d7d2}
 .slide-rail-dot{width:8px;height:8px}
 .slide-rail-dot.on{height:22px}
 
-@media(max-width:1100px){.market-grid-open{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media(max-width:700px){
-  .demo-phone{width:220px;height:476px}
-  .final-banner{min-height:170px}
-  .market-grid-open{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .journey-tip{position:static;max-width:none;margin-top:10px}
-  .def-hint{margin:10px 0 0}
+/* ============================================================
+   SINGLE-SCREEN SLIDES — centered content, smooth one-page turns
+   ============================================================ */
+html.ppt main>*{overflow:hidden}
+html.ppt main>section{padding:0!important;margin:0!important;min-height:0!important;display:block!important}
+.slide-page{height:100%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(10px,2vh,24px);padding:78px 5vw 58px;overflow:hidden;position:relative}
+.slide-page>*{width:100%;max-width:1320px;flex-shrink:0;margin-left:auto;margin-right:auto}
+.slide-page .section-head,.slide-page .block-head{text-align:center;margin:0}
+.slide-page .section-head h2,.slide-page .block-head h3{font-size:clamp(28px,3vw,44px)}
+.slide-page .eyebrow{justify-content:center}
+.slide-page .section-head p:not(.eyebrow),.slide-page .block-head p,.slide-page .chapter-body>p,.slide-page .concept-figure figcaption,.slide-page .market-summary,.slide-page .progress-step p,.slide-page .outro p,.slide-page .detail-copy p{white-space:nowrap;font-size:16px}
+.duo-card figcaption b,.final-kicker,.pc-kicker,.def-label,.version-copy>span,.question-shift span,.eyebrow span:last-child{letter-spacing:0}
+
+.hero-page{padding:72px 5vw 46px}
+.hero-page .hero-inner{max-width:1320px;display:grid;grid-template-columns:1.12fr .88fr;gap:40px;align-items:center}
+.hero-page .hero-sub{white-space:nowrap;font-size:16px}
+
+.intro-page{gap:16px}
+.intro-page .concept-figure{width:100vw;max-width:none;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);padding:0;border:0;border-radius:0;background:transparent}
+.intro-page .concept-figure img{width:100%;height:42vh;max-height:none;object-fit:cover;object-position:center 45%;border-radius:0}
+.intro-page .concept-figure figcaption{text-align:center;font-size:16px}
+
+.duo-page .demo-duo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1160px}
+.duo-page .duo-card{min-height:62vh;padding:16px;border-color:var(--line);border-radius:18px;background:#fff;color:#111;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:12px;transition:transform .3s ease,box-shadow .3s ease}
+.duo-page .duo-card:hover{transform:translateY(-6px);box-shadow:0 18px 46px rgba(0,0,0,.2)}
+.duo-page .demo-phone{width:200px;height:430px;border-width:7px;border-radius:38px}
+.duo-page .demo-phone .phone-notch{top:7px;width:66px;height:16px}
+.duo-page .duo-card figcaption{gap:6px;color:#111}
+.duo-page .duo-card figcaption b{color:var(--accent);font-size:16px}
+.duo-page .duo-card figcaption span{color:#444;font-size:16px;line-height:1.5;text-align:center;white-space:normal;max-width:300px}
+.duo-page model-viewer{display:block;width:100%;height:430px;background:#fff;cursor:grab;touch-action:pan-y}
+.duo-page model-viewer:active{cursor:grabbing}
+
+.comic-page .comic-wrap{max-width:1200px;height:68vh;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.comic-page .comic-frame{display:flex;align-items:center;justify-content:center}
+.comic-page .comic-frame img{max-height:64vh;object-fit:contain}
+
+.slide-page .chapter{display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:start;max-width:1180px;padding-left:0}
+.slide-page .chapter::before{display:none}
+.slide-page .chapter-no{position:static;width:56px;height:56px}
+.slide-page .chapter-body{padding:22px 26px}
+.slide-page .research-shot img{height:210px;object-fit:contain}
+.market-page .chapter-body{padding:16px 22px}
+.market-page .market-controls{margin:10px 0}
+.market-page .market-grid-open{grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.market-page .market-grid-open img{height:92px}
+.market-page .market-grid-open figcaption,.market-page .market-grid-open figcaption small{font-size:16px;line-height:1.3}
+.market-page .market-summary{margin-top:10px;padding:10px 16px}
+.banner-page .final-banner{width:100%;margin:0;min-height:50vh}
+.persona-page .persona{max-width:1180px}
+
+.journey-page .journey-block{max-width:1240px}
+.journey-table{font-size:16px}
+.journey-notes b,.journey-notes span{font-size:16px}
+
+.def-page .definition-card{max-width:900px;padding:28px 34px}
+.def-page .definition-card li b,.def-page .definition-card li p{font-size:16px}
+
+.version-page .version-static{width:100%;max-width:1260px}
+.version-tabs{display:flex;gap:10px;justify-content:center;margin-bottom:10px}
+.version-tab{padding:8px 18px;border:1px solid var(--line);border-radius:100px;background:var(--surface);color:var(--ink-2);font-size:16px;cursor:pointer;transition:all .2s}
+.version-tab:hover{border-color:var(--accent);color:var(--ink)}
+.version-tab.active{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:700}
+.version-page .version-frame{grid-template-columns:1.2fr .8fr;align-items:center;padding:16px}
+.version-page .version-images figure{min-height:560px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;background:#fff}
+.version-page .version-phone{width:230px;height:500px;border-width:8px;border-radius:40px}
+.version-page .version-images figcaption{color:#111;font-size:16px}
+.version-copy p{font-size:16px;line-height:1.8}
+.version-copy a{font-size:16px}
+
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1240px}
+.detail-copy ol{list-style:none;display:grid;gap:12px}
+.detail-copy li{padding:12px 16px;border-left:2px solid var(--accent);background:var(--surface);border-radius:0 10px 10px 0}
+.detail-copy li b,.detail-copy h4{display:block;font-size:16px}
+.detail-copy li span{display:block;margin-top:4px;font-size:16px;line-height:1.6;white-space:normal}
+.detail-copy h4{margin-top:14px}
+.detail-images{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.detail-images figure{margin:0;padding:8px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.detail-images img{display:block;width:100%;height:230px;object-fit:cover;border-radius:8px;background:#fff}
+.detail-images figcaption{margin-top:6px;text-align:center;font-size:16px}
+.outro-page .outro{max-width:900px;text-align:center}
+.outro-page .outro .eyebrow{justify-content:center}
+.outro-page .site-footer{width:100%;max-width:1320px}
+
+@media(max-width:1100px){
+  .slide-page{padding:72px 4vw 52px}
+  .duo-page .demo-duo{gap:10px}
+  .duo-page .demo-phone{width:170px;height:380px}
+  .duo-page model-viewer{height:380px}
+  .version-page .version-phone{width:200px;height:440px}
+  .version-page .version-images figure{min-height:500px}
 }
+@media(max-width:700px){
+  .slide-page{padding:66px 4vw 50px}
+  .slide-page .section-head p:not(.eyebrow),.slide-page .block-head p,.slide-page .chapter-body>p,.slide-page .concept-figure figcaption,.slide-page .market-summary,.slide-page .progress-step p,.slide-page .outro p,.slide-page .detail-copy p,.hero-page .hero-sub{white-space:normal}
+  .hero-page .hero-inner{grid-template-columns:1fr;gap:16px}
+  .intro-page .concept-figure img{height:34vh}
+  .duo-page .demo-duo{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .duo-page .duo-card{padding:8px;min-height:52vh}
+  .duo-page .demo-phone{width:110px;height:300px;border-width:5px;border-radius:26px}
+  .duo-page model-viewer{height:300px}
+  .duo-page .duo-card figcaption span{font-size:16px}
+  .comic-page .comic-wrap{height:64vh;grid-template-columns:1fr}
+  .comic-page .comic-frame img{max-height:36vh}
+  .slide-page .chapter{grid-template-columns:44px 1fr;gap:8px}
+  .slide-page .chapter-no{width:40px;height:40px}
+  .market-page .market-grid-open{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .market-page .market-grid-open img{height:64px}
+  .version-page .version-frame{grid-template-columns:1fr}
+  .version-page .version-images figure{min-height:360px}
+  .version-page .version-phone{width:150px;height:330px}
+  .detail-grid{grid-template-columns:1fr}
+  .detail-images img{height:140px}
+}
+
+/* Final single-screen fit tuning */
+.duo-page .duo-card{min-height:52vh}
+.duo-page .demo-phone,.duo-page model-viewer{height:360px}
+.comic-page .comic-wrap{height:58vh}
+.comic-page .comic-frame img{max-height:54vh}
+.market-page .chapter-body{padding:10px 16px}
+.market-page .market-controls{margin:4px 0}
+.market-page .market-grid-open img{height:60px}
+.journey-table th,.journey-table td{padding:3px 10px}
+.journey-chart svg{max-height:170px}
+.journey-notes li{padding:5px 8px}
+.version-page .version-phone{width:200px;height:400px}
+.version-page .version-images figure{min-height:450px}

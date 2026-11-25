@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261126a">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="styles.css?v=20261126b">
   <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
@@ -49,146 +50,161 @@
   <main id="top">
 
     <!-- 01 / HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow reveal"><span class="eyebrow-line"></span><span data-en="PRODUCT DESIGN CASE STUDY · 2026" data-zh="产品设计案例 · 2026">产品设计案例 · 2026</span></p>
-          <h1 class="hero-title reveal">
-            <span data-en="A happier way" data-zh="用一种开心的方式，">用一种开心的方式，</span><br>
-            <span class="outline" data-en="to find what matters." data-zh="找到重要和常用的东西。">找到重要和常用的东西。</span>
-          </h1>
-          <p class="hero-sub reveal" data-en="Ten frantic minutes before leaving the house, and a key that gets lost between the bag and the desk. XUNJI starts from these real moments — helping you remember where the things that matter actually are." data-zh="一次出门前十分钟的翻找，一把钥匙在包和桌面之间消失的慌乱。寻迹从这些真实时刻开始，帮你记住重要却常用的东西放在哪。">一次出门前十分钟的翻找，一把钥匙在包和桌面之间消失的慌乱。寻迹从这些真实时刻开始，帮你记住重要却常用的东西放在哪。</p>
-          <div class="hero-meta reveal">
-            <div><b>12</b><span data-en="USERS ACROSS TWO ROUNDS" data-zh="位受访用户 · 两轮调研">位受访用户 · 两轮调研</span></div>
-            <div><b>02</b><span data-en="ROUNDS OF RESEARCH" data-zh="轮 调研">轮 调研</span></div>
+    <section class="hero" id="home">
+      <div class="slide-page hero-page">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow reveal"><span class="eyebrow-line"></span><span data-en="PRODUCT DESIGN CASE STUDY · 2026" data-zh="产品设计案例 · 2026">产品设计案例 · 2026</span></p>
+            <h1 class="hero-title reveal">
+              <span data-en="A happier way" data-zh="用一种开心的方式，">用一种开心的方式，</span><br>
+              <span class="outline" data-en="to find what matters." data-zh="找到重要和常用的东西。">找到重要和常用的东西。</span>
+            </h1>
+            <p class="hero-sub reveal" data-en="Ten frantic minutes before leaving the house, and a key that gets lost between the bag and the desk. XUNJI starts from these real moments — helping you remember where the things that matter and get used every day actually are." data-zh="一次出门前十分钟的翻找，一把钥匙在包和桌面之间消失的慌乱。寻迹从这些真实时刻开始，帮你记住重要和常用的东西放在哪。">一次出门前十分钟的翻找，一把钥匙在包和桌面之间消失的慌乱。寻迹从这些真实时刻开始，帮你记住重要和常用的东西放在哪。</p>
+            <div class="hero-meta reveal">
+              <div><b>12</b><span data-en="USERS ACROSS TWO ROUNDS" data-zh="位受访用户 · 两轮调研">位受访用户 · 两轮调研</span></div>
+              <div><b>02</b><span data-en="ROUNDS OF RESEARCH" data-zh="轮 调研">轮 调研</span></div>
+            </div>
+            <a class="hero-cta reveal" href="#demo"><span data-en="See the product first" data-zh="先看产品演示">先看产品演示</span><span class="cta-arrow">↘</span></a>
           </div>
-          <a class="hero-cta reveal" href="#demo"><span data-en="See the product first" data-zh="先看产品演示">先看产品演示</span><span class="cta-arrow">↘</span></a>
-        </div>
-        <div class="hero-stage reveal">
-          <div class="stage-glow" aria-hidden="true"></div>
-          <div class="phone-frame" aria-label="手机视频预览占位">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-              <div class="phone-topbar"><span data-en="XUNJI" data-zh="寻迹">寻迹</span><span>•••</span></div>
-              <div class="video-placeholder">
-                <div class="play-ring">▶</div>
-                <b data-en="VIDEO PREVIEW" data-zh="视频预览">视频预览</b>
-                <span data-en="Coming soon" data-zh="即将上线">即将上线</span>
-              </div>
-              <div class="phone-tabbar">
-                <span data-en="Home" data-zh="首页">首页</span>
-                <span data-en="Items" data-zh="物品">物品</span>
-                <span data-en="Me" data-zh="我的">我的</span>
+          <div class="hero-stage reveal">
+            <div class="stage-glow" aria-hidden="true"></div>
+            <div class="phone-frame" aria-label="手机视频预览占位">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <div class="phone-topbar"><span data-en="XUNJI" data-zh="寻迹">寻迹</span><span>•••</span></div>
+                <div class="video-placeholder">
+                  <div class="play-ring">▶</div>
+                  <b data-en="VIDEO PREVIEW" data-zh="视频预览">视频预览</b>
+                  <span data-en="Coming soon" data-zh="即将上线">即将上线</span>
+                </div>
+                <div class="phone-tabbar">
+                  <span data-en="Device" data-zh="设备">设备</span>
+                  <span data-en="Sound" data-zh="声音">声音</span>
+                  <span data-en="Me" data-zh="我的">我的</span>
+                </div>
               </div>
             </div>
+            <div class="stage-caption"><span class="cap-dot"></span><span data-en="A happier way to find what matters." data-zh="用一种开心的方式，找到重要和常用的东西。">用一种开心的方式，找到重要和常用的东西。</span></div>
           </div>
-          <div class="stage-caption"><span class="cap-dot"></span><span data-en="A happier way to find what matters." data-zh="用一种开心的方式，找到重要和常用的东西。">用一种开心的方式，找到重要和常用的东西。</span></div>
         </div>
       </div>
-      <div class="scroll-cue"><span data-en="SCROLL" data-zh="向下滚动">向下滚动</span><i></i></div>
     </section>
 
     <!-- 02 / PRODUCT DEMO -->
     <section class="app-show demo-slide" id="demo">
-      <div class="section-head reveal">
-        <p class="eyebrow"><span class="eyebrow-line"></span><span data-en="01 / PRODUCT DEMO" data-zh="01 / 产品演示">01 / 产品演示</span></p>
-        <h2 data-en="See it used, then see how we got here." data-zh="先看它怎么用，再看我们怎么走到这一步。">先看它怎么用，再看我们怎么走到这一步。</h2>
-        <p data-en="A concept scene, the software and hardware side by side, and the little moment when finding things stops being a panic." data-zh="一张使用场景意念图，软硬件同时出现，再看那个「找东西不再慌张」的小小瞬间。">一张使用场景意念图，软硬件同时出现，再看那个「找东西不再慌张」的小小瞬间。</p>
-      </div>
-
-      <figure class="concept-figure reveal" data-slide-anchor>
-        <img src="assets/concept-scene.png?v=20261126a" alt="产品使用场景意念图：宿舍里，学生拿着绑定钥匙的手机，绿色小精灵在旁边微笑">
-        <figcaption data-en="Concept scene — a key, a tag and a phone that answers back." data-zh="使用场景意念图 —— 钥匙、标签，和会回应你的手机。">使用场景意念图 —— 钥匙、标签，和会回应你的手机。</figcaption>
-      </figure>
-
-      <div class="block-head reveal">
-        <h3 data-en="Software and hardware, shown together" data-zh="软件和硬件，放在一起看">软件和硬件，放在一起看</h3>
-        <p data-en="The app remembers; the tag answers." data-zh="App 负责记得，标签负责回应。">App 负责记得，标签负责回应。</p>
-      </div>
-      <div class="demo-duo reveal" data-slide-anchor>
-        <figure class="duo-card">
-          <div class="phone-frame demo-phone"><div class="phone-notch"></div><img src="assets/v3-sound.png?v=20261126a" alt="寻迹 3.0 声音呼唤页面截图"></div>
-          <figcaption><b data-en="SOFTWARE" data-zh="软件">软件</b><span data-en="Name the item, call it, and hear the tag answer." data-zh="说出物品名字，一键呼唤，让标签回应你。">说出物品名字，一键呼唤，让标签回应你。</span></figcaption>
-        </figure>
-        <figure class="duo-card">
-          <div class="phone-frame demo-phone"><div class="phone-notch"></div><img src="assets/v3-link.png?v=20261126a" alt="寻迹 3.0 设备联动页面截图"></div>
-          <figcaption><b data-en="HARDWARE" data-zh="硬件">硬件</b><span data-en="Bind the tag, see its location, navigate to it." data-zh="绑定标签，查看位置，跟着地图走过去。">绑定标签，查看位置，跟着地图走过去。</span></figcaption>
-        </figure>
-      </div>
-
-      <div class="block-head reveal">
-        <h3 data-en="App flow, drawn like a comic" data-zh="App 使用流程，像漫画一样看">App 使用流程，像漫画一样看</h3>
-        <p data-en="Hand-drawn storyboard · from panic to a smile" data-zh="手绘分镜 · 从慌张到松一口气">手绘分镜 · 从慌张到松一口气</p>
-      </div>
-      <div class="comic-wrap reveal" data-slide-anchor>
-        <div class="comic-frame">
-          <img src="assets/app-comic.png?v=20261126a" alt="手绘漫画风格的寻迹 App 使用流程图">
+      <div class="slide-page intro-page">
+        <div class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow-line"></span><span data-en="01 / PRODUCT DEMO" data-zh="01 / 产品演示">01 / 产品演示</span></p>
+          <h2 data-en="See it used, then see how we got here." data-zh="先看它怎么用，再看我们怎么走到这一步。">先看它怎么用，再看我们怎么走到这一步。</h2>
+          <p data-en="One scene, then the software and the shell side by side." data-zh="先看一张使用场景，再把软件与外壳放在一起看。">先看一张使用场景，再把软件与外壳放在一起看。</p>
         </div>
-        <ol class="comic-steps">
-          <li><span>01</span><div><b data-en="Keys disappeared" data-zh="钥匙不见了">钥匙不见了</b><small data-en="Pat the pockets, empty the bag." data-zh="摸口袋、翻包，心里一紧。">摸口袋、翻包，心里一紧。</small></div></li>
-          <li><span>02</span><div><b data-en="Open XUNJI" data-zh="打开寻迹">打开寻迹</b><small data-en="Check the item list and its last location." data-zh="打开物品清单，看到它最后出现的位置。">打开物品清单，看到它最后出现的位置。</small></div></li>
-          <li><span>03</span><div><b data-en="Follow the map" data-zh="跟着定位找">跟着定位找</b><small data-en="Walk back to the exact spot instead of searching the whole room." data-zh="直接回到那个位置，不用翻遍整个房间。">直接回到那个位置，不用翻遍整个房间。</small></div></li>
-          <li><span>04</span><div><b data-en="Tap to call" data-zh="一键呼唤">一键呼唤</b><small data-en="The bound tag answers from where it is." data-zh="绑定的标签在原处回应你。">绑定的标签在原处回应你。</small></div></li>
-          <li><span>05</span><div><b data-en="Found, happily" data-zh="开心找到">开心找到</b><small data-en="No rummaging. Just reach and go." data-zh="不用翻找，伸手拿上就出门。">不用翻找，伸手拿上就出门。</small></div></li>
-        </ol>
+        <figure class="concept-figure reveal">
+          <img src="assets/concept-scene.png?v=20261126b" alt="产品使用场景意念图：学生拿着绑定钥匙的手机，绿色标签在旁边回应">
+          <figcaption data-en="Concept scene — a key, a device and a phone that answers back." data-zh="使用场景意念图 —— 钥匙、设备和会回应你的手机。">使用场景意念图 —— 钥匙、设备和会回应你的手机。</figcaption>
+        </figure>
+      </div>
+
+      <div class="slide-page duo-page">
+        <div class="block-head reveal">
+          <h3 data-en="Software and hardware, shown together" data-zh="软件和硬件，放在一起看">软件和硬件，放在一起看</h3>
+          <p data-en="The app remembers; the shell answers." data-zh="App 负责记得，外壳负责回应。">App 负责记得，外壳负责回应。</p>
+        </div>
+        <div class="demo-duo reveal">
+          <figure class="duo-card">
+            <div class="phone-frame demo-phone"><div class="phone-notch"></div><img class="zoomable" src="assets/v3-home.png?v=20261126b" alt="寻迹 3.0 设备联动首页截图"></div>
+            <figcaption><b data-en="SOFTWARE" data-zh="软件">软件</b><span data-en="Device home: map, location and navigation in one place." data-zh="设备首页：地图、定位和物品导航放在一起。">设备首页：地图、定位和物品导航放在一起。</span></figcaption>
+          </figure>
+          <figure class="duo-card model-card">
+            <model-viewer src="assets/shell-rabbit.glb?v=20261126b" alt="兔子外壳 3D 模型" camera-controls disable-pan disable-zoom loading="eager" interaction-prompt="none" min-camera-orbit="115deg 55deg auto" max-camera-orbit="245deg 125deg auto" camera-orbit="180deg 90deg auto" shadow-intensity="1" exposure="1.1"></model-viewer>
+            <figcaption><b data-en="SHELL / RABBIT" data-zh="外壳 · 兔子">外壳 · 兔子</b><span data-en="Drag to rotate the rabbit shell." data-zh="可左右上下拖动旋转兔子外壳。">可左右上下拖动旋转兔子外壳。</span></figcaption>
+          </figure>
+          <figure class="duo-card model-card">
+            <model-viewer src="assets/shell-hamster.glb?v=20261126b" alt="仓鼠外壳 3D 模型" camera-controls disable-pan disable-zoom loading="eager" interaction-prompt="none" min-camera-orbit="115deg 55deg auto" max-camera-orbit="245deg 125deg auto" camera-orbit="180deg 90deg auto" shadow-intensity="1" exposure="1.1"></model-viewer>
+            <figcaption><b data-en="SHELL / HAMSTER" data-zh="外壳 · 仓鼠">外壳 · 仓鼠</b><span data-en="Drag to rotate the hamster shell." data-zh="可左右上下拖动旋转仓鼠外壳。">可左右上下拖动旋转仓鼠外壳。</span></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="slide-page comic-page">
+        <div class="block-head reveal">
+          <h3 data-en="App flow, drawn like a comic" data-zh="App 使用流程，像漫画一样看">App 使用流程，像漫画一样看</h3>
+          <p data-en="Hand-drawn storyboard · from panic to a smile" data-zh="手绘分镜 · 从慌张到松一口气">手绘分镜 · 从慌张到松一口气</p>
+        </div>
+        <div class="comic-wrap reveal">
+          <div class="comic-frame">
+            <img src="assets/app-comic.png?v=20261126b" alt="手绘漫画风格的寻迹 App 使用流程图">
+          </div>
+          <ol class="comic-steps">
+            <li><span>01</span><div><b data-en="Keys disappeared" data-zh="钥匙不见了">钥匙不见了</b><small data-en="Pat the pockets, empty the bag." data-zh="摸口袋、翻包，心里一紧。">摸口袋、翻包，心里一紧。</small></div></li>
+            <li><span>02</span><div><b data-en="Open XUNJI" data-zh="打开寻迹">打开寻迹</b><small data-en="Check the item list and its last location." data-zh="打开物品清单，看到它最后出现的位置。">打开物品清单，看到它最后出现的位置。</small></div></li>
+            <li><span>03</span><div><b data-en="Follow the map" data-zh="跟着定位找">跟着定位找</b><small data-en="Walk back to the exact spot instead of searching the whole room." data-zh="直接回到那个位置，不用翻遍整个房间。">直接回到那个位置，不用翻遍整个房间。</small></div></li>
+            <li><span>04</span><div><b data-en="Tap to call" data-zh="一键呼唤">一键呼唤</b><small data-en="The bound device answers from where it is." data-zh="绑定的设备在原处回应你。">绑定的设备在原处回应你。</small></div></li>
+            <li><span>05</span><div><b data-en="Found, happily" data-zh="开心找到">开心找到</b><small data-en="No rummaging. Just reach and go." data-zh="不用翻找，伸手拿上就出门。">不用翻找，伸手拿上就出门。</small></div></li>
+          </ol>
+        </div>
       </div>
     </section>
 
-    <!-- 03 / PAIN + RESEARCH + DEFINITION -->
+    <!-- 03 / PAIN + RESEARCH -->
     <section class="statement pain research-slide" id="pain">
-      <div class="section-head reveal">
-        <p class="eyebrow"><span class="eyebrow-line"></span><span data-en="02 / PAIN & RESEARCH" data-zh="02 / 痛点与调研">02 / 痛点与调研</span></p>
-        <h2 data-en="The question kept getting smaller. And clearer." data-zh="问题越收越窄，也越来越清楚。">问题越收越窄，也越来越清楚。</h2>
-        <p data-en="We started with a “fake” pain, checked it twice, and ended up somewhere much more human." data-zh="我们从一个「虚假的」痛点开始，经过两轮调研，最后走到一个更贴近日常的答案。">我们从一个「虚假的」痛点开始，经过两轮调研，最后走到一个更贴近日常的答案。</p>
-      </div>
-
-      <div class="chapter-chain">
-        <article class="chapter reveal" data-slide-anchor>
+      <div class="slide-page">
+        <div class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow-line"></span><span data-en="02 / PAIN & RESEARCH" data-zh="02 / 痛点与调研">02 / 痛点与调研</span></p>
+          <h2 data-en="The question kept getting smaller. And clearer." data-zh="问题越收越窄，也越来越清楚。">问题越收越窄，也越来越清楚。</h2>
+          <p data-en="We started with an assumed pain, checked it twice, and ended up somewhere much more human." data-zh="我们从一个假设的痛点开始，经过两轮调研，最后走到一个更贴近日常的答案。">我们从一个假设的痛点开始，经过两轮调研，最后走到一个更贴近日常的答案。</p>
+        </div>
+        <article class="chapter reveal">
           <span class="chapter-no">01</span>
           <div class="chapter-body">
-            <h3 data-en="The first, “fake” pain" data-zh="一开始的「虚假」痛点">一开始的「虚假」痛点</h3>
-            <p data-en="We first thought the problem was storage: “How do we help people organise their dorm?” It sounded reasonable, but it came from our assumption, not from real behaviour." data-zh="我们一开始以为问题是收纳：「如何帮助宿舍收纳？」听起来合理，但它来自我们的假设，而不是真实行为。">我们一开始以为问题是收纳：「如何帮助宿舍收纳？」听起来合理，但它来自我们的假设，而不是真实行为。</p>
-            <div class="question-shift"><span data-en="FAKE PAIN" data-zh="虚假痛点">虚假痛点</span><b data-en="How do we help organise the dorm?" data-zh="如何帮助宿舍收纳？">如何帮助宿舍收纳？</b></div>
+            <h3 data-en="The first, assumed pain" data-zh="一开始的假设痛点">一开始的假设痛点</h3>
+            <p data-en="We first thought the problem was storage. It sounded reasonable, but it came from our assumption, not from real behaviour." data-zh="我们一开始以为问题是收纳。听起来合理，但它来自我们的假设，而不是真实行为。">我们一开始以为问题是收纳。听起来合理，但它来自我们的假设，而不是真实行为。</p>
+            <div class="question-shift"><span data-en="ASSUMED PAIN" data-zh="假设痛点">假设痛点</span><b data-en="How do we help students organise their dorm effectively?" data-zh="如何帮助学生群体进行有效的宿舍收纳？">如何帮助学生群体进行有效的宿舍收纳？</b></div>
           </div>
         </article>
+      </div>
 
-        <article class="chapter reveal" data-slide-anchor>
+      <div class="slide-page">
+        <article class="chapter reveal">
           <span class="chapter-no">02</span>
           <div class="chapter-body">
             <h3 data-en="First round: questionnaires and real voices" data-zh="第一次调研：问卷和真实原话">第一次调研：问卷和真实原话</h3>
-            <p data-en="We ran a WJX questionnaire on dorm storage and interviewed students. Their words kept circling back to one thing: not tidiness, but not knowing where things are." data-zh="我们用问卷星做了「宿舍收纳问卷」，也做了前期访谈。大家反复说的不是整洁，而是不知道东西在哪。">我们用问卷星做了「宿舍收纳问卷」，也做了前期访谈。大家反复说的不是整洁，而是不知道东西在哪。</p>
+            <p data-en="We ran a questionnaire on dorm storage and interviewed students. Their words kept circling back to one thing: not tidiness, but not knowing where things are." data-zh="我们用问卷做了宿舍收纳调研，也做了前期访谈。大家反复说的不是整洁，而是不知道东西在哪。">我们用问卷做了宿舍收纳调研，也做了前期访谈。大家反复说的不是整洁，而是不知道东西在哪。</p>
             <div class="research-pair">
-              <figure class="research-shot"><img class="zoomable" src="assets/research-interviews-early.png?v=20261126a" alt="前期调研访谈记录与用户原话摘录"><figcaption data-en="Early research — interview records and user quotes" data-zh="前期调研 · 访谈记录与用户原话摘录">前期调研 · 访谈记录与用户原话摘录</figcaption></figure>
+              <figure class="research-shot"><img class="zoomable" src="assets/research-interviews-early.png?v=20261126b" alt="前期调研访谈记录与用户原话摘录"><figcaption data-en="Early research — interview records and user quotes" data-zh="前期调研 · 访谈记录与用户原话摘录">前期调研 · 访谈记录与用户原话摘录</figcaption></figure>
               <div class="research-note">
                 <b data-en="What changed" data-zh="发生了什么变化">发生了什么变化</b>
-                <p data-en="From “organise everything” to “find the thing I need”. The first question was wrong." data-zh="从「帮人收纳一切」转向「帮人找到要用的东西」。第一个问题问错了。">从「帮人收纳一切」转向「帮人找到要用的东西」。第一个问题问错了。</p>
-                <div class="question-shift"><span data-en="REAL PAIN" data-zh="真实痛点">真实痛点</span><b data-en="How do we help people find things?" data-zh="如何帮人找到东西？">如何帮人找到东西？</b></div>
+                <p data-en="From organising everything to finding the thing I need." data-zh="从「帮人收纳一切」转向「帮人找到要用的东西」。">从「帮人收纳一切」转向「帮人找到要用的东西」。</p>
+                <div class="question-shift"><span data-en="REAL PAIN" data-zh="真实痛点">真实痛点</span><b data-en="How do we find easily lost small things?" data-zh="如何找到容易丢失的小物件？">如何找到容易丢失的小物件？</b></div>
               </div>
             </div>
           </div>
         </article>
+      </div>
 
-        <article class="chapter reveal" data-slide-anchor>
+      <div class="slide-page">
+        <article class="chapter reveal">
           <span class="chapter-no">03</span>
           <div class="chapter-body">
             <h3 data-en="Second round: six users, six real stories" data-zh="第二轮调研：六位用户，六个真实故事">第二轮调研：六位用户，六个真实故事</h3>
-            <p data-en="Six interviews, transcripts, screen recordings and voice notes. The finding narrowed again: people are not looking for anything — they are looking for the important, everyday things." data-zh="六位用户，逐字稿、录屏、现场记录与语音转写。问题再次收窄：人们不是要找「任何东西」，而是要找重要、常用的东西。">六位用户，逐字稿、录屏、现场记录与语音转写。问题再次收窄：人们不是要找「任何东西」，而是要找重要、常用的东西。</p>
+            <p data-en="Six interviews, transcripts, screen recordings and voice notes. The finding narrowed again: people want the important, everyday things back." data-zh="六位用户，逐字稿、录屏、现场记录与语音转写。问题再次收窄：人们想找回的是重要、常用的东西。">六位用户，逐字稿、录屏、现场记录与语音转写。问题再次收窄：人们想找回的是重要、常用的东西。</p>
             <div class="research-trio">
-              <figure class="research-shot"><img class="zoomable" src="assets/research-interviews-six.png?v=20261126a" alt="六位用户访谈原始资料"><figcaption data-en="Transcripts · recordings · notes" data-zh="逐字稿 · 录屏 · 现场记录">逐字稿 · 录屏 · 现场记录</figcaption></figure>
+              <figure class="research-shot"><img class="zoomable" src="assets/research-interviews-six.png?v=20261126b" alt="六位用户访谈原始资料"><figcaption data-en="Transcripts · recordings · notes" data-zh="逐字稿 · 录屏 · 现场记录">逐字稿 · 录屏 · 现场记录</figcaption></figure>
               <div class="research-note compact">
                 <b data-en="Narrowed again" data-zh="再次收窄">再次收窄</b>
-                <p data-en="From finding things, to finding the important and frequently used ones." data-zh="从找到东西，到找到重要和常用的东西。">从找到东西，到找到重要和常用的东西。</p>
+                <p data-en="From finding things to finding the important and frequently used ones." data-zh="从找到东西，到找到重要和常用的东西。">从找到东西，到找到重要和常用的东西。</p>
               </div>
             </div>
             <div class="question-shift"><span data-en="NARROWED" data-zh="再次收窄">再次收窄</span><b data-en="How do we help users find important, everyday things?" data-zh="如何帮用户找到重要和常用的东西？">如何帮用户找到重要和常用的东西？</b></div>
           </div>
         </article>
+      </div>
 
-        <article class="chapter reveal" data-slide-anchor>
+      <div class="slide-page market-page">
+        <article class="chapter reveal">
           <span class="chapter-no">04</span>
           <div class="chapter-body">
             <h3 data-en="Market scan: what already exists" data-zh="市面产品调研：别人怎么解">市面产品调研：别人怎么解</h3>
-            <p data-en="We looked at trackers, QR tags, senior safety devices and wearables. Most solve either “lost object” or “emergency call”; few live in the everyday middle, and cartoon trackers often feel childish." data-zh="我们看了防丢器、扫码标签、老人呼叫设备和穿戴定位。多数只解决「丢东西」或「紧急求助」，很少落在日常中间地带；卡通定位器又偏儿童化。">我们看了防丢器、扫码标签、老人呼叫设备和穿戴定位。多数只解决「丢东西」或「紧急求助」，很少落在日常中间地带；卡通定位器又偏儿童化。</p>
+            <p data-en="We looked at trackers, QR tags, senior safety devices and wearables. Few are made for everyday keys with a happy voice reply." data-zh="我们看了防丢器、扫码标签、老人呼叫设备和穿戴定位。很少有人把「日常钥匙 + 开心语音回应」放在一起。">我们看了防丢器、扫码标签、老人呼叫设备和穿戴定位。很少有人把「日常钥匙 + 开心语音回应」放在一起。</p>
             <div class="market-controls" id="marketControls" role="group" aria-label="同类产品筛选">
               <button type="button" class="market-tab active" data-filter="all">全部 18</button>
               <button type="button" class="market-tab" data-filter="tag">防丢标签</button>
@@ -198,147 +214,162 @@
               <button type="button" class="market-tab" data-filter="award">设计奖项</button>
             </div>
             <div class="market-grid-open" id="marketGrid">
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-01.png?v=20261126a" alt="KONKHO 防丢定位器"><figcaption>KONKHO 防丢标签<small>460 天续航 · 精准定位</small></figcaption></figure>
-              <figure data-cat="wear"><img class="zoomable" src="assets/market-02.png?v=20261126a" alt="胸针式定位器"><figcaption>胸针定位<small>卡通胸牌 · 佩戴方便</small></figcaption></figure>
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-03.png?v=20261126a" alt="Kuromi 隐私定位器"><figcaption>隐私定位<small>无需充电 · 历史轨迹</small></figcaption></figure>
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-04.png?v=20261126a" alt="AirTag 同源定位器"><figcaption>AirTag 同源<small>Works with Find My</small></figcaption></figure>
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-05.png?v=20261126a" alt="卡通全球定位器"><figcaption>卡通全球定位<small>不限距离 · 可爱造型</small></figcaption></figure>
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-06.png?v=20261126a" alt="绿联 FindMy 定位器"><figcaption>绿联 FindMy<small>地图线路 · 声音查找</small></figcaption></figure>
-              <figure data-cat="qr"><img class="zoomable" src="assets/market-07.png?v=20261126a" alt="KEEP 扫码标签"><figcaption>KEEP 扫码标签<small>扫码即查 · 彩色款</small></figcaption></figure>
-              <figure data-cat="award"><img class="zoomable" src="assets/market-08.png?v=20261126a" alt="TEAMGROUP 设计奖标签"><figcaption>TEAMGROUP<small>Good Design Award 2025</small></figcaption></figure>
-              <figure data-cat="award"><img class="zoomable" src="assets/market-09.png?v=20261126a" alt="ULTION KeyTag"><figcaption>ULTION KeyTag<small>Red Dot Winner 2023</small></figcaption></figure>
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-10.png?v=20261126a" alt="Chipolo 防丢器"><figcaption>Chipolo<small>多彩防丢标签</small></figcaption></figure>
-              <figure data-cat="wear"><img class="zoomable" src="assets/market-11.png?v=20261126a" alt="ORA 项链定位器"><figcaption>ORA 项链<small>可穿戴 · 一键求助</small></figcaption></figure>
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-12.png?v=20261126a" alt="甜甜圈防丢器"><figcaption>甜甜圈防丢器<small>精准定位 · 无需充电</small></figcaption></figure>
-              <figure data-cat="sos"><img class="zoomable" src="assets/market-13.png?v=20261126a" alt="老人 SOS 定位器"><figcaption>老人 SOS 定位<small>多人监护 · 一键报警</small></figcaption></figure>
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-14.png?v=20261126a" alt="苹果 Find My 防丢器"><figcaption>Apple Find My<small>MFI 认证 · 一键查找</small></figcaption></figure>
-              <figure data-cat="wear"><img class="zoomable" src="assets/market-15.png?v=20261126a" alt="ORA 项链细节"><figcaption>ORA 项链细节<small>开合式 · 警报提示</small></figcaption></figure>
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-16.png?v=20261126a" alt="UGREEN 智能标签"><figcaption>UGREEN 智能标签<small>电子墨水 · 可切换图案</small></figcaption></figure>
-              <figure data-cat="wear"><img class="zoomable" src="assets/market-17.png?v=20261126a" alt="Careium 吊坠"><figcaption>Careium 吊坠<small>穿戴式安全定位</small></figcaption></figure>
-              <figure data-cat="sos"><img class="zoomable" src="assets/market-18.png?v=20261126a" alt="B10 智能紧急按钮"><figcaption>B10 紧急按钮<small>Red Dot · 一键援助</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-01.png?v=20261126b" alt="KONKHO 防丢定位器"><figcaption>KONKHO 防丢标签<small>460 天续航 · 精准定位</small></figcaption></figure>
+              <figure data-cat="wear"><img class="zoomable" src="assets/market-02.png?v=20261126b" alt="胸针式定位器"><figcaption>胸针定位<small>卡通胸牌 · 佩戴方便</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-03.png?v=20261126b" alt="Kuromi 隐私定位器"><figcaption>隐私定位<small>无需充电 · 历史轨迹</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-04.png?v=20261126b" alt="AirTag 同源定位器"><figcaption>AirTag 同源<small>Works with Find My</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-05.png?v=20261126b" alt="卡通全球定位器"><figcaption>卡通全球定位<small>不限距离 · 可爱造型</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-06.png?v=20261126b" alt="绿联 FindMy 定位器"><figcaption>绿联 FindMy<small>地图线路 · 声音查找</small></figcaption></figure>
+              <figure data-cat="qr"><img class="zoomable" src="assets/market-07.png?v=20261126b" alt="KEEP 扫码标签"><figcaption>KEEP 扫码标签<small>扫码即查 · 彩色款</small></figcaption></figure>
+              <figure data-cat="award"><img class="zoomable" src="assets/market-08.png?v=20261126b" alt="TEAMGROUP 设计奖标签"><figcaption>TEAMGROUP<small>Good Design Award 2025</small></figcaption></figure>
+              <figure data-cat="award"><img class="zoomable" src="assets/market-09.png?v=20261126b" alt="ULTION KeyTag"><figcaption>ULTION KeyTag<small>Red Dot Winner 2023</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-10.png?v=20261126b" alt="Chipolo 防丢器"><figcaption>Chipolo<small>多彩防丢标签</small></figcaption></figure>
+              <figure data-cat="wear"><img class="zoomable" src="assets/market-11.png?v=20261126b" alt="ORA 项链定位器"><figcaption>ORA 项链<small>可穿戴 · 一键求助</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-12.png?v=20261126b" alt="甜甜圈防丢器"><figcaption>甜甜圈防丢器<small>精准定位 · 无需充电</small></figcaption></figure>
+              <figure data-cat="sos"><img class="zoomable" src="assets/market-13.png?v=20261126b" alt="老人 SOS 定位器"><figcaption>老人 SOS 定位<small>多人监护 · 一键报警</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-14.png?v=20261126b" alt="苹果 Find My 防丢器"><figcaption>Apple Find My<small>MFI 认证 · 一键查找</small></figcaption></figure>
+              <figure data-cat="wear"><img class="zoomable" src="assets/market-15.png?v=20261126b" alt="ORA 项链细节"><figcaption>ORA 项链细节<small>开合式 · 警报提示</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-16.png?v=20261126b" alt="UGREEN 智能标签"><figcaption>UGREEN 智能标签<small>电子墨水 · 可切换图案</small></figcaption></figure>
+              <figure data-cat="wear"><img class="zoomable" src="assets/market-17.png?v=20261126b" alt="Careium 吊坠"><figcaption>Careium 吊坠<small>穿戴式安全定位</small></figcaption></figure>
+              <figure data-cat="sos"><img class="zoomable" src="assets/market-18.png?v=20261126b" alt="B10 智能紧急按钮"><figcaption>B10 紧急按钮<small>Red Dot · 一键援助</small></figcaption></figure>
             </div>
             <p class="market-summary" data-en="Across 18 references: tags dominate, QR tags need a phone scan, and wearables or SOS devices serve different moments. Few are made for everyday keys with a happy voice reply." data-zh="18 个参考里，防丢标签最多；扫码标签要掏手机，穿戴和 SOS 设备服务的是另一种场景。很少有人把「日常钥匙 + 开心语音回应」放在一起。">18 个参考里，防丢标签最多；扫码标签要掏手机，穿戴和 SOS 设备服务的是另一种场景。很少有人把「日常钥匙 + 开心语音回应」放在一起。</p>
           </div>
         </article>
       </div>
 
-      <div class="final-banner reveal" data-slide-anchor>
-        <span class="final-kicker" data-en="FINAL PROBLEM DEFINITION" data-zh="最终问题定义">最终问题定义</span>
-        <strong data-en="How do we help people find important, everyday things happily?" data-zh="如何用一种开心的方式找到重要和常用的东西？">如何用一种开心的方式找到重要和常用的东西？</strong>
-      </div>
-
-      <div class="persona reveal" data-slide-anchor>
-        <div class="persona-card">
-          <p class="pc-kicker" data-en="USER PERSONA / 01" data-zh="用户画像 / 01">用户画像 / 01</p>
-          <h3 data-en="Xiao Lin, the departure-time radar" data-zh="小林 · 出门前雷达">小林 · 出门前雷达</h3>
-          <p class="pc-meta" data-en="Alias · Junior · Lives on campus" data-zh="化名 · 大三 · 住校">化名 · 大三 · 住校</p>
-          <blockquote data-en="“Keys? I was just holding them. Where did they go?”" data-zh="「钥匙呢？我明明刚才还捏在手里。」">「钥匙呢？我明明刚才还捏在手里。」</blockquote>
-          <p class="pc-src" data-en="From interview quotes · user 5" data-zh="来自访谈原话 · 用户 5">来自访谈原话 · 用户 5</p>
-        </div>
-        <div class="persona-attrs">
-          <div><span data-en="MORNING" data-zh="早晨">早晨</span><p data-en="Gets ready fast, keys and phone always within reach — until they are not." data-zh="出门节奏很快，钥匙和手机明明都放在顺手的地方，直到突然找不到。">出门节奏很快，钥匙和手机明明都放在顺手的地方，直到突然找不到。</p></div>
-          <div><span data-en="HABIT" data-zh="习惯">习惯</span><p data-en="Casually drops things on the desk, then trusts memory to find them later." data-zh="东西随手放桌面，之后全靠脑子记。">东西随手放桌面，之后全靠脑子记。</p></div>
-          <div><span data-en="MOMENT" data-zh="关键时刻">关键时刻</span><p data-en="Ten minutes before leaving. The whole room gets searched, mood drops fast." data-zh="出门前十分钟，整个房间被翻一遍，心情迅速下坠。">出门前十分钟，整个房间被翻一遍，心情迅速下坠。</p></div>
-          <div><span data-en="WISH" data-zh="小愿望">小愿望</span><p data-en="A light, happy nudge that says “hey, I am right here” — no organising homework required." data-zh="希望有个轻松的提示说「嘿，我在这儿」，而不是先整理一大堆东西。">希望有个轻松的提示说「嘿，我在这儿」，而不是先整理一大堆东西。</p></div>
+      <div class="slide-page banner-page">
+        <div class="final-banner reveal">
+          <span class="final-kicker" data-en="FINAL PROBLEM DEFINITION" data-zh="最终问题定义">最终问题定义</span>
+          <strong data-en="How do we help people find important, everyday things happily?" data-zh="如何用一种开心的方式找到重要和常用的东西？">如何用一种开心的方式找到重要和常用的东西？</strong>
         </div>
       </div>
 
-      <div class="journey-block reveal" data-slide-anchor>
-        <div class="block-head"><h3 data-en="User journey: why the mood dips" data-zh="用户旅程：情绪为什么会掉下去">用户旅程：情绪为什么会掉下去</h3><p data-en="The same table and emotion curve from the research, made explorable." data-zh="把调研里的同一张表和情绪曲线做成可以点选的图表。">把调研里的同一张表和情绪曲线做成可以点选的图表。</p></div>
-        <div class="journey-table-wrap">
-          <table class="journey-table">
-            <thead><tr><th></th><th>决定整理</th><th>动手整理</th><th>整理之后</th></tr></thead>
-            <tbody>
-              <tr><th>目标</th><td>找一个必须收纳的理由</td><td>快点把东西分好类</td><td>让东西留在原位</td></tr>
-              <tr><th>行为</th><td>盯着桌面发呆，不想动</td><td>清空抽屉，堆成一堆</td><td>随手放下，慢慢又乱了</td></tr>
-              <tr><th>卡点</th><td>东西太多，不知道从哪开始</td><td>分类标准不清，盒子不合适</td><td>找不到东西，又重来一遍</td></tr>
-              <tr><th>情绪</th><td>😕 困惑</td><td>😩 无助 → 😣 压倒性</td><td>😌 释然 → 😞 失望</td></tr>
-              <tr><th>机会</th><td>一键生成「从哪开始」清单</td><td>拍照即记录，不用手动分类</td><td>轻提醒，随手放回去</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <h4 class="journey-subtitle">那释然，维持不了多久</h4>
-        <div class="journey-figure">
-          <div class="journey-chart" id="journeyChart">
-            <svg viewBox="0 0 900 240" role="img" aria-label="可交互的用户情绪曲线">
-              <path class="journey-line" d="M90 150 C170 150 215 172 280 172 C350 172 400 116 470 116 C540 116 590 92 660 92 C730 92 770 186 820 186"></path>
-              <g class="journey-point" data-note="0" tabindex="0" role="button"><text x="90" y="112" class="jp-emoji">😕</text><circle cx="90" cy="150" r="10"></circle><text x="90" y="196" class="jp-label">困惑</text></g>
-              <g class="journey-point" data-note="1" tabindex="0" role="button"><text x="280" y="134" class="jp-emoji">😩</text><circle cx="280" cy="172" r="10"></circle><text x="280" y="218" class="jp-label">无助</text></g>
-              <g class="journey-point" data-note="2" tabindex="0" role="button"><text x="470" y="78" class="jp-emoji">😣</text><circle cx="470" cy="116" r="10"></circle><text x="470" y="162" class="jp-label">压倒性</text></g>
-              <g class="journey-point" data-note="3" tabindex="0" role="button"><text x="660" y="54" class="jp-emoji">😌</text><circle cx="660" cy="92" r="10"></circle><text x="660" y="138" class="jp-label">释然</text></g>
-              <g class="journey-point" data-note="4" tabindex="0" role="button"><text x="820" y="148" class="jp-emoji">😞</text><circle cx="820" cy="186" r="10"></circle><text x="820" y="232" class="jp-label">失望</text></g>
-            </svg>
-            <div class="journey-tip" id="journeyTip" aria-live="polite"></div>
+      <div class="slide-page persona-page">
+        <div class="persona reveal">
+          <div class="persona-card">
+            <p class="pc-kicker" data-en="USER PERSONA / 01" data-zh="用户画像 / 01">用户画像 / 01</p>
+            <h3 data-en="Xiao Lin, the departure-time radar" data-zh="小林 · 出门前雷达">小林 · 出门前雷达</h3>
+            <p class="pc-meta" data-en="Alias · Junior · Lives on campus" data-zh="化名 · 大三 · 住校">化名 · 大三 · 住校</p>
+            <blockquote data-en="“Keys? I was just holding them. Where did they go?”" data-zh="「钥匙呢？我明明刚才还捏在手里。」">「钥匙呢？我明明刚才还捏在手里。」</blockquote>
+            <p class="pc-src" data-en="From interview quotes · user 5" data-zh="来自访谈原话 · 用户 5">来自访谈原话 · 用户 5</p>
+          </div>
+          <div class="persona-attrs">
+            <div><span data-en="MORNING" data-zh="早晨">早晨</span><p data-en="Gets ready fast, keys and phone always within reach — until they are not." data-zh="出门节奏很快，钥匙和手机明明都放在顺手的地方，直到突然找不到。">出门节奏很快，钥匙和手机明明都放在顺手的地方，直到突然找不到。</p></div>
+            <div><span data-en="HABIT" data-zh="习惯">习惯</span><p data-en="Casually drops things on the desk, then trusts memory to find them later." data-zh="东西随手放桌面，之后全靠脑子记。">东西随手放桌面，之后全靠脑子记。</p></div>
+            <div><span data-en="MOMENT" data-zh="关键时刻">关键时刻</span><p data-en="Ten minutes before leaving. The whole room gets searched, mood drops fast." data-zh="出门前十分钟，整个房间被翻一遍，心情迅速下坠。">出门前十分钟，整个房间被翻一遍，心情迅速下坠。</p></div>
+            <div><span data-en="WISH" data-zh="小愿望">小愿望</span><p data-en="A light, happy nudge that says “hey, I am right here” — no organising homework required." data-zh="希望有个轻松的提示说「嘿，我在这儿」，而不是先整理一大堆东西。">希望有个轻松的提示说「嘿，我在这儿」，而不是先整理一大堆东西。</p></div>
           </div>
         </div>
-        <ul class="journey-notes">
-          <li><b data-en="Confused" data-zh="困惑">困惑</b><span data-en="Deciding to tidy: too many things, no idea where to start." data-zh="决定整理时：东西太多，不知道从哪下手。">决定整理时：东西太多，不知道从哪下手。</span></li>
-          <li><b data-en="Helpless" data-zh="无助">无助</b><span data-en="Sorting starts: no clear category rules, boxes do not fit." data-zh="动手整理时：分类标准不清，盒子尺寸不合适。">动手整理时：分类标准不清，盒子尺寸不合适。</span></li>
-          <li><b data-en="Overwhelmed" data-zh="压倒性">压倒性</b><span data-en="Mid-sort: piles grow, effort rises, progress feels invisible." data-zh="整理过程中：堆得越多越累，进度看不见。">整理过程中：堆得越多越累，进度看不见。</span></li>
-          <li><b data-en="Relieved" data-zh="释然">释然</b><span data-en="Just finished: everything has a place, so it feels solved." data-zh="刚整理完：每样东西都有位置，短暂觉得解决了。">刚整理完：每样东西都有位置，短暂觉得解决了。</span></li>
-          <li><b data-en="Disappointed" data-zh="失望">失望</b><span data-en="Put things down casually again, then cannot find them — the relief disappears." data-zh="之后随手放下，又找不到东西，释然感迅速消失。">之后随手放下，又找不到东西，释然感迅速消失。</span></li>
-        </ul>
+      </div>
+
+      <div class="slide-page journey-page">
+        <div class="journey-block reveal">
+          <div class="block-head"><h3 data-en="User journey: why the mood dips" data-zh="用户旅程：情绪为什么会掉下去">用户旅程：情绪为什么会掉下去</h3><p data-en="The same table and emotion curve from the research, made explorable." data-zh="把调研里的同一张表和情绪曲线做成可以点选的图表。">把调研里的同一张表和情绪曲线做成可以点选的图表。</p></div>
+          <div class="journey-table-wrap">
+            <table class="journey-table">
+              <thead><tr><th></th><th>决定整理</th><th>动手整理</th><th>整理之后</th></tr></thead>
+              <tbody>
+                <tr><th>目标</th><td>找一个必须收纳的理由</td><td>快点把东西分好类</td><td>让东西留在原位</td></tr>
+                <tr><th>行为</th><td>盯着桌面发呆，不想动</td><td>清空抽屉，堆成一堆</td><td>随手放下，慢慢又乱了</td></tr>
+                <tr><th>卡点</th><td>东西太多，不知道从哪开始</td><td>分类标准不清，盒子不合适</td><td>找不到东西，又重来一遍</td></tr>
+                <tr><th>情绪</th><td>😕 困惑</td><td>😩 无助 → 😣 压倒性</td><td>😌 释然 → 😞 失望</td></tr>
+                <tr><th>机会</th><td>一键生成「从哪开始」清单</td><td>拍照即记录，不用手动分类</td><td>轻提醒，随手放回去</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="journey-subtitle">那释然，维持不了多久</h4>
+          <div class="journey-figure">
+            <div class="journey-chart" id="journeyChart">
+              <svg viewBox="0 0 900 240" role="img" aria-label="可交互的用户情绪曲线">
+                <path class="journey-line" d="M90 150 C170 150 215 172 280 172 C350 172 400 116 470 116 C540 116 590 92 660 92 C730 92 770 186 820 186"></path>
+                <g class="journey-point" data-note="0" tabindex="0" role="button"><text x="90" y="112" class="jp-emoji">😕</text><circle cx="90" cy="150" r="10"></circle><text x="90" y="196" class="jp-label">困惑</text></g>
+                <g class="journey-point" data-note="1" tabindex="0" role="button"><text x="280" y="134" class="jp-emoji">😩</text><circle cx="280" cy="172" r="10"></circle><text x="280" y="218" class="jp-label">无助</text></g>
+                <g class="journey-point" data-note="2" tabindex="0" role="button"><text x="470" y="78" class="jp-emoji">😣</text><circle cx="470" cy="116" r="10"></circle><text x="470" y="162" class="jp-label">压倒性</text></g>
+                <g class="journey-point" data-note="3" tabindex="0" role="button"><text x="660" y="54" class="jp-emoji">😌</text><circle cx="660" cy="92" r="10"></circle><text x="660" y="138" class="jp-label">释然</text></g>
+                <g class="journey-point" data-note="4" tabindex="0" role="button"><text x="820" y="148" class="jp-emoji">😞</text><circle cx="820" cy="186" r="10"></circle><text x="820" y="232" class="jp-label">失望</text></g>
+              </svg>
+              <div class="journey-tip" id="journeyTip" aria-live="polite"></div>
+            </div>
+          </div>
+          <ul class="journey-notes">
+            <li><b data-en="Confused" data-zh="困惑">困惑</b><span data-en="Deciding to tidy: too many things, no idea where to start." data-zh="决定整理时：东西太多，不知道从哪下手。">决定整理时：东西太多，不知道从哪下手。</span></li>
+            <li><b data-en="Helpless" data-zh="无助">无助</b><span data-en="Sorting starts: no clear category rules, boxes do not fit." data-zh="动手整理时：分类标准不清，盒子尺寸不合适。">动手整理时：分类标准不清，盒子尺寸不合适。</span></li>
+            <li><b data-en="Overwhelmed" data-zh="压倒性">压倒性</b><span data-en="Mid-sort: piles grow, effort rises, progress feels invisible." data-zh="整理过程中：堆得越多越累，进度看不见。">整理过程中：堆得越多越累，进度看不见。</span></li>
+            <li><b data-en="Relieved" data-zh="释然">释然</b><span data-en="Just finished: everything has a place, so it feels solved." data-zh="刚整理完：每样东西都有位置，短暂觉得解决了。">刚整理完：每样东西都有位置，短暂觉得解决了。</span></li>
+            <li><b data-en="Disappointed" data-zh="失望">失望</b><span data-en="Put things down casually again, then cannot find them — the relief disappears." data-zh="之后随手放下，又找不到东西，释然感迅速消失。">之后随手放下，又找不到东西，释然感迅速消失。</span></li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <!-- 04 / BRAINSTORM & PRODUCT DEFINITION -->
     <section class="pitch definition-slide" id="definition">
-      <div class="section-head reveal">
-        <p class="eyebrow"><span class="eyebrow-line"></span><span data-en="03 / IDEAS & DEFINITION" data-zh="03 / 头脑风暴与产品定义">03 / 头脑风暴与产品定义</span></p>
-        <h2 data-en="After the research, we stopped organising and started answering." data-zh="调研之后，我们不再想着整理，而是想着回应。">调研之后，我们不再想着整理，而是想着回应。</h2>
-        <p data-en="A brainstorm turned the narrowed problem into two concrete parts: a calm app and a small tag that answers back." data-zh="一轮头脑风暴把收窄后的问题变成两个具体部分：安静的 App，和会回应的小标签。">一轮头脑风暴把收窄后的问题变成两个具体部分：安静的 App，和会回应的小标签。</p>
+      <div class="slide-page idea-page">
+        <div class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow-line"></span><span data-en="03 / IDEAS & DEFINITION" data-zh="03 / 头脑风暴与产品定义">03 / 头脑风暴与产品定义</span></p>
+          <h2 data-en="After the research, we stopped organising and started answering." data-zh="调研之后，我们不再想着整理，而是想着回应。">调研之后，我们不再想着整理，而是想着回应。</h2>
+          <p data-en="A brainstorm turned the narrowed problem into two concrete parts: a calm app and a small shell that answers back." data-zh="一轮头脑风暴把收窄后的问题变成两个部分：安静的 App，和会回应的小外壳。">一轮头脑风暴把收窄后的问题变成两个部分：安静的 App，和会回应的小外壳。</p>
+        </div>
+        <div class="idea-grid reveal">
+          <div class="idea-card"><span>01</span><b data-en="Make people happy" data-zh="让人开心一点">让人开心一点</b><p data-en="Step out of the frustration of not finding things; finding can feel light again." data-zh="脱离找不到物品的烦躁，让找东西重新变成一件轻松的小事。">脱离找不到物品的烦躁，让找东西重新变成一件轻松的小事。</p></div>
+          <div class="idea-card"><span>02</span><b data-en="Make it instant" data-zh="让它马上回应">让它马上回应</b><p data-en="One voice command or one tap, then the device answers from where it is." data-zh="一句语音或一次点击，设备就从原地回应。">一句语音或一次点击，设备就从原地回应。</p></div>
+          <div class="idea-card"><span>03</span><b data-en="Make location specific" data-zh="让位置足够具体">让位置足够具体</b><p data-en="Keys, phone, glasses — give a precise place, not just “somewhere in the room”. " data-zh="钥匙、手机、眼镜 —— 给出足够具体的定位，而不是只说「在房间里」。">钥匙、手机、眼镜 —— 给出足够具体的定位，而不是只说「在房间里」。</p></div>
+        </div>
       </div>
 
-      <div class="idea-grid reveal" data-slide-anchor>
-        <div class="idea-card"><span>01</span><b data-en="Make it happy" data-zh="让它开心一点">让它开心一点</b><p data-en="Finding things should feel like a small conversation, not a punishment." data-zh="找东西应该像一次小小对话，而不是惩罚。">找东西应该像一次小小对话，而不是惩罚。</p></div>
-        <div class="idea-card"><span>02</span><b data-en="Make it instant" data-zh="让它马上回应">让它马上回应</b><p data-en="One voice command or one tap, then the object answers from where it is." data-zh="一句语音或一次点击，物品就从原地回应。">一句语音或一次点击，物品就从原地回应。</p></div>
-        <div class="idea-card"><span>03</span><b data-en="Make it ordinary" data-zh="让它足够日常">让它足够日常</b><p data-en="Keys, phone, glasses — the small things we use every day, not emergency gear." data-zh="钥匙、手机、眼镜 —— 日常小物，而不是应急设备。">钥匙、手机、眼镜 —— 日常小物，而不是应急设备。</p></div>
-      </div>
-
-      <p class="def-hint reveal" data-en="Tap a card to mark the key definition." data-zh="点一下卡片，可以把这一部分标为重点。">点一下卡片，可以把这一部分标为重点。</p>
-      <div class="definition-grid reveal" id="definitionGrid" data-slide-anchor>
-        <article class="definition-card" tabindex="0" role="button" aria-pressed="false">
-          <span class="def-focus">重点</span>
+      <div class="slide-page def-page">
+        <article class="definition-card">
           <span class="def-label" data-en="APP DEFINITION" data-zh="App 定义">App 定义</span>
-          <h3 data-en="Locate · bind · respond" data-zh="定位 · 添加 · 绑定">定位 · 添加 · 绑定</h3>
+          <h3 data-en="Locate · add · remind" data-zh="定位 · 添加 · 提醒">定位 · 添加 · 提醒</h3>
           <ol>
             <li><b data-en="01 / Position & voice feedback" data-zh="01 / 定位和语音反馈">01 / 定位和语音反馈</b><p data-en="Know where the item is; hear a clear voice response when you call it." data-zh="看到物品位置；呼叫后听到清晰的语音反馈。">看到物品位置；呼叫后听到清晰的语音反馈。</p></li>
-            <li><b data-en="02 / Add a device" data-zh="02 / 添加设备">02 / 添加设备</b><p data-en="Pair a physical tag with the account before it can be used." data-zh="先配对实物标签，再纳入自己的物品清单。">先配对实物标签，再纳入自己的物品清单。</p></li>
-            <li><b data-en="03 / Bind an item" data-zh="03 / 物品绑定">03 / 物品绑定</b><p data-en="Tie the tag to one everyday object and see its real-time location in the app." data-zh="把标签绑定到一件日常物品，在 App 里看到它的实时定位。">把标签绑定到一件日常物品，在 App 里看到它的实时定位。</p></li>
+            <li><b data-en="02 / Add a device" data-zh="02 / 添加设备">02 / 添加设备</b><p data-en="Pair a physical shell with the account before it can be used." data-zh="先配对实物外壳，再纳入自己的物品清单。">先配对实物外壳，再纳入自己的物品清单。</p></li>
+            <li><b data-en="03 / Left-behind reminder" data-zh="03 / 离位提醒">03 / 离位提醒</b><p data-en="When the item is more than 20 m away, the phone tells the voice module to say “You left me behind”." data-zh="物品离位超过 20 米时，手机通过通信模块通知语音模块播报「主人你丢下我了」。">物品离位超过 20 米时，手机通过通信模块通知语音模块播报「主人你丢下我了」。</p></li>
             <li><b data-en="04 / Find the phone too" data-zh="04 / 反向找手机">04 / 反向找手机</b><p data-en="Say the wake word; the app makes the phone answer when it is misplaced." data-zh="说出唤醒词，手机找不到时 App 会让手机发出语音。">说出唤醒词，手机找不到时 App 会让手机发出语音。</p></li>
           </ol>
         </article>
-        <article class="definition-card" tabindex="0" role="button" aria-pressed="false">
-          <span class="def-focus">重点</span>
+      </div>
+
+      <div class="slide-page def-page">
+        <article class="definition-card">
           <span class="def-label" data-en="PHYSICAL PRODUCT DEFINITION" data-zh="实物产品定义">实物产品定义</span>
           <h3 data-en="Call it, and it answers" data-zh="喊它一声，它就回应">喊它一声，它就回应</h3>
           <ol>
-            <li><b data-en="A small tag" data-zh="一枚小标签">一枚小标签</b><p data-en="Attached to keys, phone or glasses; light enough to forget until you need it." data-zh="挂在钥匙、手机或眼镜上，轻到平时忘记存在。">挂在钥匙、手机或眼镜上，轻到平时忘记存在。</p></li>
-            <li><b data-en="Custom call word" data-zh="自定义呼叫词">自定义呼叫词</b><p data-en="The wording can be set in the app — “小啤酒，你在哪儿？” becomes a real command." data-zh="叫法可以在 App 里自定义，「小啤酒，你在哪儿？」就是一句真的指令。">叫法可以在 App 里自定义，「小啤酒，你在哪儿？」就是一句真的指令。</p></li>
-            <li><b data-en="Voice answer" data-zh="语音回应">语音回应</b><p data-en="When called, the tag replies “Hey, I am right here!” so searching becomes walking over." data-zh="被呼叫时回应「嘿，我在这儿！」，翻找就变成走过去拿。">被呼叫时回应「嘿，我在这儿！」，翻找就变成走过去拿。</p></li>
+            <li><b data-en="A small shell" data-zh="一枚小外壳">一枚小外壳</b><p data-en="Attached to keys, phone or glasses; light enough to forget until you need it." data-zh="挂在钥匙、手机或眼镜上，轻到平时忘记存在。">挂在钥匙、手机或眼镜上，轻到平时忘记存在。</p></li>
+            <li><b data-en="Custom call word" data-zh="自定义呼叫词">自定义呼叫词</b><p data-en="The wake word, voice, welcome line, exit word and command can all be set in the app — “小铃铛，你在哪儿？” becomes a real command." data-zh="唤醒词、语音音色、欢迎词、退出语音词和命令词都能在 App 里自定义，「小铃铛，你在哪儿？」就是一句真的指令。">唤醒词、语音音色、欢迎词、退出语音词和命令词都能在 App 里自定义，「小铃铛，你在哪儿？」就是一句真的指令。</p></li>
+            <li><b data-en="Voice answer" data-zh="语音回应">语音回应</b><p data-en="When called nearby, the shell replies “我在这里” so searching becomes walking over." data-zh="钥匙在附近时，用户说「钥匙你在哪」，语音模块识别后回答「我在这里」。">钥匙在附近时，用户说「钥匙你在哪」，语音模块识别后回答「我在这里」。</p></li>
+            <li><b data-en="Left behind" data-zh="离位播报">离位播报</b><p data-en="If the phone judges the item is far away, it asks the shell to say “主人你丢下我了”." data-zh="手机判断物品距离较远时，让它播报「主人你丢下我了」。">手机判断物品距离较远时，让它播报「主人你丢下我了」。</p></li>
           </ol>
         </article>
       </div>
 
-      <div class="version-static reveal" data-slide-anchor>
-        <div class="block-head"><h3 data-en="2.0 → 3.0" data-zh="2.0 → 3.0">2.0 → 3.0</h3><p data-en="Fresh screenshots from the two live links, both shown in phone frames." data-zh="两个线上链接重新截取，统一放进手机框里对比。">两个线上链接重新截取，统一放进手机框里对比。</p></div>
-        <div class="version-frame">
-          <div class="version-images">
-            <figure>
-              <div class="phone-frame demo-phone version-phone"><div class="phone-notch"></div><img src="assets/v2-home.png?v=20261126a" alt="2.0 首页真实截图"></div>
-              <figcaption>2.0 · <span data-en="BEFORE" data-zh="改版前">改版前</span></figcaption>
-            </figure>
-            <figure>
-              <div class="phone-frame demo-phone version-phone"><div class="phone-notch"></div><img src="assets/v3-me.png?v=20261126a" alt="3.0 我的页面真实截图"></div>
-              <figcaption>3.0 · <span data-en="AFTER" data-zh="改版后">改版后</span></figcaption>
-            </figure>
+      <div class="slide-page version-page">
+        <div class="version-static reveal">
+          <div class="block-head"><h3 data-en="2.0 → 3.0" data-zh="2.0 → 3.0">2.0 → 3.0</h3><p data-en="Fresh screenshots from both live links. Switch between the three comparable screens." data-zh="两个线上链接重新截图，三组可比界面自由切换。">两个线上链接重新截图，三组可比界面自由切换。</p></div>
+          <div class="version-tabs" role="tablist" aria-label="版本对比切换">
+            <button type="button" class="version-tab active" data-pair="0" role="tab" aria-selected="true">首页 → 设备</button>
+            <button type="button" class="version-tab" data-pair="1" role="tab" aria-selected="false">功能 → 声音</button>
+            <button type="button" class="version-tab" data-pair="2" role="tab" aria-selected="false">我的 → 我的</button>
           </div>
-          <div class="version-copy">
-            <span data-en="WHAT CHANGED" data-zh="变化">变化</span>
-            <p data-en="Stacked storage lists became a calmer home with sound calling and device linking as first-class actions." data-zh="从堆叠的收纳列表，变成更安静的首页；声音呼唤和设备联动成为独立入口。">从堆叠的收纳列表，变成更安静的首页；声音呼唤和设备联动成为独立入口。</p>
-            <div class="version-links">
-              <a href="https://ananpaofu.github.io/Tracking/" target="_blank" rel="noopener" data-en="Open 2.0 ↗" data-zh="打开 2.0 ↗">打开 2.0 ↗</a>
-              <a href="https://ananpaofu.github.io/new-shouna-app/" target="_blank" rel="noopener" data-en="Open 3.0 ↗" data-zh="打开 3.0 ↗">打开 3.0 ↗</a>
+          <div class="version-frame">
+            <div class="version-images">
+              <figure>
+                <div class="phone-frame demo-phone version-phone"><div class="phone-notch"></div><img id="versionBefore" class="zoomable" src="assets/v2-home.png?v=20261126b" alt="2.0 截图"></div>
+                <figcaption id="versionBeforeCap">2.0 · 首页</figcaption>
+              </figure>
+              <figure>
+                <div class="phone-frame demo-phone version-phone"><div class="phone-notch"></div><img id="versionAfter" class="zoomable" src="assets/v3-home.png?v=20261126b" alt="3.0 截图"></div>
+                <figcaption id="versionAfterCap">3.0 · 设备</figcaption>
+              </figure>
+            </div>
+            <div class="version-copy">
+              <span data-en="WHAT CHANGED" data-zh="变化">变化</span>
+              <p id="versionCopy" data-en="2.0 stacked storage lists, expiry reminders and category entries into one screen; 3.0 opens on device linking with map, location and item navigation." data-zh="2.0 把收纳列表、到期提醒和分类入口堆在一屏；3.0 以设备联动为首页，直接看到地图、定位和物品导航。删除了到期提醒、社区、成就等与「找回」无关的功能。">2.0 把收纳列表、到期提醒和分类入口堆在一屏；3.0 以设备联动为首页，直接看到地图、定位和物品导航。删除了到期提醒、社区、成就等与「找回」无关的功能。</p>
+              <div class="version-links">
+                <a href="https://ananpaofu.github.io/Tracking/" target="_blank" rel="noopener" data-en="Open 2.0 ↗" data-zh="打开 2.0 ↗">打开 2.0 ↗</a>
+                <a href="https://ananpaofu.github.io/new-shouna-app/" target="_blank" rel="noopener" data-en="Open 3.0 ↗" data-zh="打开 3.0 ↗">打开 3.0 ↗</a>
+              </div>
             </div>
           </div>
         </div>
@@ -347,30 +378,54 @@
 
     <!-- 05 / CURRENT PROGRESS -->
     <section class="hardware progress-slide" id="hardware">
-      <div class="section-head reveal">
-        <p class="eyebrow"><span class="eyebrow-line"></span><span data-en="04 / CURRENT PROGRESS" data-zh="04 / 当前进度">04 / 当前进度</span></p>
-        <h2 data-en="The prototype is still being made." data-zh="实物还在制作中。">实物还在制作中。</h2>
-        <p data-en="The research and product definition are done. The physical tag is now moving from idea toward a real sample." data-zh="调研和产品定义已经完成，实物标签正在从想法走向真正的样品。">调研和产品定义已经完成，实物标签正在从想法走向真正的样品。</p>
+      <div class="slide-page">
+        <div class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow-line"></span><span data-en="04 / CURRENT PROGRESS" data-zh="04 / 当前进度">04 / 当前进度</span></p>
+          <h2 data-en="The prototype is still being made." data-zh="实物还在制作中。">实物还在制作中。</h2>
+          <p data-en="Research and product definition are done. The physical product is moving from idea toward a real sample." data-zh="调研和产品定义已经完成，实物产品正在从想法走向真正的样品。">调研和产品定义已经完成，实物产品正在从想法走向真正的样品。</p>
+        </div>
+        <div class="progress-track reveal">
+          <div class="progress-step done"><span>01</span><b data-en="Research" data-zh="调研">调研</b><p data-en="Questionnaires, interviews and market scan completed." data-zh="问卷、访谈与市面产品调研已完成。">问卷、访谈与市面产品调研已完成。</p></div>
+          <div class="progress-step active"><span>02</span><b data-en="Voice module" data-zh="语音模块">语音模块</b><p data-en="ASRPRO board, speaker, SD card and battery are being sourced." data-zh="ASRPRO 开发板、喇叭、SD 卡与电池正在确认。">ASRPRO 开发板、喇叭、SD 卡与电池正在确认。</p></div>
+          <div class="progress-step active"><span>03</span><b data-en="Shell printing" data-zh="外壳打印">外壳打印</b><p data-en="Rabbit and hamster shells are being printed for fit and feel." data-zh="兔子和仓鼠外壳正在打印，测试尺寸和手感。">兔子和仓鼠外壳正在打印，测试尺寸和手感。</p></div>
+          <div class="progress-step"><span>04</span><b data-en="Testing after samples" data-zh="拿到样品后测试">拿到样品后测试</b><p data-en="Product testing will start only after real samples are in hand." data-zh="拿到真实样品后，才开始产品测试。">拿到真实样品后，才开始产品测试。</p></div>
+        </div>
       </div>
 
-      <div class="progress-track reveal">
-        <div class="progress-step done"><span>01</span><b data-en="Research" data-zh="调研">调研</b><p data-en="Questionnaires, interviews and market scan completed." data-zh="问卷、访谈与市面产品调研已完成。">问卷、访谈与市面产品调研已完成。</p></div>
-        <div class="progress-step active"><span>02</span><b data-en="Hardware sourcing" data-zh="联系硬件">联系硬件</b><p data-en="Talking to hardware partners and confirming the feedback module." data-zh="正在联系硬件方，确认声音反馈模块。">正在联系硬件方，确认声音反馈模块。</p></div>
-        <div class="progress-step active"><span>03</span><b data-en="3D printing" data-zh="3D 打印">3D 打印</b><p data-en="Building early shells to test size, attachment and feel." data-zh="打印早期外壳，测试尺寸、固定方式和手感。">打印早期外壳，测试尺寸、固定方式和手感。</p></div>
-        <div class="progress-step"><span>04</span><b data-en="Testing after samples" data-zh="拿到样品后测试">拿到样品后测试</b><p data-en="Product testing will start only after real samples are in hand." data-zh="拿到真实样品后，才开始产品测试。">拿到真实样品后，才开始产品测试。</p></div>
+      <div class="slide-page detail-page">
+        <div class="block-head reveal">
+          <h3 data-en="Voice interaction & hardware" data-zh="语音交互与硬件组成">语音交互与硬件组成</h3>
+          <p data-en="On top of the existing locating system, we add speech recognition and speech playback." data-zh="在原有定位系统的基础上，增加语音识别与语音播报功能。">在原有定位系统的基础上，增加语音识别与语音播报功能。</p>
+        </div>
+        <div class="detail-grid reveal">
+          <div class="detail-copy">
+            <ol>
+              <li><b>01 / 近距离呼唤</b><span>绑定物品为钥匙时，用户说「钥匙你在哪」，钥匙上的语音模块识别后回答「我在这里」。</span></li>
+              <li><b>02 / 离位播报</b><span>手机判断物品距离超过 20 米，通过通信模块通知语音模块播报「主人你丢下我了」。</span></li>
+              <li><b>03 / 全面自定义</b><span>唤醒词、语音音色、欢迎词、退出语音词和命令词都可以在 App 中自定义。</span></li>
+            </ol>
+            <h4>硬件组成</h4>
+            <p>定位器模块 · 3V 纽扣电池 · 铜线焊接连接 · ASRPRO 语音识别开发板 · 喇叭 · SD 卡 · 1000mAh 锂电池</p>
+          </div>
+          <div class="detail-images">
+            <figure><img class="zoomable" src="assets/hardware-asrpro.jpg?v=20261126b" alt="ASRPRO 语音识别开发板"><figcaption>ASRPRO 语音识别开发板</figcaption></figure>
+            <figure><img class="zoomable" src="assets/hardware-battery.jpg?v=20261126b" alt="3V 纽扣电池与定位器模块"><figcaption>3V 纽扣电池与定位器模块</figcaption></figure>
+          </div>
+        </div>
       </div>
 
-      <div class="outro reveal">
-        <p class="eyebrow"><span class="eyebrow-line"></span><span data-en="FINALLY" data-zh="最后">最后</span></p>
-        <h2 data-en="Find it happily." data-zh="开开心心，找到它。">开开心心，找到它。</h2>
-        <p data-en="XUNJI is not another storage chore. It is a small, friendly answer when an important everyday thing goes missing — and the prototype is on its way." data-zh="寻迹不是又一项整理任务。它是在重要日常物品不见时，一句轻轻的回应 —— 而实物原型，正在路上。">寻迹不是又一项整理任务。它是在重要日常物品不见时，一句轻轻的回应 —— 而实物原型，正在路上。</p>
-        <a class="outro-link" href="https://ananpaofu.github.io/new-shouna-app/" target="_blank" rel="noopener" data-en="Open XUNJI app ↗" data-zh="点击前往寻迹app ↗">点击前往寻迹app ↗</a>
+      <div class="slide-page outro-page">
+        <div class="outro reveal">
+          <p class="eyebrow"><span class="eyebrow-line"></span><span data-en="FINALLY" data-zh="最后">最后</span></p>
+          <h2 data-en="Find it happily." data-zh="开开心心，找到它。">开开心心，找到它。</h2>
+          <p data-en="XUNJI is not another storage chore. It is a small, friendly answer when an important everyday thing goes missing — and the prototype is on its way." data-zh="寻迹不是又一项整理任务。它是在重要日常物品不见时，一句轻轻的回应 —— 而实物原型，正在路上。">寻迹不是又一项整理任务。它是在重要日常物品不见时，一句轻轻的回应 —— 而实物原型，正在路上。</p>
+          <a class="outro-link" href="https://ananpaofu.github.io/new-shouna-app/" target="_blank" rel="noopener" data-en="Open XUNJI app ↗" data-zh="点击前往寻迹app ↗">点击前往寻迹app ↗</a>
+        </div>
+        <footer class="site-footer">
+          <span>© 2026 寻迹 XUNJI</span>
+          <span data-en="A product design case study" data-zh="产品设计案例">产品设计案例</span>
+        </footer>
       </div>
-
-      <footer class="site-footer">
-        <span>© 2026 寻迹 XUNJI</span>
-        <span data-en="A product design case study" data-zh="产品设计案例">产品设计案例</span>
-      </footer>
     </section>
   </main>
 
@@ -380,6 +435,6 @@
     <span class="lb-cap" id="lbCap"></span>
   </div>
 
-  <script src="script.js?v=20261126a"></script>
+  <script src="script.js?v=20261126b"></script>
 </body>
 </html>
