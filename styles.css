@@ -857,8 +857,8 @@ html[data-theme="warm"]{--stat:#f0a568}
 
 /* ---- PPT-style section slides ---- */
 html.ppt,html.ppt body{height:100%;overflow:hidden}
-html.ppt main{height:100vh;overflow:hidden;position:relative}
-html.ppt main>*{position:absolute;inset:0;width:100%;height:100vh;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;visibility:hidden;opacity:0;pointer-events:none}
+html.ppt main{height:calc(100vh - 72px);overflow:hidden;position:relative}
+html.ppt main>*{position:absolute;inset:0;width:100%;height:100%;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;visibility:hidden;opacity:0;pointer-events:none}
 html.ppt main>.slide-active{visibility:visible;opacity:1;pointer-events:auto;z-index:1;animation:slideInRight .78s cubic-bezier(.22,.75,.2,1) both}
 html.ppt main>.slide-active.slide-from-left{animation-name:slideInLeft}
 html.ppt main>.slide-leaving{visibility:visible;opacity:1;pointer-events:none;z-index:2;animation:slideOutRight .52s cubic-bezier(.4,0,.7,.2) both}
@@ -874,5 +874,16 @@ html.ppt .reveal{opacity:1;transform:none}
 html.ppt .to-top{right:76px;bottom:24px}
 @keyframes slideBob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 .slide-next.show{animation:slideBob 1.8s ease-in-out infinite}
-@media(max-width:700px){.slide-next{right:14px;bottom:14px;width:38px;height:38px}html.ppt .to-top{right:60px;bottom:14px}}
+@media(max-width:700px){.slide-next{right:14px;bottom:14px;width:38px;height:38px}html.ppt main{height:calc(100vh - 62px)}html.ppt .to-top{right:60px;bottom:14px}}
 @media(prefers-reduced-motion:reduce){.slide-next.show{animation:none}html.ppt main>.slide-active,html.ppt main>.slide-leaving{animation:none}html.ppt main>.slide-leaving{display:none}}
+
+/* ---- clearer resting state for outlined blocks ---- */
+:root{--line-2:#3b3b42}
+html[data-theme="light"]{--line-2:#c6c6c0}
+html[data-theme="warm"]{--line-2:#6d523d}
+.sketch-node,.hw-card{border-color:var(--line-2);background:var(--surface-2);box-shadow:0 8px 22px rgba(0,0,0,.06)}
+.sketch-node span,.hw-card p{color:var(--ink-2)}
+.hw-card.pending{opacity:1;border-color:var(--accent)}
+.plan-note{background:var(--surface-2);border-left:3px solid var(--accent);color:var(--ink-2);box-shadow:0 0 0 1px var(--line-2)}
+.hardware{padding-bottom:0}
+.hardware .outro{padding:50px 0 18px;margin-top:54px}

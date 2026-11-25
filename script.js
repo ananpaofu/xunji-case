@@ -321,7 +321,7 @@ let navLock = null, navUnlock = null, navTick = false;
 function updateNav(){
   if (document.documentElement.classList.contains('ppt')){
     const idx = [...document.querySelector('main').children].findIndex((s)=> s.classList.contains('slide-active'));
-    setNavActive(['', '#pain', '#demo', '#research', '#iteration', '#hardware', '#hardware'][idx] || null);
+    setNavActive(['', '#pain', '#demo', '#research', '#iteration', '#hardware'][idx] || null);
     return;
   }
   if (navTick) return;
@@ -614,7 +614,7 @@ if (!location.search.includes('scroll')) {
   document.documentElement.classList.add('ppt');
   const slides = [...document.querySelector('main').children];
   let slideIndex = 0;
-  const slideNav = ['', '#pain', '#demo', '#research', '#iteration', '#hardware', '#hardware'];
+  const slideNav = ['', '#pain', '#demo', '#research', '#iteration', '#hardware'];
   const slideNext = document.createElement('button');
   slideNext.type = 'button';
   slideNext.className = 'slide-next';
