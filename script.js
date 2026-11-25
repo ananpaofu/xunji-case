@@ -624,6 +624,18 @@ if (!location.search.includes('scroll')) {
   document.body.appendChild(slideNext);
 
   let slideTimer = null;
+  const slideAnims = new Map();
+  const EASE = 'cubic-bezier(.76,0,.24,1)';
+  function animateSlide(el, fromPct, toPct){
+    const old = slideAnims.get(el);
+    if (old) old.cancel();
+    const anim = el.animate([
+      { transform: `translateY(${fromPct}%)` },
+      { transform: `translateY(${toPct}%)` }
+    ], { duration: 680, easing: EASE, fill: 'both' });
+    slideAnims.set(el, anim);
+    return anim;
+  }
   function syncSlideUI(){
     slides.forEach((s,i)=> s.classList.toggle('slide-active', i === slideIndex));
     const href = slideNav[slideIndex] || '';
@@ -640,21 +652,23 @@ if (!location.search.includes('scroll')) {
     const next = Math.max(0, Math.min(slides.length - 1, i));
     if (next === slideIndex){
       syncSlideUI();
-      if (focusTop !== false) slides[slideIndex].scrollIntoView({block:'start'});
       return;
     }
     const previous = slides[slideIndex];
-    const forward = next >= slideIndex;
+    const incoming = slides[next];
+    const forward = next > slideIndex;
     clearTimeout(slideTimer);
-    slides.forEach((s)=> s.classList.remove('slide-leaving','slide-to-below'));
+    slides.forEach((s)=> s.classList.remove('slide-leaving','slide-from-above','slide-to-below'));
     previous.classList.add('slide-leaving');
-    if (!forward) previous.classList.add('slide-to-below');
     slideIndex = next;
-    slides[slideIndex].classList.toggle('slide-from-above', !forward);
     syncSlideUI();
-    if (focusTop !== false) slides[slideIndex].scrollIntoView({block:'start'});
+    animateSlide(incoming, forward ? 100 : -100, 0);
+    animateSlide(previous, 0, forward ? -100 : 100);
     updateNav();
-    slideTimer = setTimeout(()=> slides.forEach((s)=> s.classList.remove('slide-leaving','slide-to-below')), 720);
+    slideTimer = setTimeout(()=>{
+      slides.forEach((s)=> s.classList.remove('slide-leaving','slide-from-above','slide-to-below'));
+      slideAnims.forEach((a)=>{ a.cancel(); slideAnims.delete(a.effect.target); });
+    }, 720);
   }
   goToSlide(0, false);
   requestAnimationFrame(()=>{ setNavActive(null); updateNav(); });
@@ -680,4 +694,19 @@ if (!location.search.includes('scroll')) {
     const max = Math.max(1, inner.scrollHeight - inner.clientHeight);
     scrollProgress.style.transform = `scaleX(${Math.min(1, (slideIndex + Math.min(1, inner.scrollTop / max)) / (slides.length - 1))})`;
   }, true);
+  let wheelLock = false;
+  document.querySelector('main').addEventListener('wheel', (e)=>{
+    if (lightbox.classList.contains('open') || showcase3d.classList.contains('open')) return;
+    const inner = slides[slideIndex];
+    const canScroll = inner.scrollHeight > inner.clientHeight + 2;
+    const atTop = inner.scrollTop <= 1;
+    const atBottom = inner.scrollTop + inner.clientHeight >= inner.scrollHeight - 1;
+    const goingDown = e.deltaY > 0;
+    if (canScroll && ((goingDown && !atBottom) || (!goingDown && !atTop))) return;
+    e.preventDefault();
+    if (wheelLock || Math.abs(e.deltaY) < 4) return;
+    wheelLock = true;
+    goToSlide(slideIndex + (goingDown ? 1 : -1));
+    setTimeout(()=>{ wheelLock = false; }, 760);
+  }, { passive:false });
 }

@@ -858,14 +858,8 @@ html[data-theme="warm"]{--stat:#f0a568}
 html.ppt,html.ppt body{height:100%;overflow:hidden}
 html.ppt main{height:calc(100vh - 72px);overflow:hidden;position:relative}
 html.ppt main>*{position:absolute;inset:0;width:100%;height:100%;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;visibility:hidden;pointer-events:none;transform:none}
-html.ppt main>.slide-active{visibility:visible;pointer-events:auto;z-index:2;animation:slideUpIn .68s cubic-bezier(.76,0,.24,1) both}
-html.ppt main>.slide-active.slide-from-above{animation-name:slideDownIn}
-html.ppt main>.slide-leaving{visibility:visible;pointer-events:none;z-index:1;animation:slideUpOut .68s cubic-bezier(.76,0,.24,1) both}
-html.ppt main>.slide-leaving.slide-to-below{animation-name:slideDownOut}
-@keyframes slideUpIn{from{transform:translateY(100%)}to{transform:none}}
-@keyframes slideDownIn{from{transform:translateY(-100%)}to{transform:none}}
-@keyframes slideUpOut{from{transform:none}to{transform:translateY(-100%)}}
-@keyframes slideDownOut{from{transform:none}to{transform:translateY(100%)}}
+html.ppt main>.slide-active{visibility:visible;pointer-events:auto;z-index:2}
+html.ppt main>.slide-leaving{visibility:visible;pointer-events:none;z-index:1}
 html.ppt .reveal{opacity:1;transform:none}
 .slide-next{position:fixed;right:24px;bottom:24px;width:42px;height:42px;border-radius:50%;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);font:600 22px/1 var(--sans);cursor:pointer;z-index:95;display:none;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.24);transition:transform .25s ease,opacity .25s ease}
 .slide-next.show{display:grid}
