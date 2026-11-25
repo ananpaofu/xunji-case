@@ -623,6 +623,7 @@ if (!location.search.includes('scroll')) {
   slideNext.title = 'Next section';
   document.body.appendChild(slideNext);
 
+  let slideTimer = null;
   function syncSlideUI(){
     slides.forEach((s,i)=> s.classList.toggle('slide-active', i === slideIndex));
     const href = slideNav[slideIndex] || '';
@@ -636,10 +637,24 @@ if (!location.search.includes('scroll')) {
     inner.scrollTop = 0;
   }
   function goToSlide(i, focusTop){
-    slideIndex = Math.max(0, Math.min(slides.length - 1, i));
+    const next = Math.max(0, Math.min(slides.length - 1, i));
+    if (next === slideIndex){
+      syncSlideUI();
+      if (focusTop !== false) slides[slideIndex].scrollIntoView({block:'start'});
+      return;
+    }
+    const previous = slides[slideIndex];
+    const forward = next >= slideIndex;
+    clearTimeout(slideTimer);
+    slides.forEach((s)=> s.classList.remove('slide-leaving','slide-from-left','slide-to-left'));
+    previous.classList.add('slide-leaving');
+    if (!forward) previous.classList.add('slide-to-left');
+    slideIndex = next;
+    if (!forward) slides[slideIndex].classList.add('slide-from-left');
     syncSlideUI();
     if (focusTop !== false) slides[slideIndex].scrollIntoView({block:'start'});
     updateNav();
+    slideTimer = setTimeout(()=> slides.forEach((s)=> s.classList.remove('slide-leaving','slide-from-left','slide-to-left')), 820);
   }
   goToSlide(0, false);
   requestAnimationFrame(()=>{ setNavActive(null); updateNav(); });
