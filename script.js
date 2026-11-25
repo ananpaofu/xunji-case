@@ -646,15 +646,15 @@ if (!location.search.includes('scroll')) {
     const previous = slides[slideIndex];
     const forward = next >= slideIndex;
     clearTimeout(slideTimer);
-    slides.forEach((s)=> s.classList.remove('slide-leaving','slide-from-left','slide-to-left'));
+    slides.forEach((s)=> s.classList.remove('slide-leaving','slide-to-below'));
     previous.classList.add('slide-leaving');
-    if (!forward) previous.classList.add('slide-to-left');
+    if (!forward) previous.classList.add('slide-to-below');
     slideIndex = next;
-    if (!forward) slides[slideIndex].classList.add('slide-from-left');
+    slides[slideIndex].classList.toggle('slide-from-above', !forward);
     syncSlideUI();
     if (focusTop !== false) slides[slideIndex].scrollIntoView({block:'start'});
     updateNav();
-    slideTimer = setTimeout(()=> slides.forEach((s)=> s.classList.remove('slide-leaving','slide-from-left','slide-to-left')), 820);
+    slideTimer = setTimeout(()=> slides.forEach((s)=> s.classList.remove('slide-leaving','slide-to-below')), 720);
   }
   goToSlide(0, false);
   requestAnimationFrame(()=>{ setNavActive(null); updateNav(); });
