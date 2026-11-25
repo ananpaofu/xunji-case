@@ -383,7 +383,7 @@ const s3dNum = document.getElementById('s3dNum');
 const s3dClose = document.getElementById('s3dClose');
 const demoPlay = document.getElementById('demoPlay');
 let s3dReady = false, s3dTimer = null, s3dLoop = null, s3dIndex = 0;
-function showcaseOpen(){ return !!(showcase3d && showcaseOpen()); }
+function showcaseOpen(){ return !!(showcase3d && showcase3d.classList.contains('open')); }
 
 function s3dShow(idx){
   if (!showcase3d || !s3dPages.length) return;
@@ -637,10 +637,18 @@ document.querySelectorAll('.ig-more img,.market-card img').forEach((img)=>{
 /* ---------- PPT-style section slides ---------- */
 if (!location.search.includes('scroll')) {
   document.documentElement.classList.add('ppt');
-  const slides = [...document.querySelector('main').children];
+  const main = document.querySelector('main');
+  const slides = [...main.children];
   let slideIndex = 0;
   const slideNav = ['', '#demo', '#pain', '#definition', '#hardware'];
+  const slideLabels = ['Home', 'Demo', 'Pain & research', 'Definition', 'Progress'];
   let subIndex = 0;
+  let pageBusy = false;
+  let busyTimer = null;
+  let slideTimer = null;
+  const slideAnims = new Map();
+  const EASE = 'cubic-bezier(.76,0,.24,1)';
+
   const slideNext = document.createElement('button');
   slideNext.type = 'button';
   slideNext.className = 'slide-next';
@@ -651,12 +659,30 @@ if (!location.search.includes('scroll')) {
   const slideRail = document.createElement('nav');
   slideRail.className = 'slide-rail';
   slideRail.setAttribute('aria-label', 'Slide pagination');
-  const slideLabels = ['Home', 'Demo', 'Pain & research', 'Definition', 'Progress'];
   document.body.appendChild(slideRail);
 
-  function subCount(slide){
-    return Math.max(1, Math.ceil(slide.scrollHeight / Math.max(1, slide.clientHeight)));
+  function setBusy(ms){
+    pageBusy = true;
+    clearTimeout(busyTimer);
+    busyTimer = setTimeout(()=>{ pageBusy = false; }, ms);
   }
+  function pageStarts(slide){
+    const max = Math.max(0, slide.scrollHeight - slide.clientHeight);
+    const anchors = [...slide.querySelectorAll('[data-slide-anchor]')];
+    let starts = [0];
+    if (anchors.length){
+      anchors.forEach((anchor)=>{
+        const top = Math.max(0, Math.round(anchor.offsetTop));
+        if (top - starts[starts.length - 1] > 48) starts.push(top);
+      });
+    } else {
+      const count = Math.max(1, Math.ceil((slide.scrollHeight + 1) / Math.max(1, slide.clientHeight)));
+      for (let i = 1; i < count; i++) starts.push(i * slide.clientHeight);
+    }
+    starts = starts.map((top)=> Math.min(max, Math.round(top)));
+    return starts.filter((top, i)=> i === 0 || top - starts[i - 1] > 40);
+  }
+  function subCount(slide){ return pageStarts(slide).length; }
   function totalPages(){ return slides.reduce((sum, s)=> sum + subCount(s), 0); }
   function pageOffset(){
     let count = 0;
@@ -666,18 +692,18 @@ if (!location.search.includes('scroll')) {
   function rebuildRail(){
     slideRail.innerHTML = '';
     slides.forEach((slide, si)=>{
-      const count = subCount(slide);
-      for (let j = 0; j < count; j++){
+      const starts = pageStarts(slide);
+      starts.forEach((_, j)=>{
         const dot = document.createElement('button');
         dot.type = 'button';
         dot.className = 'slide-rail-dot';
         dot.dataset.slide = String(si);
         dot.dataset.sub = String(j);
-        dot.title = (slideLabels[si] || ('Page ' + (si + 1))) + (count > 1 ? (' · ' + (j + 1) + '/' + count) : '');
+        dot.title = (slideLabels[si] || ('Page ' + (si + 1))) + (starts.length > 1 ? (' · ' + (j + 1) + '/' + starts.length) : '');
         dot.setAttribute('aria-label', dot.title);
         dot.addEventListener('click', ()=> goToPage(si, j));
         slideRail.appendChild(dot);
-      }
+      });
     });
     syncSlideUI();
   }
@@ -693,31 +719,6 @@ if (!location.search.includes('scroll')) {
     const pages = Math.max(1, totalPages() - 1);
     scrollProgress.style.transform = `scaleX(${Math.min(1, pageOffset() / pages)})`;
   }
-  function goToPage(si, j){
-    const slide = slides[si];
-    const count = subCount(slide);
-    const sub = Math.max(0, Math.min(count - 1, j));
-    if (si !== slideIndex) goToSlide(si);
-    subIndex = sub;
-    slide.scrollTo({ top: sub * slide.clientHeight, behavior: 'smooth' });
-    syncSlideUI();
-  }
-  function stepPage(delta){
-    const current = slides[slideIndex];
-    const count = subCount(current);
-    if (delta > 0){
-      if (subIndex < count - 1){ goToPage(slideIndex, subIndex + 1); return true; }
-      if (slideIndex < slides.length - 1){ goToSlide(slideIndex + 1); return true; }
-    } else {
-      if (subIndex > 0){ goToPage(slideIndex, subIndex - 1); return true; }
-      if (slideIndex > 0){ goToSlide(slideIndex - 1); return true; }
-    }
-    return false;
-  }
-
-  let slideTimer = null;
-  const slideAnims = new Map();
-  const EASE = 'cubic-bezier(.76,0,.24,1)';
   function animateSlide(el, fromPct, toPct){
     const old = slideAnims.get(el);
     if (old) old.cancel();
@@ -730,7 +731,7 @@ if (!location.search.includes('scroll')) {
   }
   function goToSlide(i){
     const next = Math.max(0, Math.min(slides.length - 1, i));
-    if (next === slideIndex) return;
+    if (next === slideIndex) return false;
     const previous = slides[slideIndex];
     const incoming = slides[next];
     const forward = next > slideIndex;
@@ -744,15 +745,49 @@ if (!location.search.includes('scroll')) {
     animateSlide(incoming, forward ? 100 : -100, 0);
     animateSlide(previous, 0, forward ? -100 : 100);
     updateNav();
+    setBusy(760);
     slideTimer = setTimeout(()=>{
       slides.forEach((s)=> s.classList.remove('slide-leaving','slide-from-above','slide-to-below'));
       slideAnims.forEach((a)=>{ a.cancel(); slideAnims.delete(a.effect.target); });
     }, 720);
+    return true;
   }
+  function goToPage(si, j){
+    const slide = slides[si];
+    const starts = pageStarts(slide);
+    const sub = Math.max(0, Math.min(starts.length - 1, j));
+    if (si !== slideIndex){
+      goToSlide(si);
+      subIndex = sub;
+      slide.scrollTop = starts[sub] || 0;
+      syncSlideUI();
+      setBusy(760);
+      return;
+    }
+    subIndex = sub;
+    slide.scrollTop = starts[sub] || 0;
+    syncSlideUI();
+    setBusy(700);
+  }
+  function stepPage(delta){
+    if (pageBusy) return true;
+    const current = slides[slideIndex];
+    const count = subCount(current);
+    if (delta > 0){
+      if (subIndex < count - 1){ goToPage(slideIndex, subIndex + 1); return true; }
+      if (slideIndex < slides.length - 1){ goToSlide(slideIndex + 1); return true; }
+    } else {
+      if (subIndex > 0){ goToPage(slideIndex, subIndex - 1); return true; }
+      if (slideIndex > 0){ goToSlide(slideIndex - 1); return true; }
+    }
+    return false;
+  }
+
   rebuildRail();
   setTimeout(rebuildRail, 600);
   window.addEventListener('load', rebuildRail);
   window.addEventListener('resize', rebuildRail);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(rebuildRail);
   const startSlide = parseInt(new URLSearchParams(location.search).get('slide'), 10);
   if (Number.isFinite(startSlide) && startSlide > 0 && startSlide < slides.length) goToSlide(startSlide);
   requestAnimationFrame(()=>{ setNavActive(null); updateNav(); });
@@ -773,20 +808,21 @@ if (!location.search.includes('scroll')) {
     if (e.key === 'PageDown'){ e.preventDefault(); stepPage(1); }
     if (e.key === 'PageUp'){ e.preventDefault(); stepPage(-1); }
   });
-  document.querySelector('main').addEventListener('scroll', ()=>{
+  main.addEventListener('scroll', ()=>{
     const inner = slides[slideIndex];
-    const next = Math.max(0, Math.min(subCount(inner) - 1, Math.round(inner.scrollTop / Math.max(1, inner.clientHeight))));
-    if (next !== subIndex){ subIndex = next; syncSlideUI(); }
-    else syncSlideUI();
+    const starts = pageStarts(inner);
+    let nearest = 0;
+    let best = Infinity;
+    starts.forEach((top, i)=>{
+      const distance = Math.abs(inner.scrollTop - top);
+      if (distance < best){ best = distance; nearest = i; }
+    });
+    if (nearest !== subIndex){ subIndex = nearest; syncSlideUI(); }
   }, true);
-  let wheelLock = false;
-  document.querySelector('main').addEventListener('wheel', (e)=>{
+  main.addEventListener('wheel', (e)=>{
     if (lightbox.classList.contains('open') || showcaseOpen()) return;
-    const goingDown = e.deltaY > 0;
-    const moved = stepPage(goingDown ? 1 : -1);
     e.preventDefault();
-    if (wheelLock || Math.abs(e.deltaY) < 4 || !moved) return;
-    wheelLock = true;
-    setTimeout(()=>{ wheelLock = false; }, 700);
+    if (Math.abs(e.deltaY) < 4 || pageBusy) return;
+    stepPage(e.deltaY > 0 ? 1 : -1);
   }, { passive:false });
 }
