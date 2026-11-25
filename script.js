@@ -662,14 +662,10 @@ if (!location.search.includes('scroll')) {
     const max = Math.max(1, inner.scrollHeight - inner.clientHeight);
     const frac = Math.min(1, inner.scrollTop / max);
     scrollProgress.style.transform = `scaleX(${Math.min(1, (slideIndex + frac) / (slides.length - 1))})`;
-    inner.scrollTop = 0;
   }
   function goToSlide(i, focusTop){
     const next = Math.max(0, Math.min(slides.length - 1, i));
-    if (next === slideIndex){
-      syncSlideUI();
-      return;
-    }
+    if (next === slideIndex) return;
     const previous = slides[slideIndex];
     const incoming = slides[next];
     const forward = next > slideIndex;
@@ -678,6 +674,7 @@ if (!location.search.includes('scroll')) {
     previous.classList.add('slide-leaving');
     slideIndex = next;
     syncSlideUI();
+    slides[slideIndex].scrollTop = 0;
     animateSlide(incoming, forward ? 100 : -100, 0);
     animateSlide(previous, 0, forward ? -100 : 100);
     updateNav();
@@ -686,7 +683,7 @@ if (!location.search.includes('scroll')) {
       slideAnims.forEach((a)=>{ a.cancel(); slideAnims.delete(a.effect.target); });
     }, 720);
   }
-  goToSlide(0, false);
+  syncSlideUI();
   requestAnimationFrame(()=>{ setNavActive(null); updateNav(); });
 
   slideNext.addEventListener('click', ()=> goToSlide(slideIndex + 1));
@@ -719,6 +716,7 @@ if (!location.search.includes('scroll')) {
     const atBottom = inner.scrollTop + inner.clientHeight >= inner.scrollHeight - 1;
     const goingDown = e.deltaY > 0;
     if (canScroll && ((goingDown && !atBottom) || (!goingDown && !atTop))) return;
+    if ((goingDown && slideIndex === slides.length - 1 && atBottom) || (!goingDown && slideIndex === 0 && atTop)) return;
     e.preventDefault();
     if (wheelLock || Math.abs(e.deltaY) < 4) return;
     wheelLock = true;
