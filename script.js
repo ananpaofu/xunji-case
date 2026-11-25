@@ -319,6 +319,11 @@ function currentNavHref(){
 }
 let navLock = null, navUnlock = null, navTick = false;
 function updateNav(){
+  if (document.documentElement.classList.contains('ppt')){
+    const idx = [...document.querySelector('main').children].findIndex((s)=> s.classList.contains('slide-active'));
+    setNavActive(['', '#pain', '#demo', '#research', '#iteration', '#hardware', '#hardware'][idx] || null);
+    return;
+  }
   if (navTick) return;
   navTick = true;
   requestAnimationFrame(()=>{
@@ -602,3 +607,62 @@ document.querySelectorAll('.ig-more img,.market-card img').forEach((img)=>{
     lightbox.classList.add('open');
   });
 });
+
+
+/* ---------- PPT-style section slides ---------- */
+if (!location.search.includes('scroll')) {
+  document.documentElement.classList.add('ppt');
+  const slides = [...document.querySelector('main').children];
+  let slideIndex = 0;
+  const slideNav = ['', '#pain', '#demo', '#research', '#iteration', '#hardware', '#hardware'];
+  const slideNext = document.createElement('button');
+  slideNext.type = 'button';
+  slideNext.className = 'slide-next';
+  slideNext.textContent = '↓';
+  slideNext.setAttribute('aria-label', 'Next section');
+  slideNext.title = 'Next section';
+  document.body.appendChild(slideNext);
+
+  function syncSlideUI(){
+    slides.forEach((s,i)=> s.classList.toggle('slide-active', i === slideIndex));
+    const href = slideNav[slideIndex] || '';
+    setNavActive(href || null);
+    slideNext.classList.toggle('show', slideIndex < slides.length - 1);
+    toTop.classList.toggle('show', slideIndex > 0);
+    const inner = slides[slideIndex];
+    const max = Math.max(1, inner.scrollHeight - inner.clientHeight);
+    const frac = Math.min(1, inner.scrollTop / max);
+    scrollProgress.style.transform = `scaleX(${Math.min(1, (slideIndex + frac) / (slides.length - 1))})`;
+    inner.scrollTop = 0;
+  }
+  function goToSlide(i, focusTop){
+    slideIndex = Math.max(0, Math.min(slides.length - 1, i));
+    syncSlideUI();
+    if (focusTop !== false) slides[slideIndex].scrollIntoView({block:'start'});
+    updateNav();
+  }
+  goToSlide(0, false);
+  requestAnimationFrame(()=>{ setNavActive(null); updateNav(); });
+
+  slideNext.addEventListener('click', ()=> goToSlide(slideIndex + 1));
+  document.addEventListener('click', (e)=>{
+    const topBtn = e.target.closest('.to-top');
+    if (topBtn){ e.stopPropagation(); e.preventDefault(); goToSlide(0, false); return; }
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    const id = link.getAttribute('href').slice(1);
+    if (id === 'top'){ e.stopPropagation(); e.preventDefault(); goToSlide(0); return; }
+    const idx = slides.findIndex((s)=> s.id === id || s.querySelector('#' + id));
+    if (idx >= 0){ e.stopPropagation(); e.preventDefault(); goToSlide(idx); }
+  }, true);
+  document.addEventListener('keydown', (e)=>{
+    if (lightbox.classList.contains('open') || showcase3d.classList.contains('open')) return;
+    if (e.key === 'PageDown'){ e.preventDefault(); goToSlide(slideIndex + 1); }
+    if (e.key === 'PageUp'){ e.preventDefault(); goToSlide(slideIndex - 1); }
+  });
+  document.querySelector('main').addEventListener('scroll', ()=>{
+    const inner = slides[slideIndex];
+    const max = Math.max(1, inner.scrollHeight - inner.clientHeight);
+    scrollProgress.style.transform = `scaleX(${Math.min(1, (slideIndex + Math.min(1, inner.scrollTop / max)) / (slides.length - 1))})`;
+  }, true);
+}
