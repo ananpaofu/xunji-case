@@ -321,7 +321,7 @@ let navLock = null, navUnlock = null, navTick = false;
 function updateNav(){
   if (document.documentElement.classList.contains('ppt')){
     const idx = [...document.querySelector('main').children].findIndex((s)=> s.classList.contains('slide-active'));
-    setNavActive(['', '#pain', '#demo', '#research', '#iteration', '#hardware'][idx] || null);
+    setNavActive(['', '#demo', '#pain', '#definition', '#hardware'][idx] || null);
     return;
   }
   if (navTick) return;
@@ -354,41 +354,49 @@ window.addEventListener('scroll', updateNav, {passive:true});
 window.addEventListener('resize', updateNav);
 updateNav();
 
-/* ---------- screenshot lightbox ---------- */
+/* ---------- image lightbox ---------- */
 const lightbox = document.getElementById('lightbox');
 const lbImg = document.getElementById('lbImg');
 const lbCap = document.getElementById('lbCap');
-document.querySelectorAll('.screen-shot img').forEach((img)=>{
-  img.parentElement.addEventListener('click', open3D);
-});
-document.querySelectorAll('.research-shot img').forEach((img)=>{
-  img.parentElement.addEventListener('click', ()=>{
-    lbImg.src = img.src;
-    lbCap.textContent = img.parentElement.querySelector('figcaption').textContent;
-    lightbox.classList.add('open');
-  });
-});
+const lbClose = document.getElementById('lbClose');
+function openLightbox(img){
+  if (!lbImg) return;
+  lbImg.src = img.src;
+  const figure = img.closest('figure');
+  const cap = figure && figure.querySelector('figcaption');
+  lbCap.textContent = cap ? cap.textContent : img.alt;
+  lightbox.classList.add('open');
+}
 function closeLightbox(){ lightbox.classList.remove('open'); lbImg.src=''; }
-document.getElementById('lbClose').addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLightbox(); });
+document.querySelectorAll('.zoomable').forEach((img)=>{
+  const target = img.closest('figure') || img.parentElement;
+  target.addEventListener('click', ()=> openLightbox(img));
+});
+if (lbClose) lbClose.addEventListener('click', closeLightbox);
+if (lightbox) lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLightbox(); });
 
-/* ---------- app showcase overlay ---------- */
+/* ---------- app showcase overlay (only when present) ---------- */
 const showcase3d = document.getElementById('showcase3d');
 const s3dPages = [...document.querySelectorAll('.s3d-page')];
 const s3dDots = [...document.querySelectorAll('.s3d-dots span')];
 const s3dNum = document.getElementById('s3dNum');
+const s3dClose = document.getElementById('s3dClose');
+const demoPlay = document.getElementById('demoPlay');
 let s3dReady = false, s3dTimer = null, s3dLoop = null, s3dIndex = 0;
+function showcaseOpen(){ return !!(showcase3d && showcaseOpen()); }
 
 function s3dShow(idx){
+  if (!showcase3d || !s3dPages.length) return;
   s3dPages.forEach((pg, i)=>{
     pg.classList.toggle('leaving', i === s3dIndex && i !== idx);
     pg.classList.toggle('active', i === idx);
-    s3dDots[i].classList.toggle('on', i === idx);
+    if (s3dDots[i]) s3dDots[i].classList.toggle('on', i === idx);
   });
   s3dIndex = idx;
-  s3dNum.textContent = String(idx+1).padStart(2,'0');
+  if (s3dNum) s3dNum.textContent = String(idx+1).padStart(2,'0');
 }
 function open3D(){
+  if (!showcase3d || !s3dPages.length) return;
   showcase3d.classList.add('open');
   s3dReady = false;
   s3dIndex = 0;
@@ -398,22 +406,22 @@ function open3D(){
   s3dLoop = setInterval(()=>{ s3dShow((s3dIndex+1) % s3dPages.length); }, 2600);
 }
 function close3D(force){
-  if (!s3dReady && !force) return;
+  if (!showcase3d || (!s3dReady && !force)) return;
   s3dReady = false;
   showcase3d.classList.remove('open');
   clearTimeout(s3dTimer); clearInterval(s3dLoop);
 }
-document.querySelectorAll('.hero-shot').forEach((el)=> el.addEventListener('click', open3D));
-const demoPlay = document.getElementById('demoPlay');
-if (demoPlay) demoPlay.addEventListener('click', open3D);
-showcase3d.addEventListener('click', close3D);
-const s3dClose = document.getElementById('s3dClose');
-if (s3dClose) s3dClose.addEventListener('click', (e)=>{ e.stopPropagation(); close3D(true); });
+if (showcase3d){
+  showcase3d.addEventListener('click', close3D);
+  document.querySelectorAll('.hero-shot').forEach((el)=> el.addEventListener('click', open3D));
+  if (demoPlay) demoPlay.addEventListener('click', open3D);
+  if (s3dClose) s3dClose.addEventListener('click', (e)=>{ e.stopPropagation(); close3D(true); });
+}
 document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ close3D(true); closeLightbox(); } });
 
 /* ---------- compare keyboard navigation ---------- */
 document.addEventListener('keydown', (e)=>{
-  if (lightbox.classList.contains('open') || showcase3d.classList.contains('open')) return;
+  if (lightbox.classList.contains('open') || showcaseOpen()) return;
   if (!['ArrowLeft','ArrowRight'].includes(e.key)) return;
   const activeFrame = document.querySelector('.cmp-panel.active .cmp-frame');
   if (!activeFrame) return;
@@ -554,6 +562,7 @@ let marketFilter = 'all';
 let marketExpanded = false;
 function marketRowCount(){ return innerWidth <= 700 ? 1 : innerWidth <= 960 ? 2 : 4; }
 function updateMarket(){
+  if (!marketCards.length || !marketMoreBtn) return;
   const limit = marketExpanded ? marketCards.length : marketRowCount();
   const total = marketCards.filter((card)=> marketFilter === 'all' || card.dataset.cat === marketFilter).length;
   let shown = 0;
@@ -567,6 +576,7 @@ function updateMarket(){
   marketMoreBtn.classList.toggle('hide', !more);
   marketMoreBtn.setAttribute('aria-expanded', marketExpanded ? 'true' : 'false');
   const label = marketMoreBtn.querySelector('span');
+  if (!label) return;
   label.dataset.zh = marketExpanded ? '收起同类产品' : '点击查看更多同类产品';
   label.dataset.en = marketExpanded ? 'Show fewer product references' : 'Show more product references';
   label.textContent = currentLang === 'zh' ? label.dataset.zh : label.dataset.en;
@@ -579,7 +589,7 @@ document.querySelectorAll('.market-tab').forEach((btn)=>{
     updateMarket();
   });
 });
-marketMoreBtn.addEventListener('click', ()=>{
+if (marketMoreBtn) marketMoreBtn.addEventListener('click', ()=>{
   marketExpanded = !marketExpanded;
   updateMarket();
 });
@@ -614,7 +624,7 @@ if (!location.search.includes('scroll')) {
   document.documentElement.classList.add('ppt');
   const slides = [...document.querySelector('main').children];
   let slideIndex = 0;
-  const slideNav = ['', '#pain', '#demo', '#research', '#iteration', '#hardware'];
+  const slideNav = ['', '#demo', '#pain', '#definition', '#hardware'];
   const slideNext = document.createElement('button');
   slideNext.type = 'button';
   slideNext.className = 'slide-next';
@@ -625,7 +635,7 @@ if (!location.search.includes('scroll')) {
   const slideRail = document.createElement('nav');
   slideRail.className = 'slide-rail';
   slideRail.setAttribute('aria-label', 'Section pagination');
-  const slideLabels = ['Home', 'Pain', 'Demo', 'Research', 'Planning & testing', 'Hardware'];
+  const slideLabels = ['Home', 'Demo', 'Pain & research', 'Definition', 'Progress'];
   slides.forEach((_, i)=>{
     const dot = document.createElement('button');
     dot.type = 'button';
@@ -684,6 +694,8 @@ if (!location.search.includes('scroll')) {
     }, 720);
   }
   syncSlideUI();
+  const startSlide = parseInt(new URLSearchParams(location.search).get('slide'), 10);
+  if (Number.isFinite(startSlide) && startSlide > 0 && startSlide < slides.length) goToSlide(startSlide);
   requestAnimationFrame(()=>{ setNavActive(null); updateNav(); });
 
   slideNext.addEventListener('click', ()=> goToSlide(slideIndex + 1));
@@ -698,7 +710,7 @@ if (!location.search.includes('scroll')) {
     if (idx >= 0){ e.stopPropagation(); e.preventDefault(); goToSlide(idx); }
   }, true);
   document.addEventListener('keydown', (e)=>{
-    if (lightbox.classList.contains('open') || showcase3d.classList.contains('open')) return;
+    if (lightbox.classList.contains('open') || showcaseOpen()) return;
     if (e.key === 'PageDown'){ e.preventDefault(); goToSlide(slideIndex + 1); }
     if (e.key === 'PageUp'){ e.preventDefault(); goToSlide(slideIndex - 1); }
   });
@@ -709,7 +721,7 @@ if (!location.search.includes('scroll')) {
   }, true);
   let wheelLock = false;
   document.querySelector('main').addEventListener('wheel', (e)=>{
-    if (lightbox.classList.contains('open') || showcase3d.classList.contains('open')) return;
+    if (lightbox.classList.contains('open') || showcaseOpen()) return;
     const inner = slides[slideIndex];
     const canScroll = inner.scrollHeight > inner.clientHeight + 2;
     const atTop = inner.scrollTop <= 1;
