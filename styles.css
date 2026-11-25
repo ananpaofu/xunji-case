@@ -1147,7 +1147,7 @@ html.ppt main>section{padding:0!important;margin:0!important;min-height:0!import
 .journey-table{font-size:16px}
 .journey-notes b,.journey-notes span{font-size:16px}
 
-.def-page .definition-card{max-width:900px;padding:28px 34px}
+.def-page .definition-card{max-width:960px;padding:28px 34px}
 .def-page .definition-card li b,.def-page .definition-card li p{font-size:16px}
 
 .version-page .version-static{width:100%;max-width:1260px}
@@ -1233,6 +1233,13 @@ html.ppt main>section{padding:0!important;margin:0!important;min-height:0!import
 .version-page .version-frame{max-width:none;grid-template-columns:1.35fr .65fr;gap:18px;padding:8px}
 .version-page .version-images figure{min-height:480px;padding:10px}
 .version-page .version-phone{width:195px;height:400px;border-radius:36px}
+
+/* Round 7 refinements */
+.slide-page .chapter{align-items:center}
+.idea-card p,.definition-card li p,.progress-step p{white-space:normal!important;overflow-wrap:anywhere;word-break:break-word;max-width:100%}
+.definition-card li.one-line p{white-space:nowrap!important}
+.detail-images{grid-template-columns:repeat(3,minmax(0,1fr))}
+.detail-images img{height:200px}
 .version-page .version-images figcaption{font-size:18px}
 .version-copy p{font-size:18px;line-height:1.9}
 .version-page .block-head h3{font-size:clamp(30px,3vw,44px)}
