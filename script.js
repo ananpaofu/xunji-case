@@ -321,7 +321,7 @@ let navLock = null, navUnlock = null, navTick = false;
 function updateNav(){
   if (document.documentElement.classList.contains('ppt')){
     const idx = [...document.querySelector('main').children].findIndex((s)=> s.classList.contains('slide-active'));
-    setNavActive(['', '#pain', '#demo', '#research', '#iteration', '#hardware'][idx] || null);
+    setNavActive(['', '#demo', '#pain', '#research', '#definition', '#hardware'][idx] || null);
     return;
   }
   if (navTick) return;
@@ -537,6 +537,11 @@ document.querySelectorAll('.hero-cta,.demo-play,.lang-btn,.theme-btn').forEach((
 const igBtn = document.getElementById('igMoreBtn');
 const igMore = document.getElementById('igMore');
 if (igBtn && igMore){
+  igMore.classList.add('open');
+  igBtn.setAttribute('aria-expanded', 'true');
+  igBtn.style.display = 'none';
+}
+if (igBtn && igMore){
   igBtn.addEventListener('click', ()=>{
     const open = igMore.classList.toggle('open');
     igBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -551,7 +556,7 @@ if (igBtn && igMore){
 const marketCards = [...document.querySelectorAll('.market-card')];
 const marketMoreBtn = document.getElementById('marketMoreBtn');
 let marketFilter = 'all';
-let marketExpanded = false;
+let marketExpanded = true;
 function marketRowCount(){ return innerWidth <= 700 ? 1 : innerWidth <= 960 ? 2 : 4; }
 function updateMarket(){
   const limit = marketExpanded ? marketCards.length : marketRowCount();
@@ -614,7 +619,7 @@ if (!location.search.includes('scroll')) {
   document.documentElement.classList.add('ppt');
   const slides = [...document.querySelector('main').children];
   let slideIndex = 0;
-  const slideNav = ['', '#pain', '#demo', '#research', '#iteration', '#hardware'];
+  const slideNav = ['', '#demo', '#pain', '#research', '#definition', '#hardware'];
   const slideNext = document.createElement('button');
   slideNext.type = 'button';
   slideNext.className = 'slide-next';
@@ -625,7 +630,7 @@ if (!location.search.includes('scroll')) {
   const slideRail = document.createElement('nav');
   slideRail.className = 'slide-rail';
   slideRail.setAttribute('aria-label', 'Section pagination');
-  const slideLabels = ['Home', 'Pain', 'Demo', 'Research', 'Planning & testing', 'Hardware'];
+  const slideLabels = ['Result', 'Product demo', 'The pain', 'Research', 'Ideas & definition', 'Current progress'];
   slides.forEach((_, i)=>{
     const dot = document.createElement('button');
     dot.type = 'button';
