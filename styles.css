@@ -880,3 +880,11 @@ html[data-theme="warm"]{--line-2:#6d523d}
 .plan-note{background:var(--surface-2);border-left:3px solid var(--accent);color:var(--ink-2);box-shadow:0 0 0 1px var(--line-2)}
 .hardware{padding-bottom:0}
 .hardware .outro{padding:50px 0 18px;margin-top:54px}
+
+/* ---- vertical section rail ---- */
+.slide-rail{position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:94;display:flex;flex-direction:column;align-items:center;gap:9px}
+.slide-rail-dot{width:6px;height:6px;padding:0;border:0;border-radius:100px;background:var(--ink-3);opacity:.45;cursor:pointer;transition:height .3s ease,width .3s ease,opacity .3s ease,background .3s ease}
+.slide-rail-dot:hover{opacity:1;transform:scale(1.3)}
+.slide-rail-dot.on{height:22px;background:var(--accent);opacity:1}
+@media(max-width:700px){.slide-rail{right:10px;gap:7px}.slide-rail-dot{width:5px;height:5px}.slide-rail-dot.on{height:16px}}
+@media(prefers-reduced-motion:reduce){.slide-rail-dot{transition:none}}

@@ -622,6 +622,21 @@ if (!location.search.includes('scroll')) {
   slideNext.setAttribute('aria-label', 'Next section');
   slideNext.title = 'Next section';
   document.body.appendChild(slideNext);
+  const slideRail = document.createElement('nav');
+  slideRail.className = 'slide-rail';
+  slideRail.setAttribute('aria-label', 'Section pagination');
+  const slideLabels = ['Home', 'Pain', 'Demo', 'Research', 'Planning & testing', 'Hardware'];
+  slides.forEach((_, i)=>{
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'slide-rail-dot';
+    dot.dataset.slide = String(i);
+    dot.title = slideLabels[i] || ('Section ' + (i + 1));
+    dot.setAttribute('aria-label', dot.title);
+    dot.addEventListener('click', ()=> goToSlide(i));
+    slideRail.appendChild(dot);
+  });
+  document.body.appendChild(slideRail);
 
   let slideTimer = null;
   const slideAnims = new Map();
@@ -642,6 +657,7 @@ if (!location.search.includes('scroll')) {
     setNavActive(href || null);
     slideNext.classList.toggle('show', slideIndex < slides.length - 1);
     toTop.classList.toggle('show', slideIndex > 0);
+    slideRail.querySelectorAll('.slide-rail-dot').forEach((d, i)=> d.classList.toggle('on', i === slideIndex));
     const inner = slides[slideIndex];
     const max = Math.max(1, inner.scrollHeight - inner.clientHeight);
     const frac = Math.min(1, inner.scrollTop / max);
