@@ -380,8 +380,8 @@ if (lightbox) lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) 
 const heroVideo = document.getElementById('heroVideo');
 if (heroVideo){
   const heroClips = [
-    'assets/showcase.mp4?v=20261126f',
-    'assets/showcase-alt.mp4?v=20261126f'
+    'assets/showcase.mp4?v=20261126h',
+    'assets/showcase-alt.mp4?v=20261126h'
   ];
   let heroClipIndex = 0;
   heroVideo.addEventListener('ended', ()=>{
@@ -612,24 +612,24 @@ journeyNotes.forEach((note, i)=>{
 /* ---------- interactive version comparison ---------- */
 const versionPairs = [
   {
-    before: 'assets/v2-home.png?v=20261126f',
-    after: 'assets/v3-home.png?v=20261126f',
+    before: 'assets/v2-home.png?v=20261126h',
+    after: 'assets/v3-home.png?v=20261126h',
     beforeCap: '2.0 · 首页',
     afterCap: '3.0 · 设备',
     zh: '2.0 把收纳列表、到期提醒和分类入口堆在一屏；3.0 以设备联动为首页，直接看到地图、定位和物品导航。删除了到期提醒、社区、成就等与「找回」无关的功能。',
     en: '2.0 stacked storage lists, expiry reminders and category entries into one screen; 3.0 opens on device linking with map, location and item navigation. Expiry reminders, community, achievements and other storage-only functions are gone.'
   },
   {
-    before: 'assets/v2-function.png?v=20261126f',
-    after: 'assets/v3-sound.png?v=20261126f',
+    before: 'assets/v2-function.png?v=20261126h',
+    after: 'assets/v3-sound.png?v=20261126h',
     beforeCap: '2.0 · 功能中心',
     afterCap: '3.0 · 声音',
     zh: '2.0 用一个功能中心收纳消息聊天、社区动态、成就等级、到期提醒和安装到桌面；3.0 直接把声音呼唤做成一级页面：输入物品名、一键呼唤、语音呼唤和自定义都在这里。',
     en: '2.0 hid everything in a function grid: chat, community, achievements, expiry reminders and install prompts. 3.0 makes voice calling a first-class page: name an item, call it, use voice, or customise the command.'
   },
   {
-    before: 'assets/v2-me.png?v=20261126f',
-    after: 'assets/v3-me.png?v=20261126f',
+    before: 'assets/v2-me.png?v=20261126h',
+    after: 'assets/v3-me.png?v=20261126h',
     beforeCap: '2.0 · 我的',
     afterCap: '3.0 · 我的',
     zh: '2.0 的「我的」主要是昵称、联系方式和个性签名；3.0 把界面设置、通知中心、账号安全、修改密码和使用指南集中起来，去掉了与找回物品无关的个人资料展示。',
