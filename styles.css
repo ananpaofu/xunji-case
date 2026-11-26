@@ -115,10 +115,10 @@ html[data-theme="warm"] .cursor-blob.visible{opacity:.15}
 .hero-title{font-size:clamp(54px,7.1vw,102px);font-weight:800;letter-spacing:-.065em;margin:26px 0 28px}
 .hero-title .outline{color:transparent;-webkit-text-stroke:1.4px var(--ink-2)}
 .hero-sub{color:var(--ink-2);max-width:500px;font-size:16px;line-height:1.85}
-.hero-meta{display:grid;grid-template-columns:repeat(2,max-content);gap:18px 36px;margin:34px 0 30px}
-.hero-meta div{display:flex;flex-direction:column;gap:2px}
-.hero-meta b{font-size:28px;font-weight:700;letter-spacing:-.04em}
-.hero-meta span{font-family:var(--mono);font-size:16px;letter-spacing:.12em;color:var(--ink-3)}
+.hero-meta{display:flex;gap:22px;margin:34px 0 30px}
+.hero-meta div{display:flex;flex-direction:column;gap:2px;white-space:nowrap}
+.hero-meta b{font-size:26px;font-weight:700;letter-spacing:-.04em}
+.hero-meta span{font-family:var(--mono);font-size:16px;letter-spacing:.08em;color:var(--ink-3);white-space:nowrap}
 .hero-cta{display:inline-flex;align-items:center;gap:16px;border:1px solid var(--line);border-radius:100px;padding:13px 20px 13px 24px;font-size:16px;font-weight:600;transition:border-color .3s,background .3s}
 .hero-cta:hover{border-color:var(--accent);background:var(--accent-wash)}
 .cta-arrow{width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-size:16px}
