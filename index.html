@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-  <link rel="stylesheet" href="styles.css?v=20261126e">
+  <link rel="stylesheet" href="styles.css?v=20261126f">
   <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
@@ -72,7 +72,7 @@
               <div class="phone-notch"></div>
               <div class="phone-screen">
                 <div class="phone-topbar"><span data-en="XUNJI" data-zh="寻迹">寻迹</span><span>•••</span></div>
-                <video class="hero-video" src="assets/showcase.mp4?v=20261126e" autoplay muted loop playsinline aria-label="寻迹产品演示视频"></video>
+                <video id="heroVideo" class="hero-video ui-shot" src="assets/showcase.mp4?v=20261126f" autoplay muted playsinline aria-label="寻迹产品演示视频"></video>
                 <div class="phone-tabbar">
                   <span data-en="Device" data-zh="设备">设备</span>
                   <span data-en="Sound" data-zh="声音">声音</span>
@@ -95,7 +95,7 @@
           <p data-en="One scene, then the software and the shell side by side." data-zh="先看一张使用场景，再把软件与物品放在一起看。">先看一张使用场景，再把软件与物品放在一起看。</p>
         </div>
         <figure class="concept-figure reveal">
-          <img src="assets/concept-scene.png?v=20261126e" alt="产品使用场景意念图：学生拿着绑定钥匙的手机，绿色标签在旁边回应">
+          <img src="assets/concept-scene.png?v=20261126f" alt="产品使用场景意念图：学生拿着绑定钥匙的手机，绿色标签在旁边回应">
           <figcaption data-en="Concept scene — a key, a device and a phone that answers back." data-zh="使用场景意念图 —— 钥匙、设备和会回应你的手机。">使用场景意念图 —— 钥匙、设备和会回应你的手机。</figcaption>
         </figure>
       </div>
@@ -107,15 +107,15 @@
         </div>
         <div class="demo-duo reveal">
           <figure class="duo-card">
-            <div class="phone-frame demo-phone"><div class="phone-notch"></div><img class="zoomable" src="assets/v3-home.png?v=20261126e" alt="寻迹 3.0 设备联动首页截图"></div>
+            <div class="phone-frame demo-phone"><div class="phone-notch"></div><img class="zoomable ui-shot" src="assets/v3-home.png?v=20261126f" alt="寻迹 3.0 设备联动首页截图"></div>
             <figcaption><b data-en="SOFTWARE" data-zh="软件">软件</b><span data-en="Device home: map, location and navigation in one place." data-zh="设备首页：地图、定位和物品导航放在一起。">设备首页：地图、定位和物品导航放在一起。</span></figcaption>
           </figure>
           <figure class="duo-card model-card">
-            <model-viewer src="assets/shell-rabbit.glb?v=20261126e" alt="兔子外壳 3D 模型" camera-controls disable-pan disable-zoom loading="eager" interaction-prompt="none" min-camera-orbit="25deg 55deg auto" max-camera-orbit="155deg 125deg auto" camera-orbit="90deg 90deg auto" shadow-intensity="1" exposure="1.1"></model-viewer>
+            <model-viewer src="assets/shell-rabbit.glb?v=20261126f" alt="兔子外壳 3D 模型" camera-controls disable-pan disable-zoom loading="eager" interaction-prompt="none" min-camera-orbit="25deg 55deg auto" max-camera-orbit="155deg 125deg auto" camera-orbit="90deg 90deg auto" shadow-intensity="1" exposure="1.1"></model-viewer>
             <figcaption><b data-en="SHELL / RABBIT" data-zh="外壳 · 兔子">外壳 · 兔子</b><span data-en="Drag to rotate the rabbit shell." data-zh="可左右上下拖动旋转兔子外壳。">可左右上下拖动旋转兔子外壳。</span></figcaption>
           </figure>
           <figure class="duo-card model-card">
-            <model-viewer src="assets/shell-hamster.glb?v=20261126e" alt="仓鼠外壳 3D 模型" camera-controls disable-pan disable-zoom loading="eager" interaction-prompt="none" min-camera-orbit="25deg 55deg auto" max-camera-orbit="155deg 125deg auto" camera-orbit="90deg 90deg auto" shadow-intensity="1" exposure="1.1"></model-viewer>
+            <model-viewer src="assets/shell-hamster.glb?v=20261126f" alt="仓鼠外壳 3D 模型" camera-controls disable-pan disable-zoom loading="eager" interaction-prompt="none" min-camera-orbit="25deg 55deg auto" max-camera-orbit="155deg 125deg auto" camera-orbit="90deg 90deg auto" shadow-intensity="1" exposure="1.1"></model-viewer>
             <figcaption><b data-en="SHELL / HAMSTER" data-zh="外壳 · 仓鼠">外壳 · 仓鼠</b><span data-en="Drag to rotate the hamster shell." data-zh="可左右上下拖动旋转仓鼠外壳。">可左右上下拖动旋转仓鼠外壳。</span></figcaption>
           </figure>
         </div>
@@ -128,7 +128,7 @@
         </div>
         <div class="comic-wrap reveal">
           <div class="comic-frame">
-            <img src="assets/app-comic.png?v=20261126e" alt="手绘漫画风格的寻迹 App 使用流程图">
+            <img src="assets/app-comic.png?v=20261126f" alt="手绘漫画风格的寻迹 App 使用流程图">
           </div>
           <ol class="comic-steps">
             <li><span>01</span><div><b data-en="Keys disappeared" data-zh="钥匙不见了">钥匙不见了</b><small data-en="Pat the pockets, empty the bag." data-zh="摸口袋、翻包，心里一紧。">摸口袋、翻包，心里一紧。</small></div></li>
@@ -166,7 +166,7 @@
             <h3 data-en="First round: questionnaires and real voices" data-zh="第一次调研：问卷和真实原话">第一次调研：问卷和真实原话</h3>
             <p data-en="We ran a questionnaire on dorm storage and interviewed students. Their words kept circling back to one thing: not tidiness, but not knowing where things are." data-zh="我们用问卷做了宿舍收纳调研，也做了前期访谈。大家反复说的不是整洁，而是不知道东西在哪。">我们用问卷做了宿舍收纳调研，也做了前期访谈。大家反复说的不是整洁，而是不知道东西在哪。</p>
             <div class="research-pair">
-              <figure class="research-shot"><img class="zoomable" src="assets/research-interviews-early.png?v=20261126e" alt="前期调研访谈记录与用户原话摘录"><figcaption data-en="Early research — interview records and user quotes" data-zh="前期调研 · 访谈记录与用户原话摘录">前期调研 · 访谈记录与用户原话摘录</figcaption></figure>
+              <figure class="research-shot"><img class="zoomable" src="assets/research-interviews-early.png?v=20261126f" alt="前期调研访谈记录与用户原话摘录"><figcaption data-en="Early research — interview records and user quotes" data-zh="前期调研 · 访谈记录与用户原话摘录">前期调研 · 访谈记录与用户原话摘录</figcaption></figure>
               <div class="research-note">
                 <b data-en="What changed" data-zh="发生了什么变化">发生了什么变化</b>
                 <p data-en="From organising everything to finding the thing I need." data-zh="从「帮人收纳一切」转向「帮人找到要用的东西」。">从「帮人收纳一切」转向「帮人找到要用的东西」。</p>
@@ -184,7 +184,7 @@
             <h3 data-en="Second round: six users, six real stories" data-zh="第二轮调研：六位用户，六个真实故事">第二轮调研：六位用户，六个真实故事</h3>
             <p data-en="Six interviews, transcripts, screen recordings and voice notes. The finding narrowed again: people want the important, everyday things back." data-zh="六位用户，逐字稿、录屏、现场记录与语音转写。问题再次收窄：人们想找回的是重要、常用的东西。">六位用户，逐字稿、录屏、现场记录与语音转写。问题再次收窄：人们想找回的是重要、常用的东西。</p>
             <div class="research-trio">
-              <figure class="research-shot"><img class="zoomable" src="assets/research-interviews-six.png?v=20261126e" alt="六位用户访谈原始资料"><figcaption data-en="Transcripts · recordings · notes" data-zh="逐字稿 · 录屏 · 现场记录">逐字稿 · 录屏 · 现场记录</figcaption></figure>
+              <figure class="research-shot"><img class="zoomable" src="assets/research-interviews-six.png?v=20261126f" alt="六位用户访谈原始资料"><figcaption data-en="Transcripts · recordings · notes" data-zh="逐字稿 · 录屏 · 现场记录">逐字稿 · 录屏 · 现场记录</figcaption></figure>
               <div class="research-note compact">
                 <b data-en="Narrowed again" data-zh="再次收窄">再次收窄</b>
                 <p data-en="From finding things to finding the important and frequently used ones." data-zh="从找到东西，到找到重要和常用的东西。">从找到东西，到找到重要和常用的东西。</p>
@@ -210,24 +210,24 @@
               <button type="button" class="market-tab" data-filter="award">设计奖项</button>
             </div>
             <div class="market-grid-open" id="marketGrid">
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-01.png?v=20261126e" alt="KONKHO 防丢定位器"><figcaption>KONKHO 防丢标签<small>460 天续航 · 精准定位</small></figcaption></figure>
-              <figure data-cat="wear"><img class="zoomable" src="assets/market-02.png?v=20261126e" alt="胸针式定位器"><figcaption>胸针定位<small>卡通胸牌 · 佩戴方便</small></figcaption></figure>
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-03.png?v=20261126e" alt="Kuromi 隐私定位器"><figcaption>隐私定位<small>无需充电 · 历史轨迹</small></figcaption></figure>
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-04.png?v=20261126e" alt="AirTag 同源定位器"><figcaption>AirTag 同源<small>Works with Find My</small></figcaption></figure>
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-05.png?v=20261126e" alt="卡通全球定位器"><figcaption>卡通全球定位<small>不限距离 · 可爱造型</small></figcaption></figure>
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-06.png?v=20261126e" alt="绿联 FindMy 定位器"><figcaption>绿联 FindMy<small>地图线路 · 声音查找</small></figcaption></figure>
-              <figure data-cat="qr"><img class="zoomable" src="assets/market-07.png?v=20261126e" alt="KEEP 扫码标签"><figcaption>KEEP 扫码标签<small>扫码即查 · 彩色款</small></figcaption></figure>
-              <figure data-cat="award"><img class="zoomable" src="assets/market-08.png?v=20261126e" alt="TEAMGROUP 设计奖标签"><figcaption>TEAMGROUP<small>Good Design Award 2025</small></figcaption></figure>
-              <figure data-cat="award"><img class="zoomable" src="assets/market-09.png?v=20261126e" alt="ULTION KeyTag"><figcaption>ULTION KeyTag<small>Red Dot Winner 2023</small></figcaption></figure>
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-10.png?v=20261126e" alt="Chipolo 防丢器"><figcaption>Chipolo<small>多彩防丢标签</small></figcaption></figure>
-              <figure data-cat="wear"><img class="zoomable" src="assets/market-11.png?v=20261126e" alt="ORA 项链定位器"><figcaption>ORA 项链<small>可穿戴 · 一键求助</small></figcaption></figure>
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-12.png?v=20261126e" alt="甜甜圈防丢器"><figcaption>甜甜圈防丢器<small>精准定位 · 无需充电</small></figcaption></figure>
-              <figure data-cat="sos"><img class="zoomable" src="assets/market-13.png?v=20261126e" alt="老人 SOS 定位器"><figcaption>老人 SOS 定位<small>多人监护 · 一键报警</small></figcaption></figure>
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-14.png?v=20261126e" alt="苹果 Find My 防丢器"><figcaption>Apple Find My<small>MFI 认证 · 一键查找</small></figcaption></figure>
-              <figure data-cat="wear"><img class="zoomable" src="assets/market-15.png?v=20261126e" alt="ORA 项链细节"><figcaption>ORA 项链细节<small>开合式 · 警报提示</small></figcaption></figure>
-              <figure data-cat="tag"><img class="zoomable" src="assets/market-16.png?v=20261126e" alt="UGREEN 智能标签"><figcaption>UGREEN 智能标签<small>电子墨水 · 可切换图案</small></figcaption></figure>
-              <figure data-cat="wear"><img class="zoomable" src="assets/market-17.png?v=20261126e" alt="Careium 吊坠"><figcaption>Careium 吊坠<small>穿戴式安全定位</small></figcaption></figure>
-              <figure data-cat="sos"><img class="zoomable" src="assets/market-18.png?v=20261126e" alt="B10 智能紧急按钮"><figcaption>B10 紧急按钮<small>Red Dot · 一键援助</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-01.png?v=20261126f" alt="KONKHO 防丢定位器"><figcaption>KONKHO 防丢标签<small>460 天续航 · 精准定位</small></figcaption></figure>
+              <figure data-cat="wear"><img class="zoomable" src="assets/market-02.png?v=20261126f" alt="胸针式定位器"><figcaption>胸针定位<small>卡通胸牌 · 佩戴方便</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-03.png?v=20261126f" alt="Kuromi 隐私定位器"><figcaption>隐私定位<small>无需充电 · 历史轨迹</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-04.png?v=20261126f" alt="AirTag 同源定位器"><figcaption>AirTag 同源<small>Works with Find My</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-05.png?v=20261126f" alt="卡通全球定位器"><figcaption>卡通全球定位<small>不限距离 · 可爱造型</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-06.png?v=20261126f" alt="绿联 FindMy 定位器"><figcaption>绿联 FindMy<small>地图线路 · 声音查找</small></figcaption></figure>
+              <figure data-cat="qr"><img class="zoomable" src="assets/market-07.png?v=20261126f" alt="KEEP 扫码标签"><figcaption>KEEP 扫码标签<small>扫码即查 · 彩色款</small></figcaption></figure>
+              <figure data-cat="award"><img class="zoomable" src="assets/market-08.png?v=20261126f" alt="TEAMGROUP 设计奖标签"><figcaption>TEAMGROUP<small>Good Design Award 2025</small></figcaption></figure>
+              <figure data-cat="award"><img class="zoomable" src="assets/market-09.png?v=20261126f" alt="ULTION KeyTag"><figcaption>ULTION KeyTag<small>Red Dot Winner 2023</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-10.png?v=20261126f" alt="Chipolo 防丢器"><figcaption>Chipolo<small>多彩防丢标签</small></figcaption></figure>
+              <figure data-cat="wear"><img class="zoomable" src="assets/market-11.png?v=20261126f" alt="ORA 项链定位器"><figcaption>ORA 项链<small>可穿戴 · 一键求助</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-12.png?v=20261126f" alt="甜甜圈防丢器"><figcaption>甜甜圈防丢器<small>精准定位 · 无需充电</small></figcaption></figure>
+              <figure data-cat="sos"><img class="zoomable" src="assets/market-13.png?v=20261126f" alt="老人 SOS 定位器"><figcaption>老人 SOS 定位<small>多人监护 · 一键报警</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-14.png?v=20261126f" alt="苹果 Find My 防丢器"><figcaption>Apple Find My<small>MFI 认证 · 一键查找</small></figcaption></figure>
+              <figure data-cat="wear"><img class="zoomable" src="assets/market-15.png?v=20261126f" alt="ORA 项链细节"><figcaption>ORA 项链细节<small>开合式 · 警报提示</small></figcaption></figure>
+              <figure data-cat="tag"><img class="zoomable" src="assets/market-16.png?v=20261126f" alt="UGREEN 智能标签"><figcaption>UGREEN 智能标签<small>电子墨水 · 可切换图案</small></figcaption></figure>
+              <figure data-cat="wear"><img class="zoomable" src="assets/market-17.png?v=20261126f" alt="Careium 吊坠"><figcaption>Careium 吊坠<small>穿戴式安全定位</small></figcaption></figure>
+              <figure data-cat="sos"><img class="zoomable" src="assets/market-18.png?v=20261126f" alt="B10 智能紧急按钮"><figcaption>B10 紧急按钮<small>Red Dot · 一键援助</small></figcaption></figure>
             </div>
           </div>
         </article>
@@ -350,11 +350,11 @@
           <div class="version-frame">
             <div class="version-images">
               <figure>
-                <div class="phone-frame demo-phone version-phone"><div class="phone-notch"></div><img id="versionBefore" class="zoomable" src="assets/v2-home.png?v=20261126e" alt="2.0 截图"></div>
+                <div class="phone-frame demo-phone version-phone"><div class="phone-notch"></div><img id="versionBefore" class="zoomable ui-shot" src="assets/v2-home.png?v=20261126f" alt="2.0 截图"></div>
                 <figcaption id="versionBeforeCap">2.0 · 首页</figcaption>
               </figure>
               <figure>
-                <div class="phone-frame demo-phone version-phone"><div class="phone-notch"></div><img id="versionAfter" class="zoomable" src="assets/v3-home.png?v=20261126e" alt="3.0 截图"></div>
+                <div class="phone-frame demo-phone version-phone"><div class="phone-notch"></div><img id="versionAfter" class="zoomable ui-shot" src="assets/v3-home.png?v=20261126f" alt="3.0 截图"></div>
                 <figcaption id="versionAfterCap">3.0 · 设备</figcaption>
               </figure>
             </div>
@@ -403,9 +403,9 @@
             <p>定位器模块 · 3V 纽扣电池 · 铜线焊接连接 · ASRPRO 语音识别开发板 · 喇叭 · SD 卡 · 1000mAh 锂电池</p>
           </div>
           <div class="detail-images">
-            <figure><img class="zoomable" src="assets/hardware-asrpro.jpg?v=20261126e" alt="ASRPRO 语音识别开发板"><figcaption>ASRPRO 语音识别开发板</figcaption></figure>
-            <figure><img class="zoomable" src="assets/hardware-battery.jpg?v=20261126e" alt="3V 纽扣电池与定位器模块"><figcaption>3V 纽扣电池与定位器模块</figcaption></figure>
-            <figure><img class="zoomable" src="assets/hardware-kit.jpg?v=20261126e" alt="语音模块、喇叭、SD 卡与电池套装"><figcaption>语音模块、喇叭、SD 卡与电池套装</figcaption></figure>
+            <figure><img class="zoomable" src="assets/hardware-asrpro.jpg?v=20261126f" alt="ASRPRO 语音识别开发板"><figcaption>ASRPRO 语音识别开发板</figcaption></figure>
+            <figure><img class="zoomable" src="assets/hardware-battery.jpg?v=20261126f" alt="3V 纽扣电池与定位器模块"><figcaption>3V 纽扣电池与定位器模块</figcaption></figure>
+            <figure><img class="zoomable" src="assets/hardware-kit.jpg?v=20261126f" alt="语音模块、喇叭、SD 卡与电池套装"><figcaption>语音模块、喇叭、SD 卡与电池套装</figcaption></figure>
           </div>
         </div>
       </div>
@@ -430,6 +430,6 @@
     <span class="lb-cap" id="lbCap"></span>
   </div>
 
-  <script src="script.js?v=20261126e"></script>
+  <script src="script.js?v=20261126f"></script>
 </body>
 </html>
